@@ -1,0 +1,174 @@
+.card {
+    // .card__products
+    &__products {
+        margin: 0px -8px;
+        @include lg {
+            margin: 0px -4px;
+        }
+        @include xsm {
+            margin: 0;
+        }
+        .products--block {
+            width: calc(20% - 16px);
+            margin: 0px 8px 16px;
+            @include lg {
+                width: calc(20% - 8px);
+                margin: 0px 4px 8px;
+            }
+            @include lgFix {
+                width: calc(25% - 8px);
+            }
+            @include md {
+                width: calc(33.333% - 8px);
+            }
+            @include mdFix {
+                width: calc(50% - 8px);
+            }
+            @include xsm {
+                width: 100%;
+                margin: 0px 0px 8px 0px;
+                .products--main {
+                    min-height: auto !important;
+                }
+            }
+        }
+    }
+    h1 {
+        @include md {
+            padding: 16px 0px;
+            order: 1;
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.three-card__images_big {
+    @include md {
+        flex: 0 1 100%;
+        order: 1;
+        width: 100%;
+    }
+}
+
+.info-card {
+    flex: 1 1 auto;
+    padding: 0px 80px;
+    order: 2;
+    @include lg {
+        padding: 0px 52px;
+    }
+    @include lgFix {
+        padding: 0px 0px 0px 49px;
+    }
+    @include md {
+        flex: 0 1 100%;
+        padding: 0;
+    }
+    // .info-card__items
+    &__items {
+        margin-bottom: 28px;
+        @include lg {
+            margin-bottom: 24px;
+        }
+    }
+    // .info-card__subtitle
+    &__subtitle {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        color: $colorBlack;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 14px;
+        }
+        @include md {
+            margin-bottom: 8px;
+        }
+    }
+    // .info-card__item
+    &__item {
+        margin-bottom: 12px;
+        @include md {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+        .products--prop {
+            font-size: 14px;
+            @include lg {
+                font-size: 12px;
+            }
+            & > div:last-child {
+                color: $colorBlack;
+            }
+        }
+    }
+    // .info-card__name
+    &__name {
+        font-size: 14px;
+        line-height: calc(20 / 14);
+        color: $colorBlack;
+        margin-bottom: 8px;
+        @include lg {
+            font-size: 12px;
+        }
+    }
+
+    // .info-card__control
+    &__control {
+        @include md {
+            padding: 16px 0px;
+            border-top: 0.5px solid #c5cbd9;
+            border-bottom: 0.5px solid #c5cbd9;
+            margin-bottom: 16px;
+            order: 1;
+            width: 100%;
+        }
+        @include fix720 {
+            padding: 12px 0px;
+        }
+        div:last-child {
+            & > div {
+                width: 20px;
+                height: 20px;
+                &:not(:first-child) {
+                    margin-left: 16px;
+                }
+                &.active {
+                    svg {
+                        color: $colorBlue;
+                    }
+                }
+                @media (any-hover: hover) {
+                    &:hover {
+                        svg {
+                            color: #6689dd;
+                        }
+                    }
+                }
+                svg {
+                    color: #96a3bb;
+                }
+            }
+        }
+    }
+    // .info-card__btn
+    &__btn {
+        width: auto;
+        padding: 12px 57px;
+        font-size: 16px;
+        white-space: nowrap;
+        @include lg {
+            font-size: 14px;
+            padding: 0 27px;
+            text-align: center;
+        }
+        @include md {
+            margin-right: 8px;
+            width: 100%;
+            padding: 0;
+            max-width: 240px;
+        }
+    }
+}

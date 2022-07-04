@@ -1,0 +1,28 @@
+@@include('./header.html',{})
+
+<div class="search search-fail">
+    <div class="breadcrumbs mg32_bottom container">
+        <ul class="flex flex-center-vertical">
+            <li>
+                <a href="">Главная</a>
+            </li>
+
+            <li>Поиск</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="search__body flex flex-center-vertical flex-space-between">
+            <div class="search__text">
+                <div class="search__title">Вы не авторизованы</div>
+                <div class="search__subtitle">Для доступа к личному кабинету необходимо</div>
+                <button onclick="openModal('modal_enter')" class="search__btn btn btn--base btn--f dark--blue">Авторизироваться</button>
+            </div>
+            <div class="search__img">
+                <img src="pic/search_fail.svg" alt="404" />
+            </div>
+        </div>
+    </div>
+</div>
+@@include('./footer.html',{})
+<script src="./js/pages/lk.js"></script>

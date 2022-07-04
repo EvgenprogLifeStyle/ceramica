@@ -1,0 +1,39 @@
+.recommended--bottom {
+  position: relative; }
+
+.recommended--block {
+  display: none; }
+  .recommended--block.active {
+    display: block; }
+
+.recommended--slider-left {
+  left: -56px; }
+
+.recommended--slider-right {
+  right: -56px; }
+
+.recommended--tabs {
+  margin-left: 44px; }
+  .recommended--tabs button {
+    padding: 8px 16px;
+    margin: 0 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4772DA;
+    background: #E3E7F1;
+    border-radius: 100px; }
+    .recommended--tabs button.active {
+      background: #4772DA;
+      color: #FFFFFF; }
+      .recommended--tabs button.active:hover {
+        background: #4772DA; }
+    .recommended--tabs button:hover {
+      background: #D3D9E8; }
+    .recommended--tabs button:active {
+      background: #4772DA;
+      color: #FFFFFF; }
+    .recommended--tabs button:first-child {
+      margin-left: 0; }
+    .recommended--tabs button:last-child {
+      margin-right: 0; }

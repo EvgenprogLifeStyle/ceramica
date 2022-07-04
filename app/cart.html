@@ -1,0 +1,603 @@
+@@include('./header.html')
+<section id="cart">
+    <div class="breadcrumbs mg32_bottom container mg24_top">
+        <ul class="inline-flex flex-center-vertical">
+            <li>
+                <a href="">Главная</a>
+            </li>
+            <li>Корзина</li>
+        </ul>
+    </div>
+    <h1 class="mg24_bottom container">Корзина</h1>
+    <div class="container">
+        <div class="flex flex-wrap">
+            <div class="cart--block-wrap cbl">
+                <div class="cart--block">
+                    <div class="cart--block-title">Керамическая плитка</div>
+                    <div>
+                        <div class="cart--block-product flex flex-center-vertical">
+                            <div class="cart--block-left flex flex-column">
+                                <div class="cart--block-top">
+                                    <div class="cart--block-image">
+                                        <img src="pic/114x80.png" class="bg-i contain"
+                                             style="background-image: url(pic/cart_product_1.png)" alt="product_image"/>
+                                    </div>
+                                    <div class="cart--block-main">
+                                        <div class="cart--block-code">Код товара: <span>3708025</span></div>
+                                        <div class="cart--block-name">Плитка настенная New Trend Artwork Bruno 24,9х50
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart--block-bottom flex flex-center-vertical flex-wrap">
+                                    <div class="cart--block-price">
+                                        <div>Цена м<sup>2</sup><span>2 344 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена шт.:<span>365.1096 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена уп.:<span>2 920.06 ₽</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart--block-center flex flex-center-vertical">
+                                <input type="hidden" class="select" value="м2"/>
+                                <div class="new-select custom">
+                                    <div class="new-select__input _icon-arr-a">М<sup>2</sup></div>
+                                    <div class="new-select__body">
+                                        <div class="new-select__list scrll" aria-label="scrollable content">
+                                            <div onclick="changeQuantityType(this)" class="new-select__item active"
+                                                 data-value="м2">М<sup>2</sup></div>
+                                            <div onclick="changeQuantityType(this)" class="new-select__item"
+                                                 data-value="Шт">Шт.
+                                            </div>
+                                            <div onclick="changeQuantityType(this)" class="new-select__item"
+                                                 data-value="Уп">Уп.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calc--quantity flex flex-center-vertical">
+                                    <button onclick="cQuantity(this,false)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div onclick="contentFocus(this)"
+                                         class="calc--quantity-input flex flex-center-horizontal">
+                                        <input type="hidden" value="" name="quantity"/>
+                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                             class="calc--num">1
+                                        </div>
+                                        <div class="calc--qt">М<sup>2</sup></div>
+                                    </div>
+                                    <button onclick="cQuantity(this,true)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart--block-total">
+                                <div>Итого</div>
+                                <div class="cart--block-price_wrap">
+                                    <div class="cart--block-total_price">128 262 ₽</div>
+                                </div>
+                            </div>
+                            <div class="cart--block-del">
+                                <button type="button" class="flex flex-center-vertical flex-center-horizontal">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M8.91846 1.49184C8.63448 1.57192 8.35514 1.74594 8.15189 1.96942C7.8149 2.33993 7.68572 2.71927 7.68572 3.33847V3.72311L6.02157 3.73367L4.35741 3.7442L4.12938 3.8575C3.81208 4.01511 3.61436 4.21809 3.46081 4.54384L3.33331 4.81429V6.09331C3.33331 7.32926 3.33567 7.37565 3.4037 7.47123C3.54079 7.66386 3.64303 7.71558 3.91538 7.72998L4.16966 7.74347L4.17034 7.87377C4.17311 8.40054 4.65399 18.348 4.68276 18.4734C4.81894 19.067 5.34911 19.5953 5.9379 19.7241C6.19245 19.7797 14.6408 19.7797 14.8954 19.7241C15.4842 19.5953 16.0144 19.067 16.1505 18.4734C16.1793 18.348 16.6602 8.40054 16.663 7.87377L16.6636 7.74347L16.9179 7.72998C17.1903 7.71558 17.2925 7.66386 17.4296 7.47123C17.4976 7.37565 17.5 7.32926 17.5 6.09331V4.81429L17.3725 4.54384C17.2189 4.21809 17.0212 4.01511 16.7039 3.8575L16.4759 3.7442L14.8117 3.73367L13.1476 3.72311V3.33847C13.1476 2.71927 13.0184 2.33993 12.6814 1.96942C12.4731 1.74039 12.1975 1.57128 11.9002 1.49005C11.6155 1.4123 9.19538 1.41373 8.91846 1.49184ZM11.8031 2.67249C12.0075 2.83261 12.0372 2.91226 12.0497 3.33503L12.0612 3.7263H10.4197H8.77809V3.38855C8.77809 3.02577 8.80823 2.89798 8.92546 2.76416C9.08198 2.58543 9.11516 2.58167 10.4569 2.59047C11.6618 2.59835 11.7125 2.60146 11.8031 2.67249ZM16.3409 4.9597C16.4247 5.04755 16.4247 5.04766 16.4247 5.81885V6.59011H10.4166H4.40861V5.81885C4.40861 5.04766 4.40861 5.04755 4.49242 4.9597L4.57619 4.87182H10.4166H16.2571L16.3409 4.9597ZM15.5718 7.79828C15.5742 8.09354 15.1212 17.9007 15.0974 18.0695C15.0603 18.3327 14.988 18.4488 14.8009 18.546C14.6641 18.6171 14.6037 18.6181 10.4166 18.6181C6.22963 18.6181 6.16921 18.6171 6.03235 18.546C5.84528 18.4488 5.77302 18.3327 5.73588 18.0695C5.71205 17.9007 5.25913 8.09354 5.26152 7.79828C5.26199 7.73889 5.53044 7.73563 10.4166 7.73563C15.3028 7.73563 15.5713 7.73889 15.5718 7.79828ZM7.46213 8.92952C7.32377 8.99535 7.18108 9.1781 7.15664 9.32071C7.14579 9.38415 7.14135 11.1625 7.14677 13.2727C7.15654 17.0838 7.15708 17.11 7.227 17.2082C7.36074 17.3961 7.46984 17.4547 7.68572 17.4547C7.9016 17.4547 8.0107 17.3961 8.14445 17.2082C8.21453 17.1098 8.21484 17.0928 8.21484 13.1769C8.21484 9.26093 8.21453 9.24396 8.14445 9.14552C8.10574 9.09114 8.03392 9.01522 7.98486 8.97681C7.87187 8.88835 7.60031 8.86379 7.46213 8.92952ZM10.1931 8.92952C10.0547 8.99535 9.91201 9.1781 9.88756 9.32071C9.87671 9.38415 9.87227 11.1625 9.8777 13.2727C9.88746 17.0838 9.88801 17.11 9.95792 17.2082C10.0917 17.3961 10.2008 17.4547 10.4166 17.4547C10.6325 17.4547 10.7416 17.3961 10.8754 17.2082C10.9455 17.1098 10.9458 17.0928 10.9458 13.1769C10.9458 9.26093 10.9455 9.24396 10.8754 9.14552C10.8367 9.09114 10.7648 9.01522 10.7158 8.97681C10.6028 8.88835 10.3312 8.86379 10.1931 8.92952ZM12.924 8.92952C12.7856 8.99535 12.6429 9.1781 12.6185 9.32071C12.6076 9.38415 12.6032 11.1625 12.6086 13.2727C12.6184 17.0838 12.6189 17.11 12.6888 17.2082C12.8226 17.3961 12.9317 17.4547 13.1476 17.4547C13.3634 17.4547 13.4725 17.3961 13.6063 17.2082C13.6764 17.1098 13.6767 17.0928 13.6767 13.1769C13.6767 9.26093 13.6764 9.24396 13.6063 9.14552C13.5676 9.09114 13.4958 9.01522 13.4467 8.97681C13.3337 8.88835 13.0622 8.86379 12.924 8.92952Z"
+                                              fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cart--block-product flex flex-center-vertical">
+                            <div class="cart--block-left flex flex-column">
+                                <div class="cart--block-top">
+                                    <div class="cart--block-image">
+                                        <img src="pic/114x80.png" class="bg-i contain"
+                                             style="background-image: url(pic/cart_product_2.png)" alt="product_image"/>
+                                    </div>
+                                    <div class="cart--block-main">
+                                        <div class="cart--block-code">Код товара: <span>3708025</span></div>
+                                        <div class="cart--block-name">Панно Fanal Albi Blanco Garden (4) 126,4x90</div>
+                                    </div>
+                                </div>
+                                <div class="cart--block-bottom flex flex-center-vertical flex-wrap">
+                                    <div class="cart--block-price">
+                                        <div>Цена м<sup>2</sup><span>2 344 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена шт.:<span>365.1096 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена уп.:<span>2 920.06 ₽</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart--block-center flex flex-center-vertical">
+                                <input type="hidden" class="select" value="м2"/>
+                                <div class="new-select custom">
+                                    <div class="new-select__input _icon-arr-a">М<sup>2</sup></div>
+                                    <div class="new-select__body">
+                                        <div class="new-select__list scrll" aria-label="scrollable content">
+                                            <div onclick="changeQuantityType(this)" class="new-select__item active"
+                                                 data-value="м2">М<sup>2</sup></div>
+                                            <div onclick="changeQuantityType(this)" class="new-select__item"
+                                                 data-value="Шт">Шт.
+                                            </div>
+                                            <div onclick="changeQuantityType(this)" class="new-select__item"
+                                                 data-value="Уп">Уп.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calc--quantity flex flex-center-vertical">
+                                    <button onclick="cQuantity(this,false)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div onclick="contentFocus(this)"
+                                         class="calc--quantity-input flex flex-center-horizontal">
+                                        <input type="hidden" value="" name="quantity"/>
+                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                             class="calc--num">1
+                                        </div>
+                                        <div class="calc--qt">М<sup>2</sup></div>
+                                    </div>
+                                    <button onclick="cQuantity(this,true)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart--block-total">
+                                <div>Итого</div>
+                                <div class="cart--block-price_wrap">
+                                    <div class="cart--block-sale flex flex-center-vertical">
+                                        <div>16 895 ₽</div>
+                                        <div>-15%</div>
+                                    </div>
+                                    <div class="cart--block-total_price">12 156 ₽</div>
+                                </div>
+                            </div>
+                            <div class="cart--block-del">
+                                <button type="button" class="flex flex-center-vertical flex-center-horizontal">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M8.91846 1.49184C8.63448 1.57192 8.35514 1.74594 8.15189 1.96942C7.8149 2.33993 7.68572 2.71927 7.68572 3.33847V3.72311L6.02157 3.73367L4.35741 3.7442L4.12938 3.8575C3.81208 4.01511 3.61436 4.21809 3.46081 4.54384L3.33331 4.81429V6.09331C3.33331 7.32926 3.33567 7.37565 3.4037 7.47123C3.54079 7.66386 3.64303 7.71558 3.91538 7.72998L4.16966 7.74347L4.17034 7.87377C4.17311 8.40054 4.65399 18.348 4.68276 18.4734C4.81894 19.067 5.34911 19.5953 5.9379 19.7241C6.19245 19.7797 14.6408 19.7797 14.8954 19.7241C15.4842 19.5953 16.0144 19.067 16.1505 18.4734C16.1793 18.348 16.6602 8.40054 16.663 7.87377L16.6636 7.74347L16.9179 7.72998C17.1903 7.71558 17.2925 7.66386 17.4296 7.47123C17.4976 7.37565 17.5 7.32926 17.5 6.09331V4.81429L17.3725 4.54384C17.2189 4.21809 17.0212 4.01511 16.7039 3.8575L16.4759 3.7442L14.8117 3.73367L13.1476 3.72311V3.33847C13.1476 2.71927 13.0184 2.33993 12.6814 1.96942C12.4731 1.74039 12.1975 1.57128 11.9002 1.49005C11.6155 1.4123 9.19538 1.41373 8.91846 1.49184ZM11.8031 2.67249C12.0075 2.83261 12.0372 2.91226 12.0497 3.33503L12.0612 3.7263H10.4197H8.77809V3.38855C8.77809 3.02577 8.80823 2.89798 8.92546 2.76416C9.08198 2.58543 9.11516 2.58167 10.4569 2.59047C11.6618 2.59835 11.7125 2.60146 11.8031 2.67249ZM16.3409 4.9597C16.4247 5.04755 16.4247 5.04766 16.4247 5.81885V6.59011H10.4166H4.40861V5.81885C4.40861 5.04766 4.40861 5.04755 4.49242 4.9597L4.57619 4.87182H10.4166H16.2571L16.3409 4.9597ZM15.5718 7.79828C15.5742 8.09354 15.1212 17.9007 15.0974 18.0695C15.0603 18.3327 14.988 18.4488 14.8009 18.546C14.6641 18.6171 14.6037 18.6181 10.4166 18.6181C6.22963 18.6181 6.16921 18.6171 6.03235 18.546C5.84528 18.4488 5.77302 18.3327 5.73588 18.0695C5.71205 17.9007 5.25913 8.09354 5.26152 7.79828C5.26199 7.73889 5.53044 7.73563 10.4166 7.73563C15.3028 7.73563 15.5713 7.73889 15.5718 7.79828ZM7.46213 8.92952C7.32377 8.99535 7.18108 9.1781 7.15664 9.32071C7.14579 9.38415 7.14135 11.1625 7.14677 13.2727C7.15654 17.0838 7.15708 17.11 7.227 17.2082C7.36074 17.3961 7.46984 17.4547 7.68572 17.4547C7.9016 17.4547 8.0107 17.3961 8.14445 17.2082C8.21453 17.1098 8.21484 17.0928 8.21484 13.1769C8.21484 9.26093 8.21453 9.24396 8.14445 9.14552C8.10574 9.09114 8.03392 9.01522 7.98486 8.97681C7.87187 8.88835 7.60031 8.86379 7.46213 8.92952ZM10.1931 8.92952C10.0547 8.99535 9.91201 9.1781 9.88756 9.32071C9.87671 9.38415 9.87227 11.1625 9.8777 13.2727C9.88746 17.0838 9.88801 17.11 9.95792 17.2082C10.0917 17.3961 10.2008 17.4547 10.4166 17.4547C10.6325 17.4547 10.7416 17.3961 10.8754 17.2082C10.9455 17.1098 10.9458 17.0928 10.9458 13.1769C10.9458 9.26093 10.9455 9.24396 10.8754 9.14552C10.8367 9.09114 10.7648 9.01522 10.7158 8.97681C10.6028 8.88835 10.3312 8.86379 10.1931 8.92952ZM12.924 8.92952C12.7856 8.99535 12.6429 9.1781 12.6185 9.32071C12.6076 9.38415 12.6032 11.1625 12.6086 13.2727C12.6184 17.0838 12.6189 17.11 12.6888 17.2082C12.8226 17.3961 12.9317 17.4547 13.1476 17.4547C13.3634 17.4547 13.4725 17.3961 13.6063 17.2082C13.6764 17.1098 13.6767 17.0928 13.6767 13.1769C13.6767 9.26093 13.6764 9.24396 13.6063 9.14552C13.5676 9.09114 13.4958 9.01522 13.4467 8.97681C13.3337 8.88835 13.0622 8.86379 12.924 8.92952Z"
+                                              fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cart--block-product flex flex-center-vertical">
+                            <div class="cart--block-left flex flex-column">
+                                <div class="cart--block-top">
+                                    <div class="cart--block-image">
+                                        <img src="pic/114x80.png" class="bg-i contain"
+                                             style="background-image: url(pic/cart_product_3.png)" alt="product_image"/>
+                                    </div>
+                                    <div class="cart--block-main">
+                                        <div class="cart--block-code">Код товара: <span>3708025</span></div>
+                                        <div class="cart--block-name">Плитка Ceramika Paradyz Aragorn Grys 30x60</div>
+                                    </div>
+                                </div>
+                                <div class="cart--block-bottom flex flex-center-vertical flex-wrap">
+                                    <div class="cart--block-price">
+                                        <div>Цена м<sup>2</sup><span>2 344 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена шт.:<span>365.1096 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена уп.:<span>2 920.06 ₽</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart--block-center flex flex-center-vertical">
+                                <input type="hidden" class="select" value="м2"/>
+                                <div class="new-select custom">
+                                    <div class="new-select__input _icon-arr-a">М<sup>2</sup></div>
+                                    <div class="new-select__body">
+                                        <div class="new-select__list scrll" aria-label="scrollable content">
+                                            <div onclick="changeQuantityType(this)" class="new-select__item active"
+                                                 data-value="м2">М<sup>2</sup></div>
+                                            <div onclick="changeQuantityType(this)" class="new-select__item"
+                                                 data-value="Шт">Шт.
+                                            </div>
+                                            <div onclick="changeQuantityType(this)" class="new-select__item"
+                                                 data-value="Уп">Уп.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calc--quantity flex flex-center-vertical">
+                                    <button onclick="cQuantity(this,false)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div onclick="contentFocus(this)"
+                                         class="calc--quantity-input flex flex-center-horizontal">
+                                        <input type="hidden" value="" name="quantity"/>
+                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                             class="calc--num">1
+                                        </div>
+                                        <div class="calc--qt">М<sup>2</sup></div>
+                                    </div>
+                                    <button onclick="cQuantity(this,true)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart--block-total">
+                                <div>Итого</div>
+                                <div class="cart--block-price_wrap">
+                                    <div class="cart--block-total_price">28 532 ₽</div>
+                                </div>
+                            </div>
+                            <div class="cart--block-del">
+                                <button type="button" class="flex flex-center-vertical flex-center-horizontal">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M8.91846 1.49184C8.63448 1.57192 8.35514 1.74594 8.15189 1.96942C7.8149 2.33993 7.68572 2.71927 7.68572 3.33847V3.72311L6.02157 3.73367L4.35741 3.7442L4.12938 3.8575C3.81208 4.01511 3.61436 4.21809 3.46081 4.54384L3.33331 4.81429V6.09331C3.33331 7.32926 3.33567 7.37565 3.4037 7.47123C3.54079 7.66386 3.64303 7.71558 3.91538 7.72998L4.16966 7.74347L4.17034 7.87377C4.17311 8.40054 4.65399 18.348 4.68276 18.4734C4.81894 19.067 5.34911 19.5953 5.9379 19.7241C6.19245 19.7797 14.6408 19.7797 14.8954 19.7241C15.4842 19.5953 16.0144 19.067 16.1505 18.4734C16.1793 18.348 16.6602 8.40054 16.663 7.87377L16.6636 7.74347L16.9179 7.72998C17.1903 7.71558 17.2925 7.66386 17.4296 7.47123C17.4976 7.37565 17.5 7.32926 17.5 6.09331V4.81429L17.3725 4.54384C17.2189 4.21809 17.0212 4.01511 16.7039 3.8575L16.4759 3.7442L14.8117 3.73367L13.1476 3.72311V3.33847C13.1476 2.71927 13.0184 2.33993 12.6814 1.96942C12.4731 1.74039 12.1975 1.57128 11.9002 1.49005C11.6155 1.4123 9.19538 1.41373 8.91846 1.49184ZM11.8031 2.67249C12.0075 2.83261 12.0372 2.91226 12.0497 3.33503L12.0612 3.7263H10.4197H8.77809V3.38855C8.77809 3.02577 8.80823 2.89798 8.92546 2.76416C9.08198 2.58543 9.11516 2.58167 10.4569 2.59047C11.6618 2.59835 11.7125 2.60146 11.8031 2.67249ZM16.3409 4.9597C16.4247 5.04755 16.4247 5.04766 16.4247 5.81885V6.59011H10.4166H4.40861V5.81885C4.40861 5.04766 4.40861 5.04755 4.49242 4.9597L4.57619 4.87182H10.4166H16.2571L16.3409 4.9597ZM15.5718 7.79828C15.5742 8.09354 15.1212 17.9007 15.0974 18.0695C15.0603 18.3327 14.988 18.4488 14.8009 18.546C14.6641 18.6171 14.6037 18.6181 10.4166 18.6181C6.22963 18.6181 6.16921 18.6171 6.03235 18.546C5.84528 18.4488 5.77302 18.3327 5.73588 18.0695C5.71205 17.9007 5.25913 8.09354 5.26152 7.79828C5.26199 7.73889 5.53044 7.73563 10.4166 7.73563C15.3028 7.73563 15.5713 7.73889 15.5718 7.79828ZM7.46213 8.92952C7.32377 8.99535 7.18108 9.1781 7.15664 9.32071C7.14579 9.38415 7.14135 11.1625 7.14677 13.2727C7.15654 17.0838 7.15708 17.11 7.227 17.2082C7.36074 17.3961 7.46984 17.4547 7.68572 17.4547C7.9016 17.4547 8.0107 17.3961 8.14445 17.2082C8.21453 17.1098 8.21484 17.0928 8.21484 13.1769C8.21484 9.26093 8.21453 9.24396 8.14445 9.14552C8.10574 9.09114 8.03392 9.01522 7.98486 8.97681C7.87187 8.88835 7.60031 8.86379 7.46213 8.92952ZM10.1931 8.92952C10.0547 8.99535 9.91201 9.1781 9.88756 9.32071C9.87671 9.38415 9.87227 11.1625 9.8777 13.2727C9.88746 17.0838 9.88801 17.11 9.95792 17.2082C10.0917 17.3961 10.2008 17.4547 10.4166 17.4547C10.6325 17.4547 10.7416 17.3961 10.8754 17.2082C10.9455 17.1098 10.9458 17.0928 10.9458 13.1769C10.9458 9.26093 10.9455 9.24396 10.8754 9.14552C10.8367 9.09114 10.7648 9.01522 10.7158 8.97681C10.6028 8.88835 10.3312 8.86379 10.1931 8.92952ZM12.924 8.92952C12.7856 8.99535 12.6429 9.1781 12.6185 9.32071C12.6076 9.38415 12.6032 11.1625 12.6086 13.2727C12.6184 17.0838 12.6189 17.11 12.6888 17.2082C12.8226 17.3961 12.9317 17.4547 13.1476 17.4547C13.3634 17.4547 13.4725 17.3961 13.6063 17.2082C13.6764 17.1098 13.6767 17.0928 13.6767 13.1769C13.6767 9.26093 13.6764 9.24396 13.6063 9.14552C13.5676 9.09114 13.4958 9.01522 13.4467 8.97681C13.3337 8.88835 13.0622 8.86379 12.924 8.92952Z"
+                                              fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart--block-row_total flex flex-center-vertical justify-end">
+                        Итого:
+                        <div>238 532 ₽</div>
+                    </div>
+                </div>
+                <div class="cart--block">
+                    <div class="cart--block-title">Сантехника и аксессуары</div>
+                    <div>
+                        <div class="cart--block-product flex flex-center-vertical">
+                            <div class="cart--block-left flex flex-column">
+                                <div class="cart--block-top">
+                                    <div class="cart--block-image">
+                                        <img src="pic/114x80.png" class="bg-i contain"
+                                             style="background-image: url(pic/cart_product_4.png)" alt="product_image"/>
+                                    </div>
+                                    <div class="cart--block-main">
+                                        <div class="cart--block-code">Код товара: <span>3708025</span></div>
+                                        <div class="cart--block-name">Cмеситель Alcora Umbrella для душевой кабины, без
+                                            душевого комплекта, хром
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart--block-bottom flex flex-center-vertical flex-wrap">
+                                    <div class="cart--block-price">
+                                        <div>Цена м<sup>2</sup><span>2 344 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена шт.:<span>365.1096 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена уп.:<span>2 920.06 ₽</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart--block-center flex flex-center-vertical">
+                                <div class="calc--quantity flex flex-center-vertical">
+                                    <button onclick="cQuantity(this,false)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div onclick="contentFocus(this)"
+                                         class="calc--quantity-input flex flex-center-horizontal">
+                                        <input type="hidden" value="" name="quantity"/>
+                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                             class="calc--num">1
+                                        </div>
+                                        <div class="calc--qt">шт.</div>
+                                    </div>
+                                    <button onclick="cQuantity(this,true)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart--block-total">
+                                <div>Итого</div>
+                                <div class="cart--block-price_wrap">
+                                    <div class="cart--block-total_price">2 417 ₽</div>
+                                </div>
+                            </div>
+                            <div class="cart--block-del">
+                                <button type="button" class="flex flex-center-vertical flex-center-horizontal">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M8.91846 1.49184C8.63448 1.57192 8.35514 1.74594 8.15189 1.96942C7.8149 2.33993 7.68572 2.71927 7.68572 3.33847V3.72311L6.02157 3.73367L4.35741 3.7442L4.12938 3.8575C3.81208 4.01511 3.61436 4.21809 3.46081 4.54384L3.33331 4.81429V6.09331C3.33331 7.32926 3.33567 7.37565 3.4037 7.47123C3.54079 7.66386 3.64303 7.71558 3.91538 7.72998L4.16966 7.74347L4.17034 7.87377C4.17311 8.40054 4.65399 18.348 4.68276 18.4734C4.81894 19.067 5.34911 19.5953 5.9379 19.7241C6.19245 19.7797 14.6408 19.7797 14.8954 19.7241C15.4842 19.5953 16.0144 19.067 16.1505 18.4734C16.1793 18.348 16.6602 8.40054 16.663 7.87377L16.6636 7.74347L16.9179 7.72998C17.1903 7.71558 17.2925 7.66386 17.4296 7.47123C17.4976 7.37565 17.5 7.32926 17.5 6.09331V4.81429L17.3725 4.54384C17.2189 4.21809 17.0212 4.01511 16.7039 3.8575L16.4759 3.7442L14.8117 3.73367L13.1476 3.72311V3.33847C13.1476 2.71927 13.0184 2.33993 12.6814 1.96942C12.4731 1.74039 12.1975 1.57128 11.9002 1.49005C11.6155 1.4123 9.19538 1.41373 8.91846 1.49184ZM11.8031 2.67249C12.0075 2.83261 12.0372 2.91226 12.0497 3.33503L12.0612 3.7263H10.4197H8.77809V3.38855C8.77809 3.02577 8.80823 2.89798 8.92546 2.76416C9.08198 2.58543 9.11516 2.58167 10.4569 2.59047C11.6618 2.59835 11.7125 2.60146 11.8031 2.67249ZM16.3409 4.9597C16.4247 5.04755 16.4247 5.04766 16.4247 5.81885V6.59011H10.4166H4.40861V5.81885C4.40861 5.04766 4.40861 5.04755 4.49242 4.9597L4.57619 4.87182H10.4166H16.2571L16.3409 4.9597ZM15.5718 7.79828C15.5742 8.09354 15.1212 17.9007 15.0974 18.0695C15.0603 18.3327 14.988 18.4488 14.8009 18.546C14.6641 18.6171 14.6037 18.6181 10.4166 18.6181C6.22963 18.6181 6.16921 18.6171 6.03235 18.546C5.84528 18.4488 5.77302 18.3327 5.73588 18.0695C5.71205 17.9007 5.25913 8.09354 5.26152 7.79828C5.26199 7.73889 5.53044 7.73563 10.4166 7.73563C15.3028 7.73563 15.5713 7.73889 15.5718 7.79828ZM7.46213 8.92952C7.32377 8.99535 7.18108 9.1781 7.15664 9.32071C7.14579 9.38415 7.14135 11.1625 7.14677 13.2727C7.15654 17.0838 7.15708 17.11 7.227 17.2082C7.36074 17.3961 7.46984 17.4547 7.68572 17.4547C7.9016 17.4547 8.0107 17.3961 8.14445 17.2082C8.21453 17.1098 8.21484 17.0928 8.21484 13.1769C8.21484 9.26093 8.21453 9.24396 8.14445 9.14552C8.10574 9.09114 8.03392 9.01522 7.98486 8.97681C7.87187 8.88835 7.60031 8.86379 7.46213 8.92952ZM10.1931 8.92952C10.0547 8.99535 9.91201 9.1781 9.88756 9.32071C9.87671 9.38415 9.87227 11.1625 9.8777 13.2727C9.88746 17.0838 9.88801 17.11 9.95792 17.2082C10.0917 17.3961 10.2008 17.4547 10.4166 17.4547C10.6325 17.4547 10.7416 17.3961 10.8754 17.2082C10.9455 17.1098 10.9458 17.0928 10.9458 13.1769C10.9458 9.26093 10.9455 9.24396 10.8754 9.14552C10.8367 9.09114 10.7648 9.01522 10.7158 8.97681C10.6028 8.88835 10.3312 8.86379 10.1931 8.92952ZM12.924 8.92952C12.7856 8.99535 12.6429 9.1781 12.6185 9.32071C12.6076 9.38415 12.6032 11.1625 12.6086 13.2727C12.6184 17.0838 12.6189 17.11 12.6888 17.2082C12.8226 17.3961 12.9317 17.4547 13.1476 17.4547C13.3634 17.4547 13.4725 17.3961 13.6063 17.2082C13.6764 17.1098 13.6767 17.0928 13.6767 13.1769C13.6767 9.26093 13.6764 9.24396 13.6063 9.14552C13.5676 9.09114 13.4958 9.01522 13.4467 8.97681C13.3337 8.88835 13.0622 8.86379 12.924 8.92952Z"
+                                              fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cart--block-product flex flex-center-vertical">
+                            <div class="cart--block-left flex flex-column">
+                                <div class="cart--block-top">
+                                    <div class="cart--block-image">
+                                        <img src="pic/114x80.png" class="bg-i contain"
+                                             style="background-image: url(pic/cart_product_5.png)" alt="product_image"/>
+                                    </div>
+                                    <div class="cart--block-main">
+                                        <div class="cart--block-code">Код товара: <span>3708025</span></div>
+                                        <div class="cart--block-name">Плитка настенная New Trend Artwork Bruno 24,9х50
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart--block-bottom flex flex-center-vertical flex-wrap">
+                                    <div class="cart--block-price">
+                                        <div>Цена м<sup>2</sup><span>2 344 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена шт.:<span>365.1096 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена уп.:<span>2 920.06 ₽</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart--block-center flex flex-center-vertical">
+                                <div class="calc--quantity flex flex-center-vertical">
+                                    <button onclick="cQuantity(this,false)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div onclick="contentFocus(this)"
+                                         class="calc--quantity-input flex flex-center-horizontal">
+                                        <input type="hidden" value="" name="quantity"/>
+                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                             class="calc--num">1
+                                        </div>
+                                        <div class="calc--qt">шт.</div>
+                                    </div>
+                                    <button onclick="cQuantity(this,true)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart--block-total">
+                                <div>Итого</div>
+                                <div class="cart--block-price_wrap">
+                                    <div class="cart--block-total_price">34 190 ₽</div>
+                                </div>
+                            </div>
+                            <div class="cart--block-del">
+                                <button type="button" class="flex flex-center-vertical flex-center-horizontal">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M8.91846 1.49184C8.63448 1.57192 8.35514 1.74594 8.15189 1.96942C7.8149 2.33993 7.68572 2.71927 7.68572 3.33847V3.72311L6.02157 3.73367L4.35741 3.7442L4.12938 3.8575C3.81208 4.01511 3.61436 4.21809 3.46081 4.54384L3.33331 4.81429V6.09331C3.33331 7.32926 3.33567 7.37565 3.4037 7.47123C3.54079 7.66386 3.64303 7.71558 3.91538 7.72998L4.16966 7.74347L4.17034 7.87377C4.17311 8.40054 4.65399 18.348 4.68276 18.4734C4.81894 19.067 5.34911 19.5953 5.9379 19.7241C6.19245 19.7797 14.6408 19.7797 14.8954 19.7241C15.4842 19.5953 16.0144 19.067 16.1505 18.4734C16.1793 18.348 16.6602 8.40054 16.663 7.87377L16.6636 7.74347L16.9179 7.72998C17.1903 7.71558 17.2925 7.66386 17.4296 7.47123C17.4976 7.37565 17.5 7.32926 17.5 6.09331V4.81429L17.3725 4.54384C17.2189 4.21809 17.0212 4.01511 16.7039 3.8575L16.4759 3.7442L14.8117 3.73367L13.1476 3.72311V3.33847C13.1476 2.71927 13.0184 2.33993 12.6814 1.96942C12.4731 1.74039 12.1975 1.57128 11.9002 1.49005C11.6155 1.4123 9.19538 1.41373 8.91846 1.49184ZM11.8031 2.67249C12.0075 2.83261 12.0372 2.91226 12.0497 3.33503L12.0612 3.7263H10.4197H8.77809V3.38855C8.77809 3.02577 8.80823 2.89798 8.92546 2.76416C9.08198 2.58543 9.11516 2.58167 10.4569 2.59047C11.6618 2.59835 11.7125 2.60146 11.8031 2.67249ZM16.3409 4.9597C16.4247 5.04755 16.4247 5.04766 16.4247 5.81885V6.59011H10.4166H4.40861V5.81885C4.40861 5.04766 4.40861 5.04755 4.49242 4.9597L4.57619 4.87182H10.4166H16.2571L16.3409 4.9597ZM15.5718 7.79828C15.5742 8.09354 15.1212 17.9007 15.0974 18.0695C15.0603 18.3327 14.988 18.4488 14.8009 18.546C14.6641 18.6171 14.6037 18.6181 10.4166 18.6181C6.22963 18.6181 6.16921 18.6171 6.03235 18.546C5.84528 18.4488 5.77302 18.3327 5.73588 18.0695C5.71205 17.9007 5.25913 8.09354 5.26152 7.79828C5.26199 7.73889 5.53044 7.73563 10.4166 7.73563C15.3028 7.73563 15.5713 7.73889 15.5718 7.79828ZM7.46213 8.92952C7.32377 8.99535 7.18108 9.1781 7.15664 9.32071C7.14579 9.38415 7.14135 11.1625 7.14677 13.2727C7.15654 17.0838 7.15708 17.11 7.227 17.2082C7.36074 17.3961 7.46984 17.4547 7.68572 17.4547C7.9016 17.4547 8.0107 17.3961 8.14445 17.2082C8.21453 17.1098 8.21484 17.0928 8.21484 13.1769C8.21484 9.26093 8.21453 9.24396 8.14445 9.14552C8.10574 9.09114 8.03392 9.01522 7.98486 8.97681C7.87187 8.88835 7.60031 8.86379 7.46213 8.92952ZM10.1931 8.92952C10.0547 8.99535 9.91201 9.1781 9.88756 9.32071C9.87671 9.38415 9.87227 11.1625 9.8777 13.2727C9.88746 17.0838 9.88801 17.11 9.95792 17.2082C10.0917 17.3961 10.2008 17.4547 10.4166 17.4547C10.6325 17.4547 10.7416 17.3961 10.8754 17.2082C10.9455 17.1098 10.9458 17.0928 10.9458 13.1769C10.9458 9.26093 10.9455 9.24396 10.8754 9.14552C10.8367 9.09114 10.7648 9.01522 10.7158 8.97681C10.6028 8.88835 10.3312 8.86379 10.1931 8.92952ZM12.924 8.92952C12.7856 8.99535 12.6429 9.1781 12.6185 9.32071C12.6076 9.38415 12.6032 11.1625 12.6086 13.2727C12.6184 17.0838 12.6189 17.11 12.6888 17.2082C12.8226 17.3961 12.9317 17.4547 13.1476 17.4547C13.3634 17.4547 13.4725 17.3961 13.6063 17.2082C13.6764 17.1098 13.6767 17.0928 13.6767 13.1769C13.6767 9.26093 13.6764 9.24396 13.6063 9.14552C13.5676 9.09114 13.4958 9.01522 13.4467 8.97681C13.3337 8.88835 13.0622 8.86379 12.924 8.92952Z"
+                                              fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart--block-row_total flex flex-center-vertical justify-end">
+                        Итого:
+                        <div>36 532 ₽</div>
+                    </div>
+                </div>
+                <div class="cart--block">
+                    <div class="cart--block-title">Мебель для ванной</div>
+                    <div>
+                        <div class="cart--block-product flex flex-center-vertical">
+                            <div class="cart--block-left flex flex-column">
+                                <div class="cart--block-top">
+                                    <div class="cart--block-image">
+                                        <img src="pic/114x80.png" class="bg-i contain"
+                                             style="background-image: url(pic/cart_product_6.png)" alt="product_image"/>
+                                    </div>
+                                    <div class="cart--block-main">
+                                        <div class="cart--block-code">Код товара: <span>3708025</span></div>
+                                        <div class="cart--block-name">Зеркало-шкаф Alcora Cielo Led 600х800, левый, с
+                                            розеткой, сенсор на зеркале
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart--block-bottom flex flex-center-vertical flex-wrap">
+                                    <div class="cart--block-price">
+                                        <div>Цена м<sup>2</sup><span>2 344 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена шт.:<span>365.1096 ₽</span></div>
+                                    </div>
+                                    <div class="cart--block-price">
+                                        <div>Цена уп.:<span>2 920.06 ₽</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart--block-center flex flex-center-vertical">
+                                <div class="calc--quantity flex flex-center-vertical">
+                                    <button onclick="cQuantity(this,false)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                    <div onclick="contentFocus(this)"
+                                         class="calc--quantity-input flex flex-center-horizontal">
+                                        <input type="hidden" value="" name="quantity"/>
+                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                             class="calc--num">1
+                                        </div>
+                                        <div class="calc--qt">шт.</div>
+                                    </div>
+                                    <button onclick="cQuantity(this,true)" type="button"
+                                            class="flex flex-center-vertical flex-center-horizontal">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart--block-total">
+                                <div>Итого</div>
+                                <div class="cart--block-price_wrap">
+                                    <div class="cart--block-total_price">23 373 ₽</div>
+                                </div>
+                            </div>
+                            <div class="cart--block-del">
+                                <button type="button" class="flex flex-center-vertical flex-center-horizontal">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M8.91846 1.49184C8.63448 1.57192 8.35514 1.74594 8.15189 1.96942C7.8149 2.33993 7.68572 2.71927 7.68572 3.33847V3.72311L6.02157 3.73367L4.35741 3.7442L4.12938 3.8575C3.81208 4.01511 3.61436 4.21809 3.46081 4.54384L3.33331 4.81429V6.09331C3.33331 7.32926 3.33567 7.37565 3.4037 7.47123C3.54079 7.66386 3.64303 7.71558 3.91538 7.72998L4.16966 7.74347L4.17034 7.87377C4.17311 8.40054 4.65399 18.348 4.68276 18.4734C4.81894 19.067 5.34911 19.5953 5.9379 19.7241C6.19245 19.7797 14.6408 19.7797 14.8954 19.7241C15.4842 19.5953 16.0144 19.067 16.1505 18.4734C16.1793 18.348 16.6602 8.40054 16.663 7.87377L16.6636 7.74347L16.9179 7.72998C17.1903 7.71558 17.2925 7.66386 17.4296 7.47123C17.4976 7.37565 17.5 7.32926 17.5 6.09331V4.81429L17.3725 4.54384C17.2189 4.21809 17.0212 4.01511 16.7039 3.8575L16.4759 3.7442L14.8117 3.73367L13.1476 3.72311V3.33847C13.1476 2.71927 13.0184 2.33993 12.6814 1.96942C12.4731 1.74039 12.1975 1.57128 11.9002 1.49005C11.6155 1.4123 9.19538 1.41373 8.91846 1.49184ZM11.8031 2.67249C12.0075 2.83261 12.0372 2.91226 12.0497 3.33503L12.0612 3.7263H10.4197H8.77809V3.38855C8.77809 3.02577 8.80823 2.89798 8.92546 2.76416C9.08198 2.58543 9.11516 2.58167 10.4569 2.59047C11.6618 2.59835 11.7125 2.60146 11.8031 2.67249ZM16.3409 4.9597C16.4247 5.04755 16.4247 5.04766 16.4247 5.81885V6.59011H10.4166H4.40861V5.81885C4.40861 5.04766 4.40861 5.04755 4.49242 4.9597L4.57619 4.87182H10.4166H16.2571L16.3409 4.9597ZM15.5718 7.79828C15.5742 8.09354 15.1212 17.9007 15.0974 18.0695C15.0603 18.3327 14.988 18.4488 14.8009 18.546C14.6641 18.6171 14.6037 18.6181 10.4166 18.6181C6.22963 18.6181 6.16921 18.6171 6.03235 18.546C5.84528 18.4488 5.77302 18.3327 5.73588 18.0695C5.71205 17.9007 5.25913 8.09354 5.26152 7.79828C5.26199 7.73889 5.53044 7.73563 10.4166 7.73563C15.3028 7.73563 15.5713 7.73889 15.5718 7.79828ZM7.46213 8.92952C7.32377 8.99535 7.18108 9.1781 7.15664 9.32071C7.14579 9.38415 7.14135 11.1625 7.14677 13.2727C7.15654 17.0838 7.15708 17.11 7.227 17.2082C7.36074 17.3961 7.46984 17.4547 7.68572 17.4547C7.9016 17.4547 8.0107 17.3961 8.14445 17.2082C8.21453 17.1098 8.21484 17.0928 8.21484 13.1769C8.21484 9.26093 8.21453 9.24396 8.14445 9.14552C8.10574 9.09114 8.03392 9.01522 7.98486 8.97681C7.87187 8.88835 7.60031 8.86379 7.46213 8.92952ZM10.1931 8.92952C10.0547 8.99535 9.91201 9.1781 9.88756 9.32071C9.87671 9.38415 9.87227 11.1625 9.8777 13.2727C9.88746 17.0838 9.88801 17.11 9.95792 17.2082C10.0917 17.3961 10.2008 17.4547 10.4166 17.4547C10.6325 17.4547 10.7416 17.3961 10.8754 17.2082C10.9455 17.1098 10.9458 17.0928 10.9458 13.1769C10.9458 9.26093 10.9455 9.24396 10.8754 9.14552C10.8367 9.09114 10.7648 9.01522 10.7158 8.97681C10.6028 8.88835 10.3312 8.86379 10.1931 8.92952ZM12.924 8.92952C12.7856 8.99535 12.6429 9.1781 12.6185 9.32071C12.6076 9.38415 12.6032 11.1625 12.6086 13.2727C12.6184 17.0838 12.6189 17.11 12.6888 17.2082C12.8226 17.3961 12.9317 17.4547 13.1476 17.4547C13.3634 17.4547 13.4725 17.3961 13.6063 17.2082C13.6764 17.1098 13.6767 17.0928 13.6767 13.1769C13.6767 9.26093 13.6764 9.24396 13.6063 9.14552C13.5676 9.09114 13.4958 9.01522 13.4467 8.97681C13.3337 8.88835 13.0622 8.86379 12.924 8.92952Z"
+                                              fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart--block-row_total flex flex-center-vertical justify-end">
+                        Итого:
+                        <div>23 373 ₽</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart--float">
+                <div class="cart--float-wrap">
+                    <div class="cart--float-title">Сумма заказа</div>
+                    <div class="cart--float-main">
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Всего товаров:</div>
+                            <div>12 шт.</div>
+                        </div>
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Вес</div>
+                            <div>458 кг.</div>
+                        </div>
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Всего м<sup>2</sup>:</div>
+                            <div>124 м<sup>2</sup></div>
+                        </div>
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Доставка</div>
+                            <div>6500 ₽</div>
+                        </div>
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Итого:</div>
+                            <div><b>282 532 ₽</b></div>
+                        </div>
+                    </div>
+                    <div class="cart--float-buttons">
+                        <a href="/ordering.html"
+                           class="btn--base dark--blue flex flex-center-vertical flex-center-horizontal">Подтвердить
+                            заказ</a>
+                        <div class="cart--promo-wrap">
+
+                        </div>
+                        <button onclick="addPromoLine(this)" class="btn--base blue--btn" type="button">Добавить
+                            промокод
+                        </button>
+                    </div>
+                    <div class="cart--float-links">
+                        <button type="button" class="flex flex-center-vertical hovered">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M7.80787 2.06934C6.6757 2.31183 5.77847 3.21842 5.5453 4.35551C5.49698 4.59121 5.48359 4.91508 5.48359 5.84912V7.04174H5.07184C4.17105 7.04174 3.4886 7.30766 2.89164 7.8912C2.45974 8.31344 2.18923 8.80728 2.06916 9.39278C1.97667 9.84379 1.97706 14.7857 2.06963 15.2337C2.18594 15.7968 2.43154 16.2576 2.84122 16.6816C3.43192 17.2929 4.15285 17.5848 5.07184 17.5848H5.48359V18.9887C5.48359 19.8875 5.49952 20.4669 5.52788 20.5994C5.67149 21.2703 6.2108 21.8095 6.88181 21.9531C7.17228 22.0152 16.8356 22.0159 17.1306 21.9538C17.7934 21.8142 18.347 21.2609 18.4855 20.5994C18.5126 20.47 18.5289 19.8666 18.5289 18.9887V17.5848H18.9406C19.3795 17.5848 19.8201 17.5115 20.1454 17.3842C20.8169 17.1215 21.4478 16.513 21.7544 15.8323C21.9877 15.3141 21.9801 15.4218 21.9949 12.4509C22.0068 10.0536 22.0008 9.68029 21.9454 9.40719C21.7881 8.63102 21.3288 7.95477 20.6637 7.52032C20.1515 7.18571 19.6332 7.04174 18.9406 7.04174H18.5289V5.84912C18.5289 4.91055 18.5156 4.59238 18.4667 4.35559C18.2288 3.20413 17.3288 2.30445 16.177 2.06661C15.7389 1.97613 8.23153 1.97859 7.80787 2.06934ZM15.9589 3.21948C16.6279 3.36013 17.1689 3.90126 17.3128 4.57384C17.3401 4.70109 17.3571 5.21614 17.3571 5.91125V7.04174H12.0062H6.65532V5.91125C6.65532 5.22993 6.67262 4.69856 6.69887 4.57384C6.76999 4.23571 6.92438 3.95558 7.17978 3.70118C7.42776 3.4542 7.67394 3.3137 8.00281 3.23142C8.26797 3.16508 15.6476 3.15399 15.9589 3.21948ZM19.435 8.25674C20.1041 8.39739 20.645 8.93852 20.789 9.6111C20.85 9.89611 20.8508 14.7247 20.7899 15.0155C20.7273 15.3145 20.5024 15.7195 20.2874 15.9206C19.9209 16.2633 19.4919 16.4134 18.8785 16.4134H18.5289V15.4372V14.461H18.7648C19.1789 14.461 19.4662 14.2211 19.4662 13.8752C19.4662 13.6815 19.3281 13.4565 19.1548 13.3681C19.002 13.2902 18.9392 13.2895 12.0062 13.2895C5.07328 13.2895 5.01044 13.2902 4.85765 13.3681C4.68435 13.4565 4.5462 13.6815 4.5462 13.8752C4.5462 14.2211 4.83351 14.461 5.24768 14.461H5.48359V15.4372V16.4134H5.13398C4.48195 16.4134 4.08391 16.2671 3.70474 15.888C3.45094 15.6342 3.29569 15.3528 3.22347 15.0155C3.16231 14.7297 3.16161 9.9015 3.22273 9.6111C3.29385 9.27298 3.44825 8.99284 3.70365 8.73844C3.95163 8.49146 4.19781 8.35096 4.52667 8.26869C4.79351 8.20195 19.1198 8.19043 19.435 8.25674ZM4.84933 9.62137C4.68443 9.70841 4.5462 9.93879 4.5462 10.1266C4.5462 10.3203 4.68435 10.5453 4.85765 10.6337C5.00087 10.7068 5.08649 10.7123 6.06945 10.7123C7.05242 10.7123 7.13803 10.7068 7.28126 10.6337C7.45455 10.5453 7.5927 10.3203 7.5927 10.1266C7.5927 9.93282 7.45455 9.70786 7.28126 9.61945C7.13764 9.5462 7.05433 9.54097 6.06125 9.54257C5.07731 9.54417 4.98415 9.55022 4.84933 9.62137ZM17.3571 17.4107C17.3571 20.2899 17.3553 20.3641 17.2785 20.5145C17.2279 20.6137 17.1449 20.6967 17.0457 20.7473C16.8936 20.8248 16.8254 20.8259 12.0033 20.8259H7.1151L6.9593 20.7383C6.86787 20.6869 6.77288 20.5908 6.72941 20.5056C6.6586 20.3668 6.65532 20.2298 6.65532 17.4107V14.461H12.0062H17.3571V17.4107ZM10.1612 15.8691C9.99627 15.9562 9.85805 16.1866 9.85805 16.3743C9.85805 16.5681 9.99619 16.7931 10.1695 16.8815C10.3169 16.9566 10.397 16.9601 12.0062 16.9601C13.6155 16.9601 13.6955 16.9566 13.8429 16.8815C14.0162 16.7931 14.1544 16.5681 14.1544 16.3743C14.1544 16.1806 14.0162 15.9556 13.8429 15.8672C13.6953 15.7919 13.6174 15.7887 11.998 15.7903C10.3918 15.792 10.2999 15.7959 10.1612 15.8691ZM10.1612 18.3682C9.99627 18.4553 9.85805 18.6857 9.85805 18.8735C9.85805 19.0672 9.99619 19.2922 10.1695 19.3806C10.3169 19.4557 10.397 19.4592 12.0062 19.4592C13.6155 19.4592 13.6955 19.4557 13.8429 19.3806C14.0162 19.2922 14.1544 19.0672 14.1544 18.8735C14.1544 18.6797 14.0162 18.4547 13.8429 18.3663C13.6953 18.291 13.6174 18.2878 11.998 18.2894C10.3918 18.2911 10.2999 18.295 10.1612 18.3682Z"
+                                      fill="currentColor"/>
+                            </svg>
+                            Распечатать ваш заказ
+                        </button>
+                        <button type="button" onclick="toggleMail()" class="flex flex-center-vertical hovered">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2.55942 4.07118C1.8334 4.26049 1.26394 4.82059 1.07242 5.53368C0.975861 5.89318 0.975861 18.112 1.07242 18.4715C1.26643 19.1938 1.83705 19.7489 2.57789 19.9361C2.80077 19.9924 3.9052 19.9998 12.0041 19.9998C22.0113 19.9998 21.3869 20.0146 21.8922 19.7662C22.1951 19.6175 22.5753 19.2557 22.7357 18.9639C23.0152 18.4554 22.9998 18.8592 22.9998 12.0026C22.9998 6.54246 22.9917 5.74194 22.9341 5.52739C22.7411 4.80897 22.1686 4.25562 21.4238 4.06748C21.0583 3.97513 2.91395 3.97872 2.55942 4.07118ZM21.1386 5.3704C21.1699 5.38973 19.4717 6.84436 16.6098 9.24965C12.191 12.9634 12.0274 13.096 11.932 13.0397C11.8777 13.0077 9.80554 11.2757 7.32733 9.19105C4.56104 6.86402 2.84042 5.38886 2.87057 5.37007C2.93512 5.32988 21.0734 5.33017 21.1386 5.3704ZM11.7587 14.6206C11.9212 14.6871 12.2191 14.664 12.3578 14.5739C12.4113 14.5393 14.5186 12.7756 17.0407 10.6547L21.6263 6.79858L21.6151 12.5214C21.6039 18.2282 21.6036 18.2446 21.5153 18.3594C21.4666 18.4226 21.3734 18.513 21.3082 18.5602L21.1895 18.6461H12.0041H2.81864L2.7 18.5602C2.63476 18.513 2.54155 18.4226 2.49285 18.3594C2.40454 18.2446 2.40424 18.2282 2.39311 12.5204L2.3819 6.79641L7.00149 10.6803C9.54229 12.8164 11.683 14.5896 11.7587 14.6206Z"
+                                      fill="currentColor"/>
+                            </svg>
+                            Отправить заказ по e-mail
+                        </button>
+                    </div>
+                    <div class="cart--float-email">
+                        <form id="cart_mail" class="flex flex-center-vertical flex-space-between">
+
+                            <div class="cart--float-email_wrap">
+                                <button type="button" onclick="clearInput(this);" class="flex">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                              stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                                <input class="iText" type="email" placeholder="E-mail" name="cart--float-email">
+                            </div>
+                            <button type="submit"
+                                    class="cart--float-email_btn flex flex-center-vertical flex-center-horizontal">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M22.0136 10.0081C21.6515 9.71648 4.56008 1.17412 4.11989 1.06478C3.48349 0.906664 2.67568 1.04474 2.12615 1.4054C1.4046 1.87899 0.995102 2.64905 1.00004 3.52291C1.0026 3.96742 1.06466 4.19858 2.16064 7.84422C3.03516 10.7532 3.31844 11.7678 3.31791 11.9895C3.31745 12.2058 3.01635 13.3017 2.17441 16.1517C1.20329 19.4388 1.02902 20.0843 1.01517 20.4466C0.9614 21.8482 2.0806 23.0007 3.49492 23C3.73683 22.9998 4.05821 22.9534 4.22886 22.8939C4.39582 22.8356 8.41629 20.8536 13.1632 18.4893L21.794 14.1907L22.1584 13.8596C22.4559 13.5894 22.5542 13.4698 22.6938 13.2083C23.2818 12.1066 23.0056 10.8071 22.0136 10.0081ZM12.8142 11.1555C8.43657 11.1737 4.85178 11.1855 4.84796 11.1816C4.84413 11.1778 4.33438 9.47526 3.71523 7.39824C2.43646 3.10862 2.4733 3.30813 2.88467 2.89611C3.14928 2.63108 3.30421 2.57598 3.64739 2.62485C3.74214 2.63833 7.62725 4.55125 12.2809 6.87584C16.9346 9.20039 20.7492 11.1068 20.7578 11.1124C20.7664 11.1179 17.1918 11.1373 12.8142 11.1555ZM14.6956 15.8577C11.36 17.5217 7.54768 19.4239 6.22377 20.0848C4.89986 20.7456 3.72901 21.3071 3.62188 21.3326C3.38193 21.3895 3.02312 21.2715 2.82129 21.0694C2.66907 20.9169 2.53059 20.5877 2.54662 20.4164C2.55139 20.3656 3.06926 18.6285 3.6975 16.5563L4.83972 12.7887L12.7915 12.8052C17.1649 12.8142 20.7471 12.824 20.7518 12.827C20.7565 12.8299 18.0312 14.1937 14.6956 15.8577Z"
+                                          fill="currentColor"/>
+                                </svg>
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@@include('./html_blocks/slider_default/slider_default.html',{id: 'slider-default-1', title: 'Сопутствующие товары'})
+<script src="js/pages/cart.js"></script>
+@@include('./footer.html')

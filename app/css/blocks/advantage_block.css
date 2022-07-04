@@ -1,0 +1,22 @@
+.advantages--img {
+  margin-right: 24px; }
+
+.advantages--title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #1F2636; }
+
+.advantages--text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #878889; }
+
+.advantages--block {
+  width: auto; }
+  .advantages--block-wrap {
+    padding: 40px 0;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: #C5CBD9;
+    margin-top: 40px; }

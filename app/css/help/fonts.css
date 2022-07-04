@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "Manrope";
+  src: local("/fonts/Manrope-Regular"), local("Manrope"), url("/fonts/Manrope-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Manrope";
+  src: local("../fonts/Manrope-ExtraBold"), local("Manrope"), url("../fonts/Manrope-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Manrope";
+  src: local("../fonts/Manrope-Bold"), local("Manrope"), url("../fonts/Manrope-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Manrope";
+  src: local("../fonts/Manrope-SemiBold"), local("Manrope"), url("../fonts/Manrope-SemiBold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.ttf?t3axn2") format("truetype"), url("../fonts/icons.woff?t3axn2") format("woff"), url("../fonts/icons.svg?t3axn2#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "Manrope", "icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+._icon-filter:before {
+  content: "\e904"; }
+
+._icon-filter-a:after {
+  content: "\e904"; }
+
+._icon-arr:before {
+  content: "\e900"; }
+
+._icon-arr-a:after {
+  content: "\e900"; }
+
+._icon-burger:before {
+  content: "\e901"; }
+
+._icon-close:before {
+  content: "\e902"; }
+
+._icon-close-a:after {
+  content: "\e902"; }
+
+._icon-tile:before {
+  content: "\e903"; }

@@ -1,0 +1,390 @@
+.main {
+  &--slide {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    @include lgFix {
+      min-width: 557px !important;
+      max-width: 557px !important;
+    }
+    @include fix720 {
+      min-width: 288px !important;
+      max-width: 288px !important;
+      height: 140px;
+    }
+  }
+
+  &--slider {
+    &-wrap {
+      margin-top: 40px;
+      @include lg {
+        margin-top: 32px;
+      }
+      @include lgFix {
+        margin-top: 16px;
+      }
+    }
+    &-left {
+      left: 40px;
+      @include lg {
+        left: 28px;
+      }
+      @include lgFix {
+        display: none;
+      }
+    }
+
+    &-right {
+      right: 40px;
+      @include lg {
+        right: 28px;
+      }
+      @include lgFix {
+        display: none;
+      }
+    }
+
+    &-block {
+      position: relative;
+      width: calc(#{gridCustom(20,14)} - 8px);
+      overflow: hidden;
+      @include xl {
+        width: calc(#{gridCustom(18,12)} - 8px);
+      }
+      @include lg {
+        height: 340px;
+      }
+      @include lgFix {
+        width: 100%;
+        height: 280px;
+        padding-bottom: 26px;
+      }
+      @include fix720 {
+        height: auto;
+        padding-bottom: 18px;
+      }
+      //@include lg {
+      //  width: calc(#{gridCustom(24,16)} - 8px);
+      //}
+
+    }
+
+    &-t {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      padding: 28px 128px;
+      z-index: 2;
+      @include lg {
+        padding: 0 122px;
+      }
+      @include lgFix {
+        padding: 0 28px;
+      }
+      @include fix720 {
+        padding: 8px 16px 24px 16px;
+        justify-content: flex-end;
+      }
+
+      > * {
+        max-width: 60%;
+        @include lg {
+          max-width: 80%;
+        }
+        @include fix720 {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &-title {
+      font-weight: bold;
+      font-size: 44px;
+      line-height: 52px;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      @include lg {
+        font-size: 36px;
+        line-height: 44px;
+      }
+      @include lgFix {
+        font-size: 28px;
+        line-height: 40px;
+      }
+      @include fix720 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &-text {
+      font-size: 18px;
+      line-height: 28px;
+      color: #FFFFFF;
+      @include lg {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      @include fix720 {
+        display: none;
+      }
+    }
+
+    &-subBlock {
+      height: calc(50% - 8px);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+
+      .main--slider-t {
+        top: auto;
+        padding: 12px 28px 32px 28px;
+
+        > * {
+          max-width: 100%;
+        }
+
+        .main--slider-title {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 32px;
+          color: #FFFFFF;
+          @include lg {
+            font-size: 20px;
+            line-height: 28px;
+          }
+        }
+
+        .main--slider-text {
+          font-size: 16px;
+          line-height: 24px;
+          color: #FFFFFF;
+          @include lg {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        @include lg {
+          height: 162px;
+        }
+      }
+    }
+
+    &-sub {
+      width: calc(#{gridCustom(20,6)} - 8px);
+      @include xl {
+        width: calc(#{gridCustom(18,6)} - 8px);
+      }
+      @include lgFix {
+        display: none;
+      }
+    }
+
+    &-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #1F2636;
+      opacity: .5;
+      z-index: 1;
+    }
+  }
+}
+
+.slider {
+  &--dots {
+    position: absolute;
+    bottom: 28px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+    &.circle {
+      bottom: 0;
+      .slider--dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #C5CBD9;
+        margin: 0 6px;
+        &.dot--active {
+          background: #6689DD;
+        }
+      }
+    }
+    @include lgFix {
+      bottom: 0;
+    }
+  }
+
+  &--dot {
+    width: 28px;
+    height: 3px;
+    background: #F4F5F6;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 4px;
+    @include lgFix {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #C5CBD9;
+      margin: 0 6px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.dot--active {
+      background: #C5CBD9;
+      @include lgFix {
+        background: #6689DD;
+      }
+    }
+  }
+}
+
+.home {
+  &--about {
+    &-wrap {
+      @include lgFix {
+        align-items: center;
+      }
+      @include md {
+        flex-direction: column;
+      }
+    }
+    &-left {
+      width: gridCustom(20, 9);
+      @include xl {
+        width: gridCustom(18,7);
+      }
+      @include lg {
+        width: gridCustom(24, 9.7);
+      }
+      @include md {
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        margin-top: 8px;
+        align-items: flex-start;
+      }
+      a {
+        display: inline-block;
+        padding: 8px 16px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #4772DA;
+        background: #E3E7F1;
+        border-radius: 100px;
+        margin: 12px 0 32px;
+        @include lg {
+          font-size: 14px;
+          line-height: 20px;
+          padding: 6px 16px;
+          margin: 12px 0 28px;
+        }
+        @include md {
+          margin: 8px 0 16px 0;
+        }
+
+        &:hover {
+          background: #D3D9E8;
+        }
+
+        &:active {
+          background: #4772DA;
+          color: #FFFFFF;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #878889;
+        @include lg {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    &-right {
+      width: gridCustom(20, 10);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      height: 446px;
+      @include xl {
+        width: gridCustom(18,10);
+      }
+      @include lg {
+        width: gridCustom(24,13.1);
+        height: 400px;
+      }
+      @include lgFix {
+        width: gridCustom(24,12);
+        height: 288px;
+      }
+      @include md {
+        width: 100%;
+        height: 444px;
+        margin-top: 16px;
+      }
+      @include fix720 {
+        height: 332px;
+      }
+      @include mdFix {
+        height: 246px;
+      }
+      @include xsm {
+        height: 180px;
+      }
+      > iframe {
+        position: relative;
+        //width: 100%;
+        //height: 100%;
+      }
+    }
+  }
+}
+
+.main {
+  &--text {
+    div {
+      margin-top: 12px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #878889;
+      margin-bottom: 24px;
+      @include lg {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,479 @@
+@@include('./header.html')
+<script src="https://api-maps.yandex.ru/2.1/?apikey=5b792c24-f34d-4a6e-a963-8057ad442000&lang=ru_RU"
+        type="text/javascript"></script>
+</script>
+<section id="order">
+    <div class="breadcrumbs mg32_bottom container mg24_top">
+        <ul class="inline-flex flex-center-vertical">
+            <li>
+                <a href="">Главная</a>
+            </li>
+            <li>Оформление заказа</li>
+        </ul>
+    </div>
+    <h1 class="mg24_bottom container">Оформление заказа</h1>
+    <div class="container">
+        <div class="flex flex-wrap">
+            <div class="ordering--wrap cbl">
+                <form id="ordering_form" data-parsley-validate>
+                    <div class="ordering--block">
+                        <div class="ordering--title-wrap flex flex-center-vertical flex-space-between">
+                            <div>Укажите ваши данные</div>
+                            <button type="button" onclick="openModal('modal_enter')"
+                                    class="flex flex-center-vertical hovered">
+                                <span>Войти в кабинет</span>
+                                <svg width="16" height="16">
+                                    <use xlink:href="pic/sprite.svg#user"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="ordering--block-wrap">
+                            <div class="ordering--inputs">
+                                <div class="input--row flex flex-space-between">
+                                    <div class="input--main i33">
+                                        <button type="button" onclick="clearInput(this);" class="flex">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                      stroke-linecap="round"/>
+                                            </svg>
+                                        </button>
+                                        <input data-parsley-required-message="Поле обязательно для заполнения" required
+                                               type="text" name="ordering_name" class="iText" placeholder="Ваше имя*"/>
+                                    </div>
+                                    <div class="input--main i33">
+                                        <button type="button" onclick="clearInput(this);" class="flex">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                      stroke-linecap="round"/>
+                                            </svg>
+                                        </button>
+                                        <input data-parsley-required-message="Поле обязательно для заполнения"
+                                               data-parsley-pattern-message=""
+                                               data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$"
+                                               required type="tel" name="ordering_phone" class="iText masked-phone"
+                                               placeholder="Телефон*"/>
+                                    </div>
+                                    <div class="input--main i33">
+                                        <button type="button" onclick="clearInput(this);" class="flex">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                      stroke-linecap="round"/>
+                                            </svg>
+                                        </button>
+                                        <input data-parsley-required-message="Поле обязательно для заполнения" required
+                                               data-parsley-type="email" type="email" name="ordering_email"
+                                               class="iText"
+                                               placeholder="E-mail*"/>
+                                    </div>
+                                </div>
+                                <div class="input--main i100">
+                                    <button type="button" onclick="clearInput(this);" class="flex">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                  stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                    <textarea name="ordering_email" class="iText"
+                                              placeholder="Вы можете добавить комментарий к заказу"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ordering--block-wrap">
+                            <label class="inpCheck small">
+                                <input type="checkbox" name="chk_1"
+                                       value="Y">
+                                <span>Я представляю строительную компанию</span>
+                            </label>
+                            <label class="inpCheck small">
+                                <input type="checkbox" name="chk_1"
+                                       value="Y">
+                                <span>Зарегистрировать личный кабинет</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ordering--block">
+                        <div class="ordering--title-wrap flex flex-center-vertical">
+                            <div>Способ доставки</div>
+                        </div>
+                        <div class="ordering--block-wrap">
+                            <div class="ordering--delivery-wrap flex flex-space-between">
+                                <div data-tab="0" onclick="toggleDelivery(this);"
+                                     class="ordering--radio-block">
+                                    <label>
+                                        <input type="radio" checked name="delivery_method" value="1">
+                                    </label>
+                                    <div class="ordering--radio-main flex flex-center-vertical flex-column">
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M11.5972 2.01734C10.7262 2.12257 9.79422 2.32596 9.10362 2.56151C5.3787 3.83215 2.59407 6.90364 1.77661 10.6433C1.51366 11.8464 1.52261 11.6432 1.50648 16.7781C1.49255 21.2274 1.49604 21.5041 1.56805 21.6481C1.61005 21.7321 1.71014 21.8456 1.79049 21.9004L1.93658 22H12.5H23.0635L23.2096 21.9004C23.2899 21.8456 23.39 21.7321 23.4319 21.6481C23.5038 21.5041 23.5074 21.226 23.4937 16.8C23.4781 11.7574 23.484 11.9041 23.2503 10.8082C22.5463 7.50767 20.3208 4.60798 17.3432 3.11153C16.3018 2.58815 15.3375 2.27299 14.2412 2.09769C13.7894 2.02541 11.9843 1.9706 11.5972 2.01734ZM13.9746 3.45894C16.421 3.85176 18.4999 5.00357 19.9393 6.76375C21.0864 8.16646 21.7703 9.77143 22.0977 11.8287C22.1871 12.391 22.191 12.5599 22.2055 16.5477L22.2205 20.6836H20.4987H18.777V15.5713V10.4591H19.0501C19.2624 10.4591 19.3556 10.437 19.4692 10.3595C19.8619 10.0918 19.8518 9.56264 19.4483 9.25512L19.3295 9.16464H12.5H5.67053L5.55179 9.25512C5.14826 9.56264 5.1382 10.0918 5.53085 10.3595C5.64444 10.437 5.73769 10.4591 5.95003 10.4591H6.22312V15.5713V20.6836H4.50139H2.77962L2.79467 16.5477C2.80938 12.5138 2.81208 12.3969 2.90598 11.8033C3.25452 9.59968 4.07478 7.81686 5.40862 6.36381C6.84372 4.8004 9.04335 3.69243 11.2103 3.44147C11.4349 3.41545 11.6767 3.38583 11.7477 3.37565C12.0207 3.33646 13.5735 3.39456 13.9746 3.45894ZM17.4872 11.1613V11.8634H12.5H7.5129V11.1613V10.4591H12.5H17.4872V11.1613ZM17.4872 13.8819V14.584H12.5H7.5129V13.8819V13.1798H12.5H17.4872V13.8819ZM17.4872 18.292V20.6836H12.5H7.5129V18.292V15.9005H12.5H17.4872V18.292Z"
+                                                  fill="#4772DA"/>
+                                        </svg>
+                                        <div class="ordering--radio-title">Самовывоз</div>
+                                        <div class="ordering--radio-text">Забарать можно с пункта самовывоза</div>
+                                    </div>
+                                </div>
+                                <div data-tab="1" onclick="toggleDelivery(this);"
+                                     class="ordering--radio-block active">
+                                    <label>
+                                        <input type="radio" checked name="delivery_method" value="1">
+                                    </label>
+                                    <div class="ordering--radio-main flex flex-center-vertical flex-column">
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M11.7221 0.0399522C8.85757 0.342776 6.38804 2.33165 5.4486 5.09237C5.20897 5.7965 5.11136 6.3651 5.08439 7.21424C5.05654 8.08942 5.1364 8.70055 5.40449 9.66431C5.92631 11.5404 7.14463 14.0355 8.81682 16.6528C9.0435 17.0076 9.22897 17.3153 9.22897 17.3365C9.22897 17.3577 8.99243 17.4019 8.70327 17.4346C6.93645 17.6348 5.25033 18.071 4.15888 18.6103C3.03692 19.1646 2.5 19.8094 2.5 20.6025C2.5 21.3951 3.04374 22.0486 4.15888 22.5964C7.96902 24.4679 17.031 24.4679 20.8411 22.5964C21.9563 22.0486 22.5 21.3951 22.5 20.6025C22.5 19.8094 21.9631 19.1646 20.8411 18.6103C19.7497 18.071 18.0636 17.6348 16.2967 17.4346C16.0076 17.4019 15.771 17.3577 15.771 17.3365C15.771 17.3153 15.9565 17.0076 16.1832 16.6528C17.8554 14.0355 19.0737 11.5404 19.5955 9.66431C19.8636 8.70055 19.9435 8.08942 19.9156 7.21424C19.8689 5.74529 19.4955 4.56547 18.6895 3.34053C17.1781 1.04334 14.4509 -0.248567 11.7221 0.0399522ZM13.4813 1.58835C14.7741 1.79259 16.1301 2.55999 16.9877 3.57258C17.9962 4.76342 18.4782 6.13197 18.4189 7.63633C18.3521 9.33011 17.4287 11.6516 15.5927 14.7414C14.7702 16.1256 12.6137 19.314 12.5 19.314C12.4457 19.314 11.1587 17.4901 10.4813 16.4532C9.38056 14.7684 8.66079 13.5142 7.95131 12.0448C6.54963 9.14163 6.2614 7.41089 6.87355 5.57289C7.47715 3.76055 8.91229 2.35453 10.7455 1.77942C10.9943 1.70138 11.3593 1.61565 11.5568 1.58887C11.7543 1.56204 11.979 1.53118 12.0561 1.52026C12.2607 1.49122 13.1291 1.53268 13.4813 1.58835ZM11.7786 4.05563C10.4861 4.33365 9.45243 5.34506 9.1293 6.64785C8.99346 7.19553 9.02145 8.01039 9.19435 8.54044C9.48336 9.42644 10.1357 10.1776 10.9902 10.6081C11.8799 11.0565 13.1201 11.0565 14.0098 10.6081C14.8643 10.1776 15.5166 9.42644 15.8057 8.54044C15.9786 8.01039 16.0065 7.19553 15.8707 6.64785C15.6611 5.80283 15.1275 5.03928 14.4138 4.56307C13.6414 4.04771 12.6779 3.86218 11.7786 4.05563ZM13.014 5.56454C14.2526 5.89124 14.8433 7.34345 14.1951 8.46821C14.0201 8.77188 13.6763 9.08812 13.3554 9.24049C12.2515 9.76477 10.9959 9.20701 10.6092 8.02043C10.5003 7.68637 10.5285 7.10319 10.6713 6.7371C10.9528 6.01538 11.7279 5.48439 12.5 5.48439C12.6157 5.48439 12.847 5.52046 13.014 5.56454ZM10.6547 19.3727C12.0178 21.2582 12.0862 21.3307 12.5 21.3307C12.9138 21.3307 12.9822 21.2582 14.3453 19.3727C14.5961 19.0259 14.7922 18.7982 14.8403 18.7982C15.0264 18.7982 16.2833 18.9449 16.8333 19.0309C18.6669 19.3174 20.2445 19.8421 20.7901 20.3468C20.9081 20.456 21.0047 20.5725 21.0047 20.6057C21.0047 20.7206 20.5591 21.0593 20.1402 21.2628C17.4028 22.5926 10.8856 22.899 6.72897 21.8931C5.95528 21.7059 5.35593 21.5038 4.85981 21.2628C4.44093 21.0593 3.99533 20.7206 3.99533 20.6057C3.99533 20.4776 4.44047 20.1407 4.89916 19.9217C5.86285 19.4617 7.51579 19.0723 9.36916 18.8689C10.3115 18.7655 10.1778 18.713 10.6547 19.3727Z"
+                                                  fill="#4772DA"/>
+                                        </svg>
+                                        <div class="ordering--radio-title">Доставка</div>
+                                        <div class="ordering--radio-text">Наша служба доставки привезёт ваш заказ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-tab="2" onclick="toggleDelivery(this);" class="ordering--radio-block">
+                                    <label>
+                                        <input type="radio" checked name="delivery_method" value="1">
+                                    </label>
+                                    <div class="ordering--radio-main flex flex-center-vertical flex-column">
+                                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M2.09368 4.05961C1.41225 4.24284 0.908474 4.71579 0.650182 5.41485C0.57245 5.62518 0.563678 6.062 0.525305 11.6422C0.485477 17.4334 0.487072 17.6491 0.570808 17.8093C0.754981 18.1616 0.765114 18.164 2.1838 18.19L3.45185 18.2133L3.53239 18.4228C3.80978 19.1447 4.46658 19.7144 5.25107 19.9136C6.04622 20.1154 6.83939 19.9439 7.4619 19.4354C7.78324 19.1729 7.96549 18.9374 8.16354 18.5286L8.32764 18.19L13.0037 18.1913L17.6798 18.1925L17.8624 18.5753C18.4791 19.8679 20.053 20.3793 21.3154 19.6973C21.8342 19.4171 22.3273 18.8565 22.485 18.3678L22.5403 18.1962L23.3085 18.1815C24.1657 18.165 24.2434 18.1395 24.4197 17.816C24.5041 17.6612 24.5072 17.4944 24.4944 13.7665L24.4812 9.87837L24.3713 9.55243C24.0407 8.57086 23.4215 7.84721 22.5586 7.43368C21.8421 7.09041 21.877 7.09437 19.3843 7.07355L17.1483 7.05488L17.1303 6.30138C17.115 5.65363 17.0975 5.51036 17.0057 5.2801C16.8033 4.77208 16.36 4.33462 15.8268 4.11674L15.5688 4.01132L8.95437 4.00234C3.36197 3.99475 2.30187 4.00359 2.09368 4.05961ZM15.4017 5.47003C15.4896 5.51683 15.6002 5.62653 15.6473 5.71379C15.7289 5.86485 15.733 6.13343 15.733 11.3328V16.7931H12.013H8.29302L8.23049 16.6185C8.07277 16.1781 7.65137 15.6569 7.24231 15.3963C6.47456 14.9073 5.44327 14.8799 4.63856 15.3272C4.15547 15.5957 3.72154 16.0858 3.52601 16.5836L3.45288 16.7698L2.66595 16.7826L1.87906 16.7954L1.91002 15.3624C1.92705 14.5743 1.94103 13.4527 1.94108 12.8701L1.94117 11.8108H5.81893H9.69664L9.17546 12.3402C8.84511 12.6758 8.6434 12.9187 8.62449 13.0037C8.60812 13.0775 8.5872 13.1625 8.57796 13.1926C8.54456 13.302 8.66136 13.5992 8.78676 13.7237C8.8574 13.7938 9.0025 13.8771 9.10918 13.9089C9.47339 14.0172 9.57697 13.9431 10.8862 12.6375C12.1772 11.3501 12.2194 11.2906 12.1153 10.9043C12.0732 10.7482 11.8737 10.5257 10.9318 9.58446C10.3086 8.96186 9.73009 8.41007 9.64617 8.3583C9.33172 8.16431 8.86613 8.2749 8.68238 8.58716C8.5826 8.75674 8.56665 9.09359 8.65067 9.25721C8.68144 9.31714 8.93087 9.59145 9.20497 9.86673L9.70335 10.3673H5.81462H1.92593L1.95581 8.10359C1.98916 5.5795 1.98152 5.63501 2.31806 5.46654C2.47047 5.39022 2.88 5.3851 8.8613 5.38505C14.9513 5.38496 15.2492 5.38882 15.4017 5.47003ZM18.3131 9.82203C18.3131 11.3238 18.3343 11.4853 18.6004 12.0084C18.7948 12.3908 19.2797 12.8707 19.6684 13.0654C20.1545 13.309 20.4381 13.3457 21.8432 13.3466L23.098 13.3474V15.0702V16.7931H22.827H22.556L22.4282 16.5021C22.0261 15.5859 21.1333 15.0085 20.1192 15.0085C19.1539 15.0085 18.28 15.5537 17.8617 16.4168L17.6798 16.7922L17.4101 16.7927L17.1403 16.7931V12.6567C17.1403 10.3816 17.1544 8.50628 17.1716 8.48923C17.1888 8.47215 17.4527 8.45818 17.758 8.45818H18.3131V9.82203ZM21.2799 8.50171C21.8813 8.57868 22.4314 8.92321 22.7568 9.4267C23.0225 9.83786 23.0588 10.0151 23.0851 11.0308L23.109 11.9505H21.9565C21.3137 11.9505 20.7003 11.9284 20.5695 11.9006C20.2451 11.8315 19.9929 11.6366 19.8441 11.3402L19.7204 11.094V9.77612V8.45818L20.342 8.45971C20.6839 8.46055 21.1059 8.47945 21.2799 8.50171ZM6.48657 16.5959C7.1733 17.0203 7.11672 18.1053 6.38862 18.474C5.97336 18.6843 5.4998 18.6243 5.14688 18.3168C4.89394 18.0963 4.78304 17.8451 4.78102 17.4879C4.77952 17.2266 4.80012 17.1482 4.92115 16.9539C5.26613 16.3999 5.92556 16.2492 6.48657 16.5959ZM20.6463 16.5315C21.1664 16.8019 21.3695 17.4581 21.0995 17.996C20.9624 18.269 20.7722 18.4338 20.4736 18.5383C20.0841 18.6748 19.6649 18.5828 19.3669 18.2956C19.0488 17.989 18.9432 17.583 19.0712 17.159C19.136 16.9444 19.3931 16.6328 19.588 16.5328C19.8929 16.3762 20.3466 16.3757 20.6463 16.5315Z"
+                                                  fill="#4772DA"/>
+                                        </svg>
+                                        <div class="ordering--radio-title">Транспортная компания</div>
+                                        <div class="ordering--radio-text">Доставка в любую точку России</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-tab="0" class="ordering--delivery-tab">
+                                <div class="ordering--subtitle-wrap">
+                                    <div>г. Балабаново, ул. Лермонтова, 16А</div>
+                                    <div class="ordering--delivery-text">Пн-Пт <b>с 10.00 до 20.00</b></div>
+                                </div>
+                                <div class="ordering--map" id="map_3">
+
+                                </div>
+                                <script type="text/javascript">
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                        contactsMap("map_3", [55.18966006954173, 36.65043700000001], true);
+                                    });
+                                </script>
+                            </div>
+                            <div data-tab="1" class="ordering--delivery-tab active">
+                                <div class="ordering--title-wrap">
+                                    <div>Доставка Реал Керамика</div>
+                                    <div class="ordering--delivery-text gray">Расчёт доставки работает в тестовом
+                                        режиме, после оформления заказа менеджер уточнит данные.
+                                    </div>
+                                    <label class="inpCheck small">
+                                        <input type="checkbox" name="chk_3"
+                                               value="Y">
+                                        <span>Подъём на этаж</span>
+                                    </label>
+                                </div>
+                                <div class="ordering--inputs">
+                                    <div class="input--row flex flex-space-between">
+                                        <div class="input--main i50">
+                                            <button type="button" onclick="clearInput(this);" class="flex">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                          stroke-linecap="round"/>
+                                                </svg>
+                                            </button>
+                                            <input id="ordering_city"
+                                                   data-parsley-required-message="Поле обязательно для заполнения"
+                                                   type="text" name="ordering_city" class="iText" placeholder="Город"/>
+                                        </div>
+                                        <div class="input--main i50">
+                                            <button type="button" onclick="clearInput(this);" class="flex">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                          stroke-linecap="round"/>
+                                                </svg>
+                                            </button>
+                                            <input id="ordering_street"
+                                                   data-parsley-required-message="Поле обязательно для заполнения"
+                                                   type="text" name="ordering_street" class="iText"
+                                                   placeholder="Улица"/>
+                                        </div>
+                                        <div class="input--main i10">
+                                            <button type="button" onclick="clearInput(this);" class="flex">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                          stroke-linecap="round"/>
+                                                </svg>
+                                            </button>
+                                            <input id="ordering_home"
+                                                   data-parsley-required-message="Поле обязательно для заполнения"
+                                                   type="text" name="ordering_home" class="iText" placeholder="Дом"/>
+                                        </div>
+                                        <div class="input--main i10">
+                                            <button type="button" onclick="clearInput(this);" class="flex">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                          stroke-linecap="round"/>
+                                                </svg>
+                                            </button>
+                                            <input data-parsley-required-message="Поле обязательно для заполнения"
+                                                   type="text" name="ordering_flat" class="iText" placeholder="Кв."/>
+                                        </div>
+                                    </div>
+                                    <div class="input--main i100">
+                                        <button type="button" onclick="clearInput(this);" class="flex">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                      stroke-linecap="round"/>
+                                            </svg>
+                                        </button>
+                                        <input name="delivery_comment" class="iText"
+                                               placeholder="Комментарий к доставке">
+                                    </div>
+                                    <div class="i100 ordering--btns flex flex-space-between flex-wrap">
+                                        <button type="button" class="btn--base ordering--confirm dark--blue">
+                                            Рассчитать
+                                        </button>
+                                        <button type="button" id="btn-map-lk"
+                                                class="btn--f btn--base blue--btn ordering--openMap"
+                                                onclick="openModal('add-adres')">
+                                            <svg width="20" height="24" viewBox="0 0 20 24" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M9.22206 0.0399522C6.35757 0.342776 3.88804 2.33165 2.9486 5.09237C2.70897 5.7965 2.61136 6.3651 2.58439 7.21424C2.55654 8.08942 2.6364 8.70055 2.90449 9.66431C3.42631 11.5404 4.64463 14.0355 6.31682 16.6528C6.5435 17.0076 6.72897 17.3153 6.72897 17.3365C6.72897 17.3577 6.49243 17.4019 6.20327 17.4346C4.43645 17.6348 2.75033 18.071 1.65888 18.6103C0.536916 19.1646 0 19.8094 0 20.6025C0 21.3951 0.543738 22.0486 1.65888 22.5964C5.46902 24.4679 14.531 24.4679 18.3411 22.5964C19.4563 22.0486 20 21.3951 20 20.6025C20 19.8094 19.4631 19.1646 18.3411 18.6103C17.2497 18.071 15.5636 17.6348 13.7967 17.4346C13.5076 17.4019 13.271 17.3577 13.271 17.3365C13.271 17.3153 13.4565 17.0076 13.6832 16.6528C15.3554 14.0355 16.5737 11.5404 17.0955 9.66431C17.3636 8.70055 17.4435 8.08942 17.4156 7.21424C17.3689 5.74529 16.9955 4.56547 16.1895 3.34053C14.6781 1.04334 11.9509 -0.248567 9.22206 0.0399522ZM10.9813 1.58835C12.2741 1.79259 13.6301 2.55999 14.4877 3.57258C15.4962 4.76342 15.9782 6.13197 15.9189 7.63633C15.8521 9.33011 14.9287 11.6516 13.0927 14.7414C12.2702 16.1256 10.1137 19.314 10 19.314C9.94575 19.314 8.65874 17.4901 7.98131 16.4532C6.88056 14.7684 6.16079 13.5142 5.45131 12.0448C4.04963 9.14163 3.7614 7.41089 4.37355 5.57289C4.97715 3.76055 6.41229 2.35453 8.24551 1.77942C8.49425 1.70138 8.85935 1.61565 9.05682 1.58887C9.2543 1.56204 9.47897 1.53118 9.55608 1.52026C9.7607 1.49122 10.6291 1.53268 10.9813 1.58835ZM9.27855 4.05563C7.98612 4.33365 6.95243 5.34506 6.6293 6.64785C6.49346 7.19553 6.52145 8.01039 6.69435 8.54044C6.98336 9.42644 7.6357 10.1776 8.49023 10.6081C9.37991 11.0565 10.6201 11.0565 11.5098 10.6081C12.3643 10.1776 13.0166 9.42644 13.3057 8.54044C13.4786 8.01039 13.5065 7.19553 13.3707 6.64785C13.1611 5.80283 12.6275 5.03928 11.9138 4.56307C11.1414 4.04771 10.1779 3.86218 9.27855 4.05563ZM10.514 5.56454C11.7526 5.89124 12.3433 7.34345 11.6951 8.46821C11.5201 8.77188 11.1763 9.08812 10.8554 9.24049C9.7515 9.76477 8.49593 9.20701 8.10921 8.02043C8.00028 7.68637 8.0285 7.10319 8.17131 6.7371C8.4528 6.01538 9.2279 5.48439 10 5.48439C10.1157 5.48439 10.347 5.52046 10.514 5.56454ZM8.15467 19.3727C9.5178 21.2582 9.58617 21.3307 10 21.3307C10.4138 21.3307 10.4822 21.2582 11.8453 19.3727C12.0961 19.0259 12.2922 18.7982 12.3403 18.7982C12.5264 18.7982 13.7833 18.9449 14.3333 19.0309C16.1669 19.3174 17.7445 19.8421 18.2901 20.3468C18.4081 20.456 18.5047 20.5725 18.5047 20.6057C18.5047 20.7206 18.0591 21.0593 17.6402 21.2628C14.9028 22.5926 8.38561 22.899 4.22897 21.8931C3.45528 21.7059 2.85593 21.5038 2.35981 21.2628C1.94093 21.0593 1.49533 20.7206 1.49533 20.6057C1.49533 20.4776 1.94047 20.1407 2.39916 19.9217C3.36285 19.4617 5.01579 19.0723 6.86916 18.8689C7.8115 18.7655 7.67776 18.713 8.15467 19.3727Z"
+                                                      fill="#4772DA"/>
+                                            </svg>
+                                            <span>Указать место на карте</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-tab="2" class="ordering--delivery-tab">
+                                <div class="ordering--title-wrap">
+                                    <div>Адрес получателя</div>
+                                    <div class="ordering--delivery-text gray">Услуги транспортной компании оплачиваются
+                                        заказчиком при получении. Всю информацию по данному виду доставки уточнит наш
+                                        менеджер после подтверждения заказа.
+                                    </div>
+                                    <label class="inpCheck small">
+                                        <input type="checkbox" name="chk_4"
+                                               value="Y">
+                                        <span>Подъём на этаж</span>
+                                    </label>
+                                </div>
+                                <div class="ordering--inputs">
+                                    <div class="input--row flex flex-space-between">
+                                        <div class="input--main i50">
+                                            <button type="button" onclick="clearInput(this);" class="flex">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                          stroke-linecap="round"/>
+                                                </svg>
+                                            </button>
+                                            <input data-parsley-required-message="Поле обязательно для заполнения"
+                                                   type="text" name="transport_city" class="iText" placeholder="Город"/>
+                                        </div>
+                                        <div class="input--main i50">
+                                            <button type="button" onclick="clearInput(this);" class="flex">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                          stroke-linecap="round"/>
+                                                </svg>
+                                            </button>
+                                            <input data-parsley-required-message="Поле обязательно для заполнения"
+                                                   type="text" name="transport_street" class="iText"
+                                                   placeholder="Улица"/>
+                                        </div>
+                                        <div class="input--main i10">
+                                            <button type="button" onclick="clearInput(this);" class="flex">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                          stroke-linecap="round"/>
+                                                </svg>
+                                            </button>
+                                            <input data-parsley-required-message="Поле обязательно для заполнения"
+                                                   type="text" name="transport_home" class="iText" placeholder="Дом"/>
+                                        </div>
+                                        <div class="input--main i10">
+                                            <button type="button" onclick="clearInput(this);" class="flex">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                          stroke-linecap="round"/>
+                                                </svg>
+                                            </button>
+                                            <input data-parsley-required-message="Поле обязательно для заполнения"
+                                                   type="text" name="transport_flat" class="iText" placeholder="Кв."/>
+                                        </div>
+                                    </div>
+                                    <div class="input--main i100">
+                                        <button type="button" onclick="clearInput(this);" class="flex">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                                      stroke-linecap="round"/>
+                                            </svg>
+                                        </button>
+                                        <input name="transport_comment" class="iText"
+                                               placeholder="Комментарий к доставке">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ordering--block">
+                        <div class="ordering--title-wrap flex flex-center-vertical">
+                            <div>Способ оплаты</div>
+                        </div>
+                        <div class="ordering--payment-wrap flex">
+                            <div onclick="togglePayment(this);"
+                                 class="ordering--payment-block ordering--radio-block active">
+                                <label>
+                                    <input type="radio" checked name="delivery_payment" value="1">
+                                </label>
+                                <div class="ordering--radio-main flex flex-center-vertical flex-column">
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M19.9779 1.03417C19.9134 1.04626 16.3383 1.71275 12.0332 2.51517C7.72804 3.31764 4.12071 3.99805 4.01692 4.02724C3.19785 4.25753 2.46007 5.05495 2.23355 5.9547C2.14341 6.31294 2.14575 6.95891 2.23913 7.48585C2.3103 7.88716 2.30987 7.91283 2.23149 7.9605C1.45935 8.43025 1.00603 9.03395 0.828877 9.82839C0.722883 10.3036 0.724102 21.3835 0.830189 21.8594C1.0598 22.8892 1.84413 23.7042 2.81485 23.9217C3.29091 24.0284 18.9124 24.0249 19.3919 23.918C20.2663 23.7231 20.9692 23.0658 21.3028 22.1312C21.4039 21.8478 21.4086 21.7606 21.4311 19.7074L21.4546 17.5777L22.1578 17.442C22.5445 17.3673 22.9732 17.2611 23.1103 17.2058C24.1266 16.7962 24.8201 15.6596 24.7444 14.5276C24.7092 14.0024 22.9015 3.21952 22.7862 2.84759C22.415 1.65025 21.1266 0.818198 19.9779 1.03417ZM20.9168 2.66433C21.1905 2.82177 21.3965 3.09102 21.4732 3.39138C21.5025 3.5063 21.9389 6.07571 22.4431 9.10115C23.0962 13.0211 23.3522 14.6625 23.3338 14.8127C23.2859 15.2045 23.0162 15.5983 22.6694 15.7828C22.5899 15.8251 22.3262 15.8959 22.0834 15.94C21.8407 15.9841 21.5947 16.0324 21.5366 16.0474L21.4311 16.0746V13.0983C21.4311 11.1313 21.4137 10.0329 21.3797 9.85932C21.2262 9.07538 20.6744 8.34145 19.9737 7.98925C19.7495 7.8765 19.448 7.76917 19.2747 7.74027C19.076 7.70717 16.3158 7.68938 11.3414 7.68918L3.71272 7.68878L3.69055 7.57728C3.54818 6.86119 3.53191 6.44466 3.63608 6.18117C3.72936 5.94513 4.00511 5.63862 4.21325 5.53961C4.48735 5.40923 20.1324 2.48608 20.4339 2.50892C20.5855 2.52042 20.7697 2.57969 20.9168 2.66433ZM19.3475 9.3078C19.8184 9.57427 19.9933 9.9056 20.0167 10.5755L20.0335 11.0586H11.0933H2.15302L2.17299 10.5755C2.18808 10.2101 2.21701 10.044 2.29154 9.89406C2.43584 9.60395 2.68622 9.37317 2.96946 9.26934C3.20835 9.18178 3.54982 9.17846 11.1881 9.18911L19.1575 9.20026L19.3475 9.3078ZM20.0248 13.5365V14.478H11.0944H2.16394V13.5365V12.5949H11.0944H20.0248V13.5365ZM20.0248 18.7089C20.0248 21.6769 20.0251 21.6733 19.769 22.0283C19.7036 22.1188 19.5393 22.2579 19.4038 22.3372L19.1575 22.4815H11.0944C3.32049 22.4815 3.02529 22.4781 2.86712 22.3892C2.63807 22.2604 2.40822 22.0213 2.28873 21.7877C2.18869 21.5921 2.18719 21.5524 2.17416 18.7771L2.16099 15.9647H11.0929H20.0248V18.7089ZM4.12071 19.5541C4.02376 19.5907 3.91163 19.6494 3.8715 19.6846C3.64864 19.8801 3.58798 20.3576 3.75069 20.6353C3.94913 20.9741 3.92222 20.97 5.94491 20.9698C7.69016 20.9696 7.77243 20.9654 7.92151 20.8694C8.12763 20.7365 8.27882 20.3832 8.23503 20.1365C8.19031 19.8843 8.04156 19.6853 7.81748 19.5777C7.6415 19.4932 7.4853 19.4856 5.96113 19.4865C4.69019 19.4874 4.2553 19.5033 4.12071 19.5541Z"
+                                              fill="#4772DA"/>
+                                    </svg>
+                                    <div class="ordering--radio-title">Оплата Online</div>
+                                    <div class="ordering--radio-text">Оплата банковской картой online</div>
+                                </div>
+                            </div>
+                            <div onclick="togglePayment(this);"
+                                 class="ordering--payment-block ordering--radio-block">
+                                <label>
+                                    <input type="radio" name="delivery_payment" value="2">
+                                </label>
+                                <div class="ordering--radio-main flex flex-center-vertical flex-column">
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M5.28599 0.0325319C4.38631 0.222357 3.65854 0.873856 3.35698 1.75955L3.25 2.07365V12.0039V21.9341L3.35569 22.2444C3.62069 23.0222 4.21251 23.6236 4.97643 23.8914L5.28599 24H12.25H19.214L19.5236 23.8914C20.2875 23.6236 20.8793 23.0222 21.1443 22.2444L21.25 21.9341V14.1402V6.34624L21.1298 6.01279C21.0637 5.8294 20.9322 5.56112 20.8377 5.41669C20.6271 5.09475 16.0823 0.712014 15.6592 0.42284C15.502 0.315415 15.238 0.178082 15.0726 0.117655L14.7719 0.00778848L10.1215 0.000651854C7.56375 -0.00329207 5.38779 0.0110751 5.28599 0.0325319ZM14.0645 3.58892L14.0778 5.78498L14.2286 6.0958C14.4041 6.45747 14.6551 6.70584 15.0208 6.87984L15.2808 7.00356L17.5829 7.01694L19.885 7.03037V14.3213C19.885 22.5101 19.9122 21.8855 19.5391 22.264C19.1672 22.6414 19.7169 22.6149 12.25 22.6149C4.7831 22.6149 5.33277 22.6414 4.96088 22.264C4.58445 21.8821 4.61504 22.7893 4.61504 12.0039C4.61504 1.21641 4.58431 2.12582 4.96171 1.74293C5.31755 1.38182 5.05352 1.4007 9.80741 1.39657L14.0512 1.39286L14.0645 3.58892ZM17.5829 4.13262C18.4164 4.93258 19.0983 5.59412 19.0983 5.60276C19.0983 5.6114 18.3086 5.61849 17.3433 5.61849C15.8095 5.61849 15.5791 5.6092 15.5155 5.54473C15.4521 5.48036 15.4428 5.25448 15.4428 3.77865V2.08638L15.7551 2.38231C15.9269 2.54505 16.7494 3.33271 17.5829 4.13262ZM6.68624 9.47142C6.49088 9.57608 6.32712 9.85309 6.32712 10.0789C6.32712 10.3119 6.49079 10.5823 6.6961 10.6886C6.87591 10.7817 6.95837 10.7832 12.1112 10.7832C17.264 10.7832 17.3465 10.7817 17.5263 10.6886C17.7316 10.5823 17.8952 10.3119 17.8952 10.0789C17.8952 9.84591 17.7316 9.57542 17.5263 9.46912C17.3464 9.37602 17.2661 9.37466 12.1015 9.37668C6.97359 9.3787 6.85546 9.38076 6.68624 9.47142ZM6.68624 13.2275C6.49088 13.3322 6.32712 13.6092 6.32712 13.835C6.32712 14.068 6.49079 14.3385 6.6961 14.4448C6.87591 14.5378 6.95837 14.5393 12.1112 14.5393C17.264 14.5393 17.3465 14.5378 17.5263 14.4448C17.7316 14.3385 17.8952 14.068 17.8952 13.835C17.8952 13.602 17.7316 13.3315 17.5263 13.2252C17.3464 13.1321 17.2661 13.1308 12.1015 13.1328C6.97359 13.1348 6.85546 13.1369 6.68624 13.2275ZM6.68624 16.9829C6.49093 17.0884 6.32712 17.3659 6.32712 17.5911C6.32712 17.8256 6.49074 18.0946 6.69901 18.2024C6.87827 18.2952 6.94824 18.298 8.75421 18.2852C10.5597 18.2724 10.6282 18.2686 10.7515 18.1751C10.9809 18.0013 11.0647 17.845 11.0647 17.5911C11.0647 17.3373 10.9809 17.181 10.7515 17.0071C10.628 16.9135 10.562 16.91 8.74153 16.8999C6.93986 16.8898 6.85185 16.8933 6.68624 16.9829Z"
+                                              fill="#4772DA"/>
+                                    </svg>
+                                    <div class="ordering--radio-title">По счёту</div>
+                                    <div class="ordering--radio-text">Оплата по счету (для юр. лиц)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="cart--float">
+                <div class="cart--float-wrap">
+                    <div class="cart--float-title">Сумма заказа</div>
+                    <div class="cart--float-main">
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Всего товаров:</div>
+                            <div>12 шт.</div>
+                        </div>
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Вес</div>
+                            <div>458 кг.</div>
+                        </div>
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Всего м<sup>2</sup>:</div>
+                            <div>124 м<sup>2</sup></div>
+                        </div>
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Доставка</div>
+                            <div>6500 ₽</div>
+                        </div>
+                        <div class="flex flex-center-vertical flex-space-between">
+                            <div>Итого:</div>
+                            <div><b>282 532 ₽</b></div>
+                        </div>
+                    </div>
+                    <div class="cart--float-buttons">
+                        <button type="submit" form="ordering_form" class="btn--base dark--blue">Подтвердить
+                            заказ
+                        </button>
+                        <div class="cart--promo-wrap">
+
+                        </div>
+                        <button onclick="addPromoLine(this)" class="btn--base blue--btn" type="button">Добавить
+                            промокод
+                        </button>
+                    </div>
+                    <div class="cart--float-links">
+                        <button type="button" class="flex flex-center-vertical hovered">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M7.80787 2.06934C6.6757 2.31183 5.77847 3.21842 5.5453 4.35551C5.49698 4.59121 5.48359 4.91508 5.48359 5.84912V7.04174H5.07184C4.17105 7.04174 3.4886 7.30766 2.89164 7.8912C2.45974 8.31344 2.18923 8.80728 2.06916 9.39278C1.97667 9.84379 1.97706 14.7857 2.06963 15.2337C2.18594 15.7968 2.43154 16.2576 2.84122 16.6816C3.43192 17.2929 4.15285 17.5848 5.07184 17.5848H5.48359V18.9887C5.48359 19.8875 5.49952 20.4669 5.52788 20.5994C5.67149 21.2703 6.2108 21.8095 6.88181 21.9531C7.17228 22.0152 16.8356 22.0159 17.1306 21.9538C17.7934 21.8142 18.347 21.2609 18.4855 20.5994C18.5126 20.47 18.5289 19.8666 18.5289 18.9887V17.5848H18.9406C19.3795 17.5848 19.8201 17.5115 20.1454 17.3842C20.8169 17.1215 21.4478 16.513 21.7544 15.8323C21.9877 15.3141 21.9801 15.4218 21.9949 12.4509C22.0068 10.0536 22.0008 9.68029 21.9454 9.40719C21.7881 8.63102 21.3288 7.95477 20.6637 7.52032C20.1515 7.18571 19.6332 7.04174 18.9406 7.04174H18.5289V5.84912C18.5289 4.91055 18.5156 4.59238 18.4667 4.35559C18.2288 3.20413 17.3288 2.30445 16.177 2.06661C15.7389 1.97613 8.23153 1.97859 7.80787 2.06934ZM15.9589 3.21948C16.6279 3.36013 17.1689 3.90126 17.3128 4.57384C17.3401 4.70109 17.3571 5.21614 17.3571 5.91125V7.04174H12.0062H6.65532V5.91125C6.65532 5.22993 6.67262 4.69856 6.69887 4.57384C6.76999 4.23571 6.92438 3.95558 7.17978 3.70118C7.42776 3.4542 7.67394 3.3137 8.00281 3.23142C8.26797 3.16508 15.6476 3.15399 15.9589 3.21948ZM19.435 8.25674C20.1041 8.39739 20.645 8.93852 20.789 9.6111C20.85 9.89611 20.8508 14.7247 20.7899 15.0155C20.7273 15.3145 20.5024 15.7195 20.2874 15.9206C19.9209 16.2633 19.4919 16.4134 18.8785 16.4134H18.5289V15.4372V14.461H18.7648C19.1789 14.461 19.4662 14.2211 19.4662 13.8752C19.4662 13.6815 19.3281 13.4565 19.1548 13.3681C19.002 13.2902 18.9392 13.2895 12.0062 13.2895C5.07328 13.2895 5.01044 13.2902 4.85765 13.3681C4.68435 13.4565 4.5462 13.6815 4.5462 13.8752C4.5462 14.2211 4.83351 14.461 5.24768 14.461H5.48359V15.4372V16.4134H5.13398C4.48195 16.4134 4.08391 16.2671 3.70474 15.888C3.45094 15.6342 3.29569 15.3528 3.22347 15.0155C3.16231 14.7297 3.16161 9.9015 3.22273 9.6111C3.29385 9.27298 3.44825 8.99284 3.70365 8.73844C3.95163 8.49146 4.19781 8.35096 4.52667 8.26869C4.79351 8.20195 19.1198 8.19043 19.435 8.25674ZM4.84933 9.62137C4.68443 9.70841 4.5462 9.93879 4.5462 10.1266C4.5462 10.3203 4.68435 10.5453 4.85765 10.6337C5.00087 10.7068 5.08649 10.7123 6.06945 10.7123C7.05242 10.7123 7.13803 10.7068 7.28126 10.6337C7.45455 10.5453 7.5927 10.3203 7.5927 10.1266C7.5927 9.93282 7.45455 9.70786 7.28126 9.61945C7.13764 9.5462 7.05433 9.54097 6.06125 9.54257C5.07731 9.54417 4.98415 9.55022 4.84933 9.62137ZM17.3571 17.4107C17.3571 20.2899 17.3553 20.3641 17.2785 20.5145C17.2279 20.6137 17.1449 20.6967 17.0457 20.7473C16.8936 20.8248 16.8254 20.8259 12.0033 20.8259H7.1151L6.9593 20.7383C6.86787 20.6869 6.77288 20.5908 6.72941 20.5056C6.6586 20.3668 6.65532 20.2298 6.65532 17.4107V14.461H12.0062H17.3571V17.4107ZM10.1612 15.8691C9.99627 15.9562 9.85805 16.1866 9.85805 16.3743C9.85805 16.5681 9.99619 16.7931 10.1695 16.8815C10.3169 16.9566 10.397 16.9601 12.0062 16.9601C13.6155 16.9601 13.6955 16.9566 13.8429 16.8815C14.0162 16.7931 14.1544 16.5681 14.1544 16.3743C14.1544 16.1806 14.0162 15.9556 13.8429 15.8672C13.6953 15.7919 13.6174 15.7887 11.998 15.7903C10.3918 15.792 10.2999 15.7959 10.1612 15.8691ZM10.1612 18.3682C9.99627 18.4553 9.85805 18.6857 9.85805 18.8735C9.85805 19.0672 9.99619 19.2922 10.1695 19.3806C10.3169 19.4557 10.397 19.4592 12.0062 19.4592C13.6155 19.4592 13.6955 19.4557 13.8429 19.3806C14.0162 19.2922 14.1544 19.0672 14.1544 18.8735C14.1544 18.6797 14.0162 18.4547 13.8429 18.3663C13.6953 18.291 13.6174 18.2878 11.998 18.2894C10.3918 18.2911 10.2999 18.295 10.1612 18.3682Z"
+                                      fill="currentColor"/>
+                            </svg>
+                            Распечатать ваш заказ
+                        </button>
+                        <button type="button" onclick="toggleMail()" class="flex flex-center-vertical hovered">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M2.55942 4.07118C1.8334 4.26049 1.26394 4.82059 1.07242 5.53368C0.975861 5.89318 0.975861 18.112 1.07242 18.4715C1.26643 19.1938 1.83705 19.7489 2.57789 19.9361C2.80077 19.9924 3.9052 19.9998 12.0041 19.9998C22.0113 19.9998 21.3869 20.0146 21.8922 19.7662C22.1951 19.6175 22.5753 19.2557 22.7357 18.9639C23.0152 18.4554 22.9998 18.8592 22.9998 12.0026C22.9998 6.54246 22.9917 5.74194 22.9341 5.52739C22.7411 4.80897 22.1686 4.25562 21.4238 4.06748C21.0583 3.97513 2.91395 3.97872 2.55942 4.07118ZM21.1386 5.3704C21.1699 5.38973 19.4717 6.84436 16.6098 9.24965C12.191 12.9634 12.0274 13.096 11.932 13.0397C11.8777 13.0077 9.80554 11.2757 7.32733 9.19105C4.56104 6.86402 2.84042 5.38886 2.87057 5.37007C2.93512 5.32988 21.0734 5.33017 21.1386 5.3704ZM11.7587 14.6206C11.9212 14.6871 12.2191 14.664 12.3578 14.5739C12.4113 14.5393 14.5186 12.7756 17.0407 10.6547L21.6263 6.79858L21.6151 12.5214C21.6039 18.2282 21.6036 18.2446 21.5153 18.3594C21.4666 18.4226 21.3734 18.513 21.3082 18.5602L21.1895 18.6461H12.0041H2.81864L2.7 18.5602C2.63476 18.513 2.54155 18.4226 2.49285 18.3594C2.40454 18.2446 2.40424 18.2282 2.39311 12.5204L2.3819 6.79641L7.00149 10.6803C9.54229 12.8164 11.683 14.5896 11.7587 14.6206Z"
+                                      fill="currentColor"/>
+                            </svg>
+                            Отправить заказ по e-mail
+                        </button>
+                    </div>
+                    <div class="cart--float-email">
+                        <form id="cart_mail" class="flex flex-center-vertical flex-space-between">
+
+                            <div class="cart--float-email_wrap flex flex-center-vertical flex-space-between">
+                                <button type="button" onclick="clearInput(this);" class="flex">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 3L13 13M13 3L3 13" stroke="#C5CBD9" stroke-width="2"
+                                              stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                                <input class="iText" type="email" placeholder="E-mail" name="cart--float-email">
+                            </div>
+                            <button type="submit"
+                                    class="cart--float-email_btn flex flex-center-vertical flex-center-horizontal">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M22.0136 10.0081C21.6515 9.71648 4.56008 1.17412 4.11989 1.06478C3.48349 0.906664 2.67568 1.04474 2.12615 1.4054C1.4046 1.87899 0.995102 2.64905 1.00004 3.52291C1.0026 3.96742 1.06466 4.19858 2.16064 7.84422C3.03516 10.7532 3.31844 11.7678 3.31791 11.9895C3.31745 12.2058 3.01635 13.3017 2.17441 16.1517C1.20329 19.4388 1.02902 20.0843 1.01517 20.4466C0.9614 21.8482 2.0806 23.0007 3.49492 23C3.73683 22.9998 4.05821 22.9534 4.22886 22.8939C4.39582 22.8356 8.41629 20.8536 13.1632 18.4893L21.794 14.1907L22.1584 13.8596C22.4559 13.5894 22.5542 13.4698 22.6938 13.2083C23.2818 12.1066 23.0056 10.8071 22.0136 10.0081ZM12.8142 11.1555C8.43657 11.1737 4.85178 11.1855 4.84796 11.1816C4.84413 11.1778 4.33438 9.47526 3.71523 7.39824C2.43646 3.10862 2.4733 3.30813 2.88467 2.89611C3.14928 2.63108 3.30421 2.57598 3.64739 2.62485C3.74214 2.63833 7.62725 4.55125 12.2809 6.87584C16.9346 9.20039 20.7492 11.1068 20.7578 11.1124C20.7664 11.1179 17.1918 11.1373 12.8142 11.1555ZM14.6956 15.8577C11.36 17.5217 7.54768 19.4239 6.22377 20.0848C4.89986 20.7456 3.72901 21.3071 3.62188 21.3326C3.38193 21.3895 3.02312 21.2715 2.82129 21.0694C2.66907 20.9169 2.53059 20.5877 2.54662 20.4164C2.55139 20.3656 3.06926 18.6285 3.6975 16.5563L4.83972 12.7887L12.7915 12.8052C17.1649 12.8142 20.7471 12.824 20.7518 12.827C20.7565 12.8299 18.0312 14.1937 14.6956 15.8577Z"
+                                          fill="currentColor"/>
+                                </svg>
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="add-adres" class="modal">
+    <div class="modal-wrap">
+        <button type="button" onclick="clearModalForms()"
+                class="modal--close flex flex-center-vertical flex-center-horizontal hovered">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.50001 1.5L26.5 26.5M26.5 1.5L1.5 26.5" stroke="white" stroke-width="2"
+                      stroke-linecap="round"/>
+            </svg>
+        </button>
+        <div id="modal-map"></div>
+        <div id="modal-bollon" class="modal-bollon" onclick="clearModalForms()">
+            <div class="modal-bollon__text"></div>
+            <button type="button" class="btn btn--f btn--base dark--blue">Подтвердить</button>
+        </div>
+    </div>
+</div>
+<script src="js/pages/cart.js"></script>
+@@include('./footer.html')

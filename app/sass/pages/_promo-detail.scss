@@ -1,0 +1,65 @@
+.promo-detail {
+    &__descr {
+        margin-left: 98px;
+        @include lg {
+            margin-left: 59px;
+        }
+        @include lgFix {
+            margin-left: 48px;
+        }
+        @include md {
+            margin-left: 0;
+        }
+    }
+    &__descr-more {
+        color: #ffffff;
+        background: #4772da;
+        width: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+        @include lg {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+    &__descr-text {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 32px;
+        @include lg {
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 28px;
+        }
+        > div,
+        p {
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    &__descr-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 12px;
+        @include lg {
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    &__image {
+        flex: 1 0 50%;
+        @include md {
+            flex: 1;
+            max-width: 741px;
+            margin-bottom: 12px;
+        }
+    }
+    &__wrap {
+        @include md {
+            flex-direction: column;
+        }
+    }
+}

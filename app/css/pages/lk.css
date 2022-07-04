@@ -1,0 +1,185 @@
+.lk__sidebar {
+  flex: 0 0 272px; }
+
+.lk__order {
+  flex: 1 1 auto;
+  margin-left: 48px; }
+
+.sidebar-lk > div {
+  border-top: 1px solid #e3e7f1; }
+
+.sidebar-lk__ball {
+  padding: 12px 0px 12px 8px;
+  min-height: 40px; }
+
+.sidebar-lk__list {
+  padding: 12px 0px; }
+
+.sidebar-lk__item {
+  min-height: 40px;
+  padding: 0px 11px; }
+  .sidebar-lk__item:not(:last-child) {
+    margin-bottom: 12px; }
+  .sidebar-lk__item a {
+    font-size: 14px;
+    line-height: calc(20 / 14);
+    transition: 0.1s; }
+    .sidebar-lk__item a.active {
+      color: #4772da; }
+      .sidebar-lk__item a.active span svg {
+        color: #4772da; }
+    .sidebar-lk__item a span {
+      margin-right: 12px;
+      width: 24px;
+      height: 24px;
+      transition: 0.1s; }
+      .sidebar-lk__item a span svg {
+        transition: 0.1s;
+        color: #1f2636; }
+    @media (any-hover: hover) {
+      .sidebar-lk__item a:hover {
+        color: #4772da; }
+        .sidebar-lk__item a:hover svg {
+          color: #4772da; } }
+
+.sidebar-lk__other {
+  padding-top: 12px; }
+  .sidebar-lk__other a {
+    flex: 1;
+    font-size: 14px;
+    line-height: calc(20 / 14);
+    transition: 0.1s;
+    color: #96a3bb;
+    padding-left: 8px; }
+    .sidebar-lk__other a span {
+      margin-right: 12px;
+      width: 24px;
+      height: 24px;
+      transition: 0.1s; }
+      .sidebar-lk__other a span svg {
+        transition: 0.1s;
+        color: #96a3bb; }
+    @media (any-hover: hover) {
+      .sidebar-lk__other a:hover {
+        color: #4772da; }
+        .sidebar-lk__other a:hover svg {
+          color: #4772da; } }
+
+.content-lk {
+  padding: 12px;
+  background: #f4f5f6;
+  border-radius: 8px; }
+  .content-lk_info {
+    flex: 1 1 auto;
+    padding-right: 76px;
+    position: relative; }
+    .content-lk_info::after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #e3e7f1; }
+  .content-lk__item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px; }
+  .content-lk__status {
+    flex: 0 0 22%;
+    padding-left: 76px; }
+
+.info-lk__top {
+  padding: 6px 0px 32px;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  color: #000000; }
+  .info-lk__top:last-child {
+    font-weight: 700; }
+
+.info-lk__total {
+  padding: 12px 20px;
+  background: #f4f5f6;
+  border-radius: 5px; }
+  .info-lk__total div {
+    font-size: 16px;
+    line-height: calc(24 / 16); }
+    .info-lk__total div span {
+      display: inline-block;
+      margin-left: 4px;
+      color: #878889; }
+    .info-lk__total div:last-child span {
+      font-weight: 700;
+      color: #1f2636; }
+
+.item-order {
+  padding: 32px 0px;
+  min-height: 100px;
+  border-top: 1px solid #e3e7f1; }
+  .item-order__img {
+    flex: 0 0 156px; }
+  .item-order__body {
+    flex: 1 1 auto;
+    padding-left: 28px; }
+  .item-order__section {
+    font-size: 14px;
+    line-height: calc(20 / 14);
+    color: #878889; }
+  .item-order__name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: calc(24 / 16); }
+    @media (any-hover: hover) {
+      .item-order__name:hover {
+        color: #6689dd; } }
+    .item-order__name:active {
+      color: #496dc2; }
+  .item-order__props {
+    margin-top: 20px; }
+  .item-order__prop div {
+    font-size: 14px;
+    line-height: calc(20 / 14);
+    margin-bottom: 4px; }
+    .item-order__prop div:first-child {
+      margin-bottom: 0px;
+      color: #878889; }
+  .item-order__prop:last-child {
+    text-align: right; }
+    .item-order__prop:last-child div:last-child {
+      font-weight: 700; }
+
+.status-lk {
+  font-size: 14px;
+  line-height: calc(20 / 14); }
+  .status-lk__rez {
+    height: 36px;
+    color: #fff;
+    border-radius: 100px;
+    padding: 0px 16px;
+    font-weight: 700; }
+    .status-lk__rez_considered {
+      background: #f3bd5e; }
+  .status-lk__arr {
+    width: 16px;
+    height: 16px; }
+  .status-lk__desc {
+    margin-top: 24px;
+    color: #878889; }
+  .status-lk__subtitle {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e3e7f1;
+    font-weight: 700;
+    color: #4772da; }
+  .status-lk__user {
+    color: #878889;
+    margin-top: 8px; }
+  .status-lk__tel {
+    margin-top: 4px; }
+    .status-lk__tel a {
+      font-weight: 700;
+      font-size: inherit; }
+    .status-lk__tel span {
+      color: #878889; }
+  .status-lk__pay {
+    margin-top: 20px; }

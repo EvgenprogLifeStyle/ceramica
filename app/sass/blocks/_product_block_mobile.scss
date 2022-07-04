@@ -1,0 +1,288 @@
+.products {
+    &--icons {
+        margin-top: 4px;
+    }
+    &--badges {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        height: calc(100% - 8px);
+    }
+    &--badge {
+        border-radius: 2px 5px 5px 5px;
+        font-size: 8px;
+        line-height: calc(14 / 10);
+        color: #ffffff;
+        padding: 3px 8px 4px 8px;
+        margin-bottom: 2px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &.badge-tr {
+            border-radius: 5px 2px 5px 5px;
+        }
+        &.badge-otline {
+            border: 1px solid;
+        }
+        &.badge--sale {
+            background: #e97171;
+        }
+        &.badge--new {
+            background: #61ba8a;
+        }
+        &.badge--new--outline {
+            color: #61ba8a;
+        }
+        &.badge--exclusive {
+            background: #b7a0cf;
+        }
+        &.badge--showroom {
+            background: #e88b47;
+        }
+        &.badge--hit {
+            background: #f3bd5e;
+        }
+        &.badge--month {
+            background: #6cbfca;
+        }
+        &.badge--no {
+            color: #b79fcf;
+        }
+        &.badge--sale {
+            background: #e97171;
+        }
+
+        &.badge-sample {
+            background: rgba(86, 86, 86, 0.4);
+            position: absolute;
+            bottom: 7px;
+            white-space: nowrap;
+        }
+    }
+    &--compare {
+        width: 32px;
+        height: 32px;
+        margin-left: auto;
+        > button {
+            width: 100%;
+            height: 100%;
+            svg {
+                color: #96a3bb;
+                width: 15px;
+                height: 17px;
+            }
+            &:hover {
+                svg {
+                    color: #6689dd;
+                }
+            }
+            &:active {
+                svg {
+                    color: #4772da;
+                }
+            }
+        }
+    }
+    &--favorites {
+        width: 32px;
+        height: 32px;
+        > button {
+            width: 100%;
+            height: 100%;
+            svg {
+                color: #96a3bb;
+                width: 20px;
+                height: 17px;
+            }
+            &:hover {
+                svg {
+                    color: #6689dd;
+                }
+            }
+            &:active {
+                svg {
+                    color: #4772da;
+                }
+            }
+        }
+        &.active {
+            svg {
+                color: #4772da;
+            }
+        }
+    }
+    &--add {
+        width: 32px;
+        height: 32px;
+        margin-left: 8px;
+        > button {
+            width: 100%;
+            height: 100%;
+            background: #4772da;
+            border-radius: 5px;
+            svg {
+                color: #ffffff;
+                width: 19px;
+                height: 19px;
+            }
+            &:hover {
+                background: #6689dd;
+            }
+            &:active {
+                background: #496dc2;
+            }
+        }
+    }
+    &--bottom {
+        margin-top: 12px;
+        position: relative;
+        z-index: 2;
+    }
+    &--price {
+        &-main {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: calc(32 / 22);
+            color: #1f2636;
+            > div,
+            span {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 24px;
+                color: #878889;
+                margin-left: 4px;
+            }
+        }
+    }
+    &--old {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: calc(16 / 14);
+        text-decoration-line: line-through;
+        color: #878889;
+        margin-bottom: 4px;
+    }
+    &--reviews {
+        margin-left: 12px;
+    }
+    &--delivery {
+        margin-left: auto;
+    }
+    &--icon {
+        svg {
+            margin-right: 4px;
+        }
+        div {
+            font-size: 12px;
+            line-height: 16px;
+            color: #878889;
+
+            @include lg {
+                font-size: 10px;
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+    &--cod {
+        display: none;
+    }
+    &--ad {
+        display: flex;
+        margin-left: auto;
+    }
+
+    &--block {
+        padding: 20px;
+        background: #ffffff;
+        border: 1px solid #e3e7f1;
+        box-sizing: border-box;
+        border-radius: 8px;
+        @include lg {
+            padding: 8px;
+        }
+        &-wrap {
+            overflow: hidden;
+        }
+    }
+    &--main {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        transition: 0.5s opacity ease;
+        @include lg {
+            margin-top: 8px;
+        }
+        &.active {
+            opacity: 1;
+        }
+    }
+    &--category {
+        font-size: 12px;
+        line-height: calc(16 / 12);
+        color: #878889;
+        @include lg {
+            font-size: 10px;
+        }
+    }
+    &--title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        color: #1f2636;
+        display: block;
+        margin-top: 4px;
+        @include lg {
+            font-size: 14px;
+        }
+    }
+    &--image {
+        position: relative;
+        &-slider {
+            position: absolute;
+            left: 4px;
+            right: 4px;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        &-slide {
+            margin: 0 2px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            > div {
+                width: 100%;
+                background: #f4f5f6;
+                border-radius: 10px;
+                height: 3px;
+                margin-bottom: 4px;
+            }
+            &.active {
+                > div {
+                    background: #c5cbd9;
+                }
+            }
+        }
+    }
+    &--stock {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        background: #ffffff;
+        border: 1px solid #61ba8a;
+        border-radius: 5px 2px 5px 5px;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 14px;
+        color: #61ba8a;
+        padding: 2px 8px 3px 8px;
+        z-index: 2;
+    }
+}

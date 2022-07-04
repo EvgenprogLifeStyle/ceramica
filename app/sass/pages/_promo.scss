@@ -1,0 +1,61 @@
+.promo-list {
+    &__image {
+        > img {
+            width: 100%;
+            display: block;
+        }
+    }
+    &__item {
+        width: calc(50% - 8px);
+        &:not(:nth-child(-n + 2)) {
+            margin-top: 32px;
+        }
+        &:nth-child(odd) {
+            margin-right: 16px;
+        }
+        @include lg {
+            width: calc(50% - 4px);
+            &:not(:nth-child(-n + 2)) {
+                margin-top: 28px;
+            }
+            &:nth-child(odd) {
+                margin-right: 8px;
+            }
+        }
+        @include lgFix {
+            &:not(:nth-child(-n + 2)) {
+                margin-top: 12px;
+            }
+        }
+        @include xsm {
+            &:nth-child(odd) {
+                margin-right: 0;
+            }
+            &:not(:first-child) {
+                margin-top: 12px;
+            }
+            width: 100%;
+        }
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        color: #1f2636;
+        margin-top: 16px;
+        @include lg {
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 12px;
+        }
+        @include lgFix {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        @include fix720 {
+            font-size: 12px;
+            line-height: 16px;
+            margin-top: 4px;
+        }
+    }
+}

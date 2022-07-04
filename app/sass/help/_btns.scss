@@ -1,0 +1,93 @@
+.btn {
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4772da;
+    padding: 11px 33px;
+    border-radius: 5px;
+    border: 1px solid #4772da;
+    transition: 0.3s all ease;
+    @include lg {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 9px 0;
+    }
+
+    &--base {
+        width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        height: 48px;
+        border-radius: 5px;
+        @include lg {
+            height: 40px;
+        }
+        &.blue--btn {
+            background: #e3e7f1;
+            color: #4772da;
+
+            &:hover {
+                background: #d3d9e8;
+                color: #4772da;
+            }
+
+            &:active {
+                background: #bac3db;
+                color: #4772da;
+            }
+        }
+
+        &.dark--blue {
+            background: #4772da;
+            color: #ffffff;
+
+            &:hover {
+                background: #6689dd;
+            }
+
+            &:active {
+                background: #496dc2;
+            }
+        }
+        &.border--btn {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #4772da;
+            border: 1px solid #4772da;
+            &:hover {
+                background: #6689dd;
+                border-color: #6689dd;
+                color: #ffffff;
+            }
+            &:active {
+                background: #496dc2;
+                border-color: #496dc2;
+                color: #ffffff;
+            }
+            @include lg {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+    &--f {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+    }
+    &:hover {
+        background: #6689dd;
+        border-color: #6689dd;
+        color: #ffffff;
+    }
+
+    &:active {
+        background: #496dc2;
+        border-color: #496dc2;
+        color: #ffffff;
+    }
+}

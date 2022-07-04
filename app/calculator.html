@@ -1,0 +1,1366 @@
+@@include('./header.html')
+<section id="calculator">
+    <div class="breadcrumbs mg32_bottom container mg24_top">
+        <ul class="inline-flex flex-center-vertical">
+            <li>
+                <a href="">Главная</a>
+            </li>
+            <li>Расчёт плитки</li>
+        </ul>
+    </div>
+    <h1 class="mg24_bottom container">Расчёт плитки</h1>
+    <div class="container">
+        <div class="calc--tabs">
+            <ul class="flex flex-center-vertical">
+                <li class="active">
+                    <button data-tab="0" onclick="calcTabs(this)" type="button">Расчет плитки для фартука</button>
+                </li>
+                <li>
+                    <button data-tab="1" onclick="calcTabs(this)" type="button">Расчет плитки для ванны</button>
+                </li>
+                <li>
+                    <button data-tab="2" onclick="calcTabs(this)" type="button">Расчет плитки для пола</button>
+                </li>
+                <li>
+                    <button data-tab="3" onclick="calcTabs(this)" type="button">Расчет плитки для ступеней лестницы</button>
+                </li>
+            </ul>
+            <input type="hidden" class="select" value="Расчет плитки для фартука" />
+            <div class="new-select">
+                <div class="new-select__input _icon-arr-a">Расчет плитки для фартука</div>
+                <div class="new-select__body">
+                    <div class="new-select__list scrll" aria-label="scrollable content">
+                        <div onclick="changeCalcTab(this);" class="new-select__item active" data-block="0" data-value="Расчет плитки для фартука">Расчет плитки для фартука</div>
+                        <div onclick="changeCalcTab(this);" class="new-select__item" data-block="1" data-value="Расчет плитки для ванны">Расчет плитки для ванны</div>
+                        <div onclick="changeCalcTab(this);" class="new-select__item" data-block="2" data-value="Расчет плитки для пола">Расчет плитки для пола</div>
+                        <div onclick="changeCalcTab(this);" class="new-select__item" data-block="3" data-value="Расчет плитки для ступеней лестницы">Расчет плитки для ступеней лестницы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="calc--wrap">
+        <div class="container">
+            <div data-tab="0" class="calc--tab active">
+                <div class="flex flex-wrap">
+                    <div class="calc--left">
+                        <div class="calc--blocks-wrap">
+                            <div class="calc--block">
+                                <form id="calc_1">
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">1</div>
+                                            <div>Выберите вариант укладки плитки на фартук</div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between image--radio-wrap">
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" checked value="0">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_1.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="1">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_2.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="2">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_3.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="3">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_4.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="4">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_5.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">2</div>
+                                            <div>Укажите размеры фартука</div>
+                                        </div>
+                                        <div class="calc--100 calc--row-input flex flex-space-between flex-wrap">
+                                            <div class="calc--input w50">
+                                                <div>Ширина фартука (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота фартука (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Дополнительная поверхность (например, под вытяжкой)</span>
+                                        </label>
+                                        <div class="calc--100 tB calc--row-input flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Декоративные элементы</span>
+                                        </label>
+                                        <div class="calc--100 tB flex flex-space-between flex-wrap">
+                                            <div class="w50 calc--quantity-block">
+                                                <div>Количество декоров (шт.)</div>
+                                                <div class="calc--quantity flex flex-center-vertical">
+                                                    <button onclick="cQuantity(this,false)" type="button"
+                                                            class="flex flex-center-vertical flex-center-horizontal">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </button>
+                                                    <div onclick="contentFocus(this)"
+                                                         class="calc--quantity-input flex flex-center-horizontal">
+                                                        <input type="hidden" value="" name="quantity"/>
+                                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                                             class="calc--num">1
+                                                        </div>
+                                                        <div class="calc--qt">шт.</div>
+                                                    </div>
+                                                    <button onclick="cQuantity(this,true)" type="button"
+                                                            class="flex flex-center-vertical flex-center-horizontal">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="w50 calc--quantity-block">
+                                                <div>Cтоимость декоративных элементов</div>
+                                                <div class="flex flex-space-between">
+                                                    <div class="calc--quantity-change flex flex-space-between">
+                                                        <button onclick="changeType(this);" class="active"
+                                                                type="button">Шт.
+                                                        </button>
+                                                        <button onclick="changeType(this);" type="button">
+                                                           М <sup>2</sup>
+                                                        </button>
+                                                    </div>
+                                                    <input class="calc--price-input" type="text" placeholder="123 ₽" name="calc_input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">3</div>
+                                            <div>Укажите размеры плитки</div>
+                                        </div>
+                                        <div class="calc--100 calc--row-input flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">4</div>
+                                            <div>Укажите стоимость выбранной плитки для фартука за м<sup>2</sup></div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Стоимость</div>
+                                                <input type="text" name="calc_input" placeholder="0 ₽"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row-last">
+                                        <div>Итого</div>
+                                        <div class="calc--row-total">
+                                            <div class="calc--row-total_block">
+                                                <b>Количество плитки фартука:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Количество декоративных элементов:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Стоимость плитки для фартука:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                        </div>
+                                        <div class="calc--row-buttons flex">
+                                            <button class="btn--base dark--blue" type="button">Пересчитать стоимость
+                                            </button>
+                                            <button class="btn--base blue--btn" type="button" onclick="openModal('modal_calcul')">Отправить расчёт менеджеру
+                                            </button>
+                                            <button class="btn--base blue--btn" type="button">Сохранить в PDF</button>
+                                        </div>
+                                        <p>*Расчет плитки на калькуляторе носит рекомендательный характер, за более
+                                            точными
+                                            цифрами обращайтесь к нашему менеджеру.</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc--right">
+                        <div class="calc--float">
+                            <div class="calc--float-image flex">
+                                <img src="pic/320x222.png" class="bg-i"
+                                     style="background-image: url(pic/calculator/calc_preview_1.png)"
+                                     alt="calc--preview"/>
+                            </div>
+                            <div class="calc--float-top">
+                                <div>Отправьте расчет плитки для фартука нашему менеджеру</div>
+                                <div>Мы поможем вам получить точные цифры для вашего ремонта.</div>
+                            </div>
+                            <div class="calc--float-middle">
+                                <div>Итого</div>
+                                <div>
+                                    <div class="calc--float-total">
+                                        <div>Количество плитки фартука:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Количество декоративных элементов:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Стоимость плитки для фартука:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn--base dark--blue" type="button" onclick="openModal('modal_calcul')">Отправить расчёт менеджеру</button>
+                        </div>
+                    </div>
+                    <div class="calc--bottom">
+                        <div>
+                            <h2>Калькулятор расчета плитки для фартука</h2>
+                            <p>Кухонный фартук — одна из ключевых деталей, на которую сразу обращают внимание при входе
+                                в
+                                кухню.
+                                Он выполняет две важные опции: защитную и эстетическую, поэтому к подбору материалов,
+                                продуманной облицовке и расчету стоит относиться внимательно.
+                                <br>
+                                <br>
+                                Для комфорта владельцев квартир
+                                и домов специалисты создали онлайн-калькулятор для расчета плитки кухонного фартука,
+                                помогающий
+                                выбрать материал и определить его количество. После введения всех данных система
+                                автоматически
+                                вычислит необходимые параметры.</p>
+                        </div>
+                        <div>
+                            <h2>Калькулятор расчета плитки для фартука</h2>
+                            <p>Керамическую плитку в гарнитуре во многих ситуациях выкладывают из некрупных кусочков —
+                                10×10
+                                см.
+                                С ними не так сложно, как с мозаикой, но для укладки также требуются определенные
+                                навыки:
+                                проводить монтаж нужно только на ровной плоскости, а после следует выровнять швы. Нужно
+                                следить,
+                                чтобы плитка подходила под выбранное оформление кухни и подчеркивала ее стиль.
+                                Специалисты
+                                советуют приобретать и монтировать напольную плитку для кухни вместе с фартуком.</p>
+                        </div>
+                        <p class="c16">Чтобы правильно рассчитать объем плитки, необходимо верно ввести исходные данные.
+                            После этого
+                            нажать кнопку «Рассчитать».</p>
+                        <div>
+                            <p><b>1. Длина (в мм)</b><br><br>
+                                Кухонный фартук может находиться на единственной или сразу на нескольких стенах. При
+                                расчете
+                                складывают их длины.<br><br>
+                                <b>2. Высота (в мм)</b><br><br>
+                                Включает расстояние от рабочей зоны до нижней точки шкафчиков над ней.<br><br>
+                                <b>3. Заход фартука под рабочую область и нижний уровень навесных конструкций (в мм)</b><br><br>
+                                Плиточное покрытие желательно располагать под рабочей зоной и нижним краем навесных
+                                шкафов
+                                конструкции на расстоянии от 20 мм.<br><br>
+                                <b>4. Расстояние между навесными шкафами в районе вытяжки (в мм)</b><br><br>
+                                Вытяжку чаще всего размещают над плитой в месте, где находятся навесные шкафы.<br><br>
+                                <b>5. Высота участка фартука в районе вытяжки (в мм)</b><br><br>
+                                Параметр измеряется от нижнего края навесных шкафов до верхнего уровня фартука.
+                                Предпочтительно заводить его как минимум на 50 мм под купол вытяжки. Наиболее выигрышный
+                                вариант — продлить фартук на выбранном участке до верха шкафчиков.<br><br>
+                                <b>6. Заход части фартука в районе вытяжки под боковые стенки навесных шкафов (в мм)</b><br><br>
+                                Часть фартука в месте размещения вытяжки специалисты советуют заводить под боковые
+                                поверхности навесных шкафов на 50 и более мм.<br><br>
+                                В типовых квартирах размер фартука обычно небольшой и находится по периметру гарнитура.
+                                Также плиткой укладывают открытые зоны кухни с учетом ее дизайна и декоративных
+                                особенностей. Это, например, может быть зона вытяжки или площадь, где размещен декор.
+                                Эти
+                                особенности учтены и в нашем интернет-калькуляторе, поэтому вы можете максимально точно
+                                провести расчет плитки для кухни и узнать стоимость.
+                            </p>
+                        </div>
+                        <p>На кухне каждый из членов семьи проводит значительную часть своего времени, поэтому так
+                            важно,
+                            чтобы нахождение в этой комнате ассоциировалось только с комфортом и красотой. После выбора
+                            плитки желательно доверить ее укладку профессионалам — так вы будете испытывать только
+                            удовольствие от гармоничного пространства и каждой детали в нем.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-tab="1" class="calc--tab">
+                <div class="flex flex-wrap">
+                    <div class="calc--left">
+                        <div class="calc--blocks-wrap">
+                            <div class="calc--block">
+                                <form id="calc_2">
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">1</div>
+                                            <div>Выберите вариант укладки плитки в ванной комнате</div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between image--radio-wrap">
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" checked value="0">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_1.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="1">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_2.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="2">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_3.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="3">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_4.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="4">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_5.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">2</div>
+                                            <div>Укажите размеры стен в ванной комнате</div>
+                                        </div>
+                                        <div class="calc--100 calc--row-input flex flex-space-between">
+                                            <div class="calc--input w33">
+                                                <div>Ширина первой стены (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w33">
+                                                <div>Ширина второй стены (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w33">
+                                                <div>Высота стены(м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Дополнительные поверхности, которые вы <b>НЕ</b> будете обклеивать плиткой(например, за ванной)</span>
+                                        </label>
+                                        <div class="calc--100 tB calc--row-input flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Дополнительные поверхности, которые вы будете обклеивать плиткой(например, экран, короб)</span>
+                                        </label>
+                                        <div class="calc--100 tB calc--row-input flex flex-space-between">
+                                            <div class="calc--input w33">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w33">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w33">
+                                                <div>Длина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Есть окно</span>
+                                        </label>
+                                        <div class="calc--100 tB flex flex-space-between flex-wrap">
+                                            <div class="calc--input w50">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">3</div>
+                                            <div>Укажите размеры двери</div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between flex-wrap">
+                                            <div class="calc--input w50">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">4</div>
+                                            <div>Укажите размеры и стоимость плитки</div>
+                                        </div>
+                                        <div class="calc--100 calc--row-input flex flex-space-between">
+                                            <div class="calc--input w33">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w33">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w33">
+                                                <div>Стоимость выбранной плитки для стен за м<sup>2</sup></div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Декоративные элементы</span>
+                                        </label>
+                                        <div class="calc--100 tB flex flex-space-between flex-wrap">
+                                            <div class="w50 calc--quantity-block">
+                                                <div>Количество декоров (шт.)</div>
+                                                <div class="calc--quantity flex flex-center-vertical">
+                                                    <button onclick="cQuantity(this,false)" type="button"
+                                                            class="flex flex-center-vertical flex-center-horizontal">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </button>
+                                                    <div onclick="contentFocus(this)"
+                                                         class="calc--quantity-input flex flex-center-horizontal">
+                                                        <input type="hidden" value="" name="quantity"/>
+                                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                                             class="calc--num">1
+                                                        </div>
+                                                        <div class="calc--qt">шт.</div>
+                                                    </div>
+                                                    <button onclick="cQuantity(this,true)" type="button"
+                                                            class="flex flex-center-vertical flex-center-horizontal">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="w50 calc--quantity-block">
+                                                <div>Cтоимость декоративных элементов</div>
+                                                <div class="flex flex-space-between">
+                                                    <div class="calc--quantity-change flex flex-space-between">
+                                                        <button onclick="changeType(this);" class="active"
+                                                                type="button">Шт.
+                                                        </button>
+                                                        <button onclick="changeType(this);" type="button">
+                                                            М <sup>2</sup>
+                                                        </button>
+                                                    </div>
+                                                    <input class="calc--price-input" type="text" placeholder="123 ₽" name="calc_input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row-last">
+                                        <div>Итого</div>
+                                        <div class="calc--row-total">
+                                            <div class="calc--row-total_block">
+                                                <b>Количество плитки для стен в ванной:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Количество декоративных элементов:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Стоимость плитки для стен в ванной:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                        </div>
+                                        <div class="calc--row-buttons flex">
+                                            <button class="btn--base dark--blue" type="button">Пересчитать стоимость
+                                            </button>
+                                            <button class="btn--base blue--btn" type="button" onclick="openModal('modal_calcul')">Отправить расчёт менеджеру
+                                            </button>
+                                            <button class="btn--base blue--btn" type="button">Сохранить в PDF</button>
+                                        </div>
+                                        <p>*Расчет плитки на калькуляторе носит рекомендательный характер, за более
+                                            точными
+                                            цифрами обращайтесь к нашему менеджеру.</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc--right">
+                        <div class="calc--float">
+                            <div class="calc--float-image flex">
+                                <img src="pic/320x222.png" class="bg-i"
+                                     style="background-image: url(pic/calculator/calc_preview_2.png)"
+                                     alt="calc--preview"/>
+                            </div>
+                            <div class="calc--float-top">
+                                <div>Отправьте расчет плитки для ванны нашему менеджеру</div>
+                                <div>Мы поможем вам получить точные цифры для вашего ремонта.</div>
+                            </div>
+                            <div class="calc--float-middle">
+                                <div>Итого</div>
+                                <div>
+                                    <div class="calc--float-total">
+                                        <div>Количество плитки для стен в ванной:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Количество декоративных элементов:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Стоимость плитки для стен в ванной:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn--base dark--blue" onclick="openModal('modal_calcul')">Отправить расчёт менеджеру</button>
+                        </div>
+                    </div>
+                    <div class="calc--bottom">
+                        <div>
+                            <h2>Калькулятор расчета плитки для ванной</h2>
+                            <p>Ванная — место, которое создано для расслабления и отдыха. Огромное влияние на оформление
+                                оказывает плитка. После ее выбора нужно правильно провести расчеты. Сделать это можно
+                                вручную или при помощи онлайн-калькулятора. Второй способ более быстрый и подходит для
+                                помещений стандартной планировки и площади.</p>
+                        </div>
+                        <div>
+                            <h2>Особенности калькулятора расчета плитки для ванной</h2>
+                            <p>Принцип вычисления универсален. Этим методом можно подсчитать и керамогранит с мозаикой.
+                                Но стоит помнить: каким бы удобным ни был калькулятор, все проведенные расчеты —
+                                предварительные, так как каждое помещение имеет несколько отличительных
+                                моментов.<br><br>В ванной плитку кладут по всей территории «мокрой зоны», также в
+                                большинстве случаев облицовывают санузел. Без отделки при желании сэкономить допустимо
+                                оставить необлицованными зоны, закрытые ванной и шкафчиками. При расчете укладки важно
+                                вычесть из общей площади несколько элементов: входные двери, окна при их наличии, ванну,
+                                стоящую у стены, и мебель.
+                            </p>
+                        </div>
+                        <p class="c16">При помощи калькулятора вычислить нужный объем плитки можно по следующим
+                            параметрам: </p>
+                        <div>
+                            <div class="c16">
+                                <p><b>1. Площадь комнаты.</b><br><br>
+                                    Для этого вводят длину, ширину и высоту потолков.<br><br>
+                                    <b>2. Размер двери.</b><br><br>
+                                    Вычитается из общей площади.<br><br>
+                                    <b>3. Габариты ванны.</b><br><br>
+                                    Стоит учесть, будут ли облицовываться торцы и напольное покрытие под ванной.<br><br>
+                                    <b>4. Тип раскладки.</b><br><br>
+                                    Всего их три: классический, однотонный или совмещенный. Первый заключается в
+                                    разделении
+                                    пространства по горизонтали на два тона выбранной палитры (нижняя часть — темная,
+                                    выше —
+                                    светлая), границу между которыми проведет бордюр. При втором применяется декор, а
+                                    третий
+                                    предполагает использование кафеля нескольких расцветок.
+
+                                </p>
+                            </div>
+                            <p>Нужно учитывать, что размеры керамической плитки указывают в миллиметрах, а декор
+                                подсчитывают штуками. Также для подсчета бордюров необходимо указывать число рядов.
+                                После
+                                всех этапов добавляют запас — желательно 5–10%</p>
+                        </div>
+                        <div>
+                            <p><b>Калькулятор помогает рассчитать следующие параметры:</b></p>
+                            <br>
+                            <ul>
+                                <li>Периметр помещения.</li>
+                                <li>Объем настенной и напольной плитки (специалисты рекомендуют посчитать его с запасом
+                                    5% на подрезку).
+                                </li>
+                                <li>Цена за объемы плитки для стен и пола (отдельно для каждого покрытия).</li>
+                                <li>Полный расчет количества плитки с учетом дверей, окон, самой ванной и других
+                                    конструкций.
+                                </li>
+                            </ul>
+                            <br>
+                            <p>Все параметры в онлайн-калькулятор вводятся в метрах.</p>
+                            <br>
+                            <p><b>Внесите размеры комнаты:</b></p>
+                            <br>
+                            <ul>
+                                <li>Длина</li>
+                                <li>Ширина</li>
+                                <li>Высота стен.</li>
+                            </ul>
+                            <br>
+                            <p><b>Добавьте размер двери в ванной комнате:</b></p>
+                            <br>
+                            <ul>
+                                <li>Ширина.</li>
+                                <li>Высота.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p><b>После этого укажите следующие параметры:</b></p>
+                            <br>
+                            <p>
+                                1. Если не собираетесь класть плитку за ванной, то введите размеры чаши. Чаще всего
+                                проводить отделку пространства за ванной нет смысла. Ее не видно, при этом экономится
+                                около 2 кв. м кафеля. Некоторые продавцы могут проводить расчеты без вычета габаритов
+                                ванной из общей площади, но это обычно нецелесообразно.<br><br>
+                                2. Если в ванной есть окно, то нужно ввести его параметры.<br><br>
+                                3. Если в помещении присутствуют дополнительные элементы, на которые вы не планируете
+                                укладывать плитку, то необходимо указать их размеры.<br>
+                            </p>
+                        </div>
+                        <p><b>Результаты расчетов:</b></p>
+                        <ul class="no--mg">
+                            <li>Периметр помещения (сумма сторон).</li>
+                            <li>Объем настенной плитки (с запасом 5%).</li>
+                            <li>Объем напольного плиточного покрытия (с 5%-ым запасом).</li>
+                        </ul>
+                        <br>
+                        <p>Правильный расчет плитки поможет не купить лишний набор или не столкнуться с нехваткой
+                            материалов. В последнем случае могут возникнуть проблемы: плитка этой серии в магазине может
+                            закончиться, а другая отличаться оттенком. Чтобы такого не произошло, используйте наш
+                            калькулятор.</p>
+                        <br>
+                        <p>Правильный расчет плитки поможет не купить лишний набор или не столкнуться с нехваткой
+                            материалов. В последнем случае могут возникнуть проблемы: плитка этой серии в магазине может
+                            закончиться, а другая отличаться оттенком. Чтобы такого не произошло, используйте наш
+                            калькулятор.</p>
+                        <br>
+                        <p>Все, что требуется, это ввести размеры ванной с ключевыми элементами и добавить их в поля
+                            online-сервиса. После заполнения всех данных система рассчитает онлайн и автоматически
+                            выведет
+                            требуемую информацию: периметр помещения, необходимое для отделки количество напольной и
+                            настенной плитки в квадратных метрах с запасом для обрезки и стоимость продукции.
+                        </p>
+                        <br>
+                        <p>Такое решение при подсчетах помогает точно еще до начала ремонта представлять будущие
+                            затраты, не
+                            обзавестись лишними моделями и не мучиться с поиском такой же партии при нехватке. Когда
+                            подсчеты произведены, можно идти в магазин за покупками. Отделку стоит доверить
+                            специалистам:
+                            это позволит не беспокоиться о качестве проведенных работ и том, чтобы расход при облицовке
+                            был
+                            минимальный.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-tab="2" class="calc--tab">
+                <div class="flex flex-wrap">
+                    <div class="calc--left">
+                        <div class="calc--blocks-wrap">
+                            <div class="calc--block">
+                                <form id="calc_3">
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">1</div>
+                                            <div>Выберите вариант укладки плитки в ванной комнате</div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between image--radio-wrap">
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" checked value="0">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_1.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="1">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_6.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="2">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_7.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="3">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_8.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="4">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_9.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="4">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_10.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                            <label class="image--radio flex">
+                                                <input type="radio" name="radio_1" value="4">
+                                                <img src="pic/196x196.png" class="bg-i"
+                                                     style="background-image: url(pic/calculator/calc_11.png)"
+                                                     alt="calc_holder"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">2</div>
+                                            <div>Укажите размеры фартука</div>
+                                        </div>
+                                        <div class="calc--100 calc--row-input flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Ширина фартука (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота фартука (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Дополнительная площадь, на которую хотите выложить плитку</span>
+                                        </label>
+                                        <div class="calc--100 tB calc--row-input flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Ширина фартука (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота фартука (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Дополнительные поверхности, которые вы <b>НЕ</b> будете обклеивать плиткой(например, за ванной)</span>
+                                        </label>
+                                        <div class="calc--100 tB calc--row-input flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span>Декоративные элементы</span>
+                                        </label>
+                                        <div class="calc--100 tB tBx2 c16 flex flex-space-between flex-wrap">
+                                            <div class="calc--input w50">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <div class="calc--100 tB flex flex-space-between flex-wrap">
+                                            <div class="w50 calc--quantity-block">
+                                                <div>Количество декоров (шт.)</div>
+                                                <div class="calc--quantity flex flex-center-vertical">
+                                                    <button onclick="cQuantity(this,false)" type="button"
+                                                            class="flex flex-center-vertical flex-center-horizontal">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M8 8V9V8ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44772 1 8C1 8.55229 1.44772 9 2 9V7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </button>
+                                                    <div onclick="contentFocus(this)"
+                                                         class="calc--quantity-input flex flex-center-horizontal">
+                                                        <input type="hidden" value="" name="quantity"/>
+                                                        <div oninput="contentBlock(this)" contenteditable="true"
+                                                             class="calc--num">1
+                                                        </div>
+                                                        <div class="calc--qt">шт.</div>
+                                                    </div>
+                                                    <button onclick="cQuantity(this,true)" type="button"
+                                                            class="flex flex-center-vertical flex-center-horizontal">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9 2C9 1.44772 8.55229 1 8 1C7.44772 1 7 1.44772 7 2L9 2ZM7 14C7 14.5523 7.44772 15 8 15C8.55229 15 9 14.5523 9 14H7ZM14 9C14.5523 9 15 8.55228 15 8C15 7.44771 14.5523 7 14 7V9ZM2 7C1.44772 7 1 7.44771 1 8C1 8.55228 1.44772 9 2 9V7ZM7 2L7 8H9L9 2L7 2ZM7 8L7 14H9L9 8H7ZM14 7L8 7V9L14 9V7ZM8 7H2V9H8V7Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <p>(если у вас панно из 4-х плиток, то укажите количество декоров в
+                                                    панно 4)</p>
+                                            </div>
+                                            <div class="w50 calc--quantity-block">
+                                                <div>Cтоимость декоративных элементов</div>
+                                                <div class="flex flex-space-between">
+                                                    <div class="calc--quantity-change flex flex-space-between">
+                                                        <button onclick="changeType(this);" class="active"
+                                                                type="button">Шт.
+                                                        </button>
+                                                        <button onclick="changeType(this);" type="button">
+                                                            М <sup>2</sup>
+                                                        </button>
+                                                    </div>
+                                                    <input class="calc--price-input" type="text" placeholder="123 ₽" name="calc_input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">4</div>
+                                            <div>Укажите стоимость выбранной плитки для пола за м<sup>2</sup></div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Стоимость</div>
+                                                <input type="text" name="calc_input" placeholder="0 ₽"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row-last">
+                                        <div>Итого</div>
+                                        <div class="calc--row-total">
+                                            <div class="calc--row-total_block">
+                                                <b>Количество плитки для пола:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Количество декоративных элементов:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Количество вставок для пола</b>
+                                                <span>348 шт.</span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Стоимость плитки для пола:</b>
+                                                <span>4 560 ₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="calc--row-buttons flex">
+                                            <button class="btn--base dark--blue" type="button">Пересчитать стоимость
+                                            </button>
+                                            <button class="btn--base blue--btn" type="button" onclick="openModal('modal_calcul')">Отправить расчёт менеджеру
+                                            </button>
+                                            <button class="btn--base blue--btn" type="button">Сохранить в PDF</button>
+                                        </div>
+                                        <p>*Расчет плитки на калькуляторе носит рекомендательный характер, за более
+                                            точными
+                                            цифрами обращайтесь к нашему менеджеру.</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc--right">
+                        <div class="calc--float">
+                            <div class="calc--float-image flex">
+                                <img src="pic/320x222.png" class="bg-i"
+                                     style="background-image: url(pic/calculator/calc_preview_3.png)"
+                                     alt="calc--preview"/>
+                            </div>
+                            <div class="calc--float-top">
+                                <div>Отправьте расчет плитки для пола нашему менеджеру</div>
+                                <div>Мы поможем вам получить точные цифры для вашего ремонта.</div>
+                            </div>
+                            <div class="calc--float-middle">
+                                <div>Итого</div>
+                                <div>
+                                    <div class="calc--float-total">
+                                        <div>Количество плитки для пола:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Количество декоративных элементов: </div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Количество вставок для пола:</div>
+                                        <div> 348 шт.</div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Стоимость плитки для пола:</div>
+                                        <div>4 560 ₽</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn--base dark--blue" type="button" onclick="openModal('modal_calcul')">Отправить расчёт менеджеру</button>
+                        </div>
+                    </div>
+                    <div class="calc--bottom">
+                        <div>
+                            <h2>Калькулятор расчета плитки для пола</h2>
+                            <p>Ремонт нередко сталкивает владельцев домов и квартир со многими сложностями. Мало кто
+                                укладывает плитку самостоятельно. Услуга «под ключ» сильно экономит время и гарантирует,
+                                что облицовка будет выполнена качественно.
+                                <br>Можно попробовать разобраться с этим и самому. Первый и самый важный аспект —
+                                узнать, как правильно провести расчет плитки для комнаты.
+                            </p>
+                        </div>
+                        <div>
+                            <h2>Особенности калькулятора расчета плитки для пола</h2>
+                            <p>Укладку напольной плитки преимущественно проводят в двух вариациях: прямая раскладка и по
+                                диагонали. Другие варианты считаются их разновидностями. При планировании ремонта и
+                                выборе отделочных материалов для пола нужно подобрать тип укладки, что будет влиять на
+                                расход плитки.<br><br>
+                                Диагональная нуждается в большем запасе на подрезку — 10%, а прямой тип требует только
+                                5%. Эта особенность учтена в нашем калькуляторе, который для большего удобства отражает
+                                одновременно два способа расчета.<br><br>
+                                Но нужно знать, что при желании выложить на пол не однотонное или простое плиточное
+                                покрытие, а полотно со сложным рисунком, мало просто рассчитать размеры. Понадобится
+                                создать эскиз пола самостоятельно. Для этого сначала схему рисуют на миллиметровке, а
+                                после считают нужное количество плитки всех разновидностей, формата или оттенка. При
+                                этом также необходимо прибавить 5–10% запаса.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="c16">При помощи калькулятора можно вычислить следующие параметры:</p>
+                            <ul>
+                                <li>Сколько напольной плитки понадобится при ваших размерах пола (с запасом 5–10% на
+                                    подрезку).
+                                </li>
+                                <li>Стоимость необходимого объема напольной плитки.</li>
+                                <li>Все параметры в онлайн-калькулятор вводятся в метрах.</li>
+                                <li>Укажите, знаете ли точную площадь пола или только размеры сторон помещения. Если
+                                    комната
+                                    представляет собой прямоугольник, то нужно измерить его две стороны и внести
+                                    полученные
+                                    параметры в калькулятор. Если ванная или другое помещение имеет сложную форму, то
+                                    желательно посмотреть его площадь в документах и указать ее в кв. м.
+                                </li>
+                                <li>Посмотрите, есть ли дополнительная площадь под укладку кафеля.</li>
+                                <li>Добавьте площадь, которую нужно вычесть из общего значения (это может быть мебель,
+                                    оборудование, ванна, панно на полу и другие элементы).
+                                </li>
+                                <li>Введите стоимость 1 кв. м, чтобы посчитать ценник плитки на весь пол. Если точная
+                                    цена
+                                    материалов неизвестна, то стоит указать приблизительную.
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p><b>Результаты расчетов:</b></p>
+                            <ul class="no--mg">
+                                <li>Периметр помещения (сумма сторон).</li>
+                                <li>Объем настенной плитки (с запасом 5%).</li>
+                                <li>Объем напольного плиточного покрытия (с 5%-ым запасом).</li>
+                            </ul>
+                        </div>
+                        <p>Верный подсчет керамической плитки при помощи калькулятора позволит не ошибиться при покупке материалов. Все, что нужно сделать, это внести габариты комнаты в специальные поля. После заполнения всей информации сервис автоматически выведет необходимые данные: объем плитки при выбранном типе укладки в квадратных метрах с рассчитанным запасом для обрезки, а также сумму, в которую обойдется покупка.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-tab="3" class="calc--tab">
+                <div class="flex flex-wrap">
+                    <div class="calc--left">
+                        <div class="calc--blocks-wrap">
+                            <div class="calc--block">
+                                <form id="calc_4">
+                                    <div class="calc--row">
+                                        <div class="calc--image flex">
+                                            <img src="pic/calculator/calc_sheme.png" alt="calc_scheme"/>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">1</div>
+                                            <div>Укажите размеры ступеней</div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between flex-wrap">
+                                            <div class="calc--input w2">
+                                                <div>Ширина (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w2">
+                                                <div>Высота (м):</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w2">
+                                                <div>Глубина ступеней:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w2">
+                                                <div>Количество ступеней:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">2</div>
+                                            <div>Укажите размеры плитки для ступеней</div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between flex-wrap">
+                                            <div class="calc--input w50">
+                                                <div>Ширина плитки для ступеней:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота плитки для ступеней:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">3</div>
+                                            <div>Укажите размеры плитки для подступеней</div>
+                                        </div>
+                                        <div class="calc--100 calc--row-input flex flex-space-between">
+                                            <div class="calc--input w50">
+                                                <div>Ширина плитки для ступеней:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w50">
+                                                <div>Высота плитки для ступеней:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                        <label class="inpCheck small">
+                                            <input onchange="toggleLine(this);" type="checkbox" name="chk_1"
+                                                   value="Y">
+                                            <span><b>Если вы выкладываете плитку на верхнюю площадку над лестницей, укажите размеры площадки</b></span>
+                                        </label>
+                                        <div class="calc--100 tB flex flex-space-between flex-wrap">
+                                            <div class="calc--input w2">
+                                                <div>Ширина площадки:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w2">
+                                                <div>Глубина площадки:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w2">
+                                                <div>Ширина плитки для площадки:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                            <div class="calc--input w2">
+                                                <div>Высота плитки для площадки:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0.0 метров"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row">
+                                        <div class="calc--row-top flex flex-center-vertical">
+                                            <div class="flex flex-center-vertical flex-center-horizontal">4</div>
+                                            <div>Укажие стоимость плитки</div>
+                                        </div>
+                                        <div class="calc--100 flex flex-space-between flex-wrap">
+                                            <div class="calc--input w33">
+                                                <div>Стоимость для ступеней за м<sup>2</sup>:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0 ₽"/>
+                                            </div>
+                                            <div class="calc--input w33">
+                                                <div>Стоимость для подступеней за м<sup>2</sup>:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0 ₽"/>
+                                            </div>
+                                            <div class="calc--input w33">
+                                                <div>Стоимость для верхней площадки за м<sup>2</sup>:</div>
+                                                <input type="text" class="clc_inp" name="calc_input"
+                                                       placeholder="0 ₽"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="calc--row-last">
+                                        <div>Итого</div>
+                                        <div class="calc--row-total">
+                                            <div class="calc--row-total_block">
+                                                <b>Количество плитки для ступеней:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Количество плитки для подступеней:</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Количество плитки для верхней площадки(без учета верхней ступени):</b>
+                                                <span>348 шт. 5 м<sup>2</sup></span>
+                                            </div>
+                                            <div class="calc--row-total_block">
+                                                <b>Стоимость плитки для лестницы:</b>
+                                                <span>4 560 ₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="calc--row-buttons flex">
+                                            <button class="btn--base dark--blue" type="button">Пересчитать стоимость
+                                            </button>
+                                            <button class="btn--base blue--btn" type="button" onclick="openModal('modal_calcul')">Отправить расчёт менеджеру
+                                            </button>
+                                            <button class="btn--base blue--btn" type="button">Сохранить в PDF</button>
+                                        </div>
+                                        <p>*Расчет плитки на калькуляторе носит рекомендательный характер, за более
+                                            точными
+                                            цифрами обращайтесь к нашему менеджеру.</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc--right">
+                        <div class="calc--float">
+                            <div class="calc--float-image flex">
+                                <img src="pic/320x222.png" class="bg-i"
+                                     style="background-image: url(pic/calculator/calc_preview_1.png)"
+                                     alt="calc--preview"/>
+                            </div>
+                            <div class="calc--float-top">
+                                <div>Отправьте расчет плитки для ступеней лестницы нашему менеджеру</div>
+                                <div>Мы поможем вам получить точные цифры для вашего ремонта.</div>
+                            </div>
+                            <div class="calc--float-middle">
+                                <div>Итого</div>
+                                <div>
+                                    <div class="calc--float-total">
+                                        <div>Количество плитки для ступеней:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Количество плитки для подступеней:</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Количество плитки для верхней площадки(без учета верхней ступени):</div>
+                                        <div> 348 шт. 5м<sup>2</sup></div>
+                                    </div>
+                                    <div class="calc--float-total">
+                                        <div>Стоимость плитки для лестницы:</div>
+                                        <div>4 560 ₽</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn--base dark--blue" type="button" onclick="openModal('modal_calcul')">Отправить расчёт менеджеру</button>
+                        </div>
+                    </div>
+                    <div class="calc--bottom">
+                        <div>
+                            <h2>Калькулятор расчета плитки для фартука</h2>
+                            <p>Кухонный фартук — одна из ключевых деталей, на которую сразу обращают внимание при входе
+                                в
+                                кухню.
+                                Он выполняет две важные опции: защитную и эстетическую, поэтому к подбору материалов,
+                                продуманной облицовке и расчету стоит относиться внимательно.
+                                <br>
+                                Для комфорта владельцев квартир
+                                и домов специалисты создали онлайн-калькулятор для расчета плитки кухонного фартука,
+                                помогающий
+                                выбрать материал и определить его количество. После введения всех данных система
+                                автоматически
+                                вычислит необходимые параметры.</p>
+                        </div>
+                        <div>
+                            <h2>Калькулятор расчета плитки для фартука</h2>
+                            <p>Керамическую плитку в гарнитуре во многих ситуациях выкладывают из некрупных кусочков —
+                                10×10
+                                см.
+                                С ними не так сложно, как с мозаикой, но для укладки также требуются определенные
+                                навыки:
+                                проводить монтаж нужно только на ровной плоскости, а после следует выровнять швы. Нужно
+                                следить,
+                                чтобы плитка подходила под выбранное оформление кухни и подчеркивала ее стиль.
+                                Специалисты
+                                советуют приобретать и монтировать напольную плитку для кухни вместе с фартуком.</p>
+                        </div>
+                        <p class="c16">Чтобы правильно рассчитать объем плитки, необходимо верно ввести исходные данные.
+                            После этого
+                            нажать кнопку «Рассчитать».</p>
+                        <div>
+                            <p><b>1. Длина (в мм)</b><br><br>
+                                Кухонный фартук может находиться на единственной или сразу на нескольких стенах. При
+                                расчете
+                                складывают их длины.<br><br>
+                                <b>2. Высота (в мм)</b><br><br>
+                                Включает расстояние от рабочей зоны до нижней точки шкафчиков над ней.<br><br>
+                                <b>3. Заход фартука под рабочую область и нижний уровень навесных конструкций (в мм)</b><br><br>
+                                Плиточное покрытие желательно располагать под рабочей зоной и нижним краем навесных
+                                шкафов
+                                конструкции на расстоянии от 20 мм.<br><br>
+                                <b>4. Расстояние между навесными шкафами в районе вытяжки (в мм)</b><br><br>
+                                Вытяжку чаще всего размещают над плитой в месте, где находятся навесные шкафы.<br><br>
+                                <b>5. Высота участка фартука в районе вытяжки (в мм)</b><br><br>
+                                Параметр измеряется от нижнего края навесных шкафов до верхнего уровня фартука.
+                                Предпочтительно заводить его как минимум на 50 мм под купол вытяжки. Наиболее выигрышный
+                                вариант — продлить фартук на выбранном участке до верха шкафчиков.<br><br>
+                                <b>6. Заход части фартука в районе вытяжки под боковые стенки навесных шкафов (в мм)</b><br><br>
+                                Часть фартука в месте размещения вытяжки специалисты советуют заводить под боковые
+                                поверхности навесных шкафов на 50 и более мм.<br><br>
+                                В типовых квартирах размер фартука обычно небольшой и находится по периметру гарнитура.
+                                Также плиткой укладывают открытые зоны кухни с учетом ее дизайна и декоративных
+                                особенностей. Это, например, может быть зона вытяжки или площадь, где размещен декор.
+                                Эти
+                                особенности учтены и в нашем интернет-калькуляторе, поэтому вы можете максимально точно
+                                провести расчет плитки для кухни и узнать стоимость.
+                            </p>
+                        </div>
+                        <p>На кухне каждый из членов семьи проводит значительную часть своего времени, поэтому так
+                            важно,
+                            чтобы нахождение в этой комнате ассоциировалось только с комфортом и красотой. После выбора
+                            плитки желательно доверить ее укладку профессионалам — так вы будете испытывать только
+                            удовольствие от гармоничного пространства и каждой детали в нем.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="modal_calcul" class="modal calcul--modal">
+    <button type="button" onclick="clearModalForms()" class="modal--close flex flex-center-vertical flex-center-horizontal hovered">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3L13 13M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+    </button>
+    <div class="modal--callback-wrap mmh">
+        <div class="modal--callback-title">Отправить расчеты</div>
+        <div class="modal--callback-subTitle">Напишите нам, ответим вам в ближайшее время</div>
+        <div class="modal--callback-main">
+            <form id="calcul_form" data-parsley-validate>
+                <div class="input--blocks">
+                    <div class="input--main">
+                        <input data-parsley-required-message="Поле обязательно для заполнения" type="text"
+                               name="calcul_name" value="" placeholder="Имя"/>
+                    </div>
+                    <div class="input--main">
+                        <input data-parsley-required-message="Поле обязательно для заполнения"
+                               data-parsley-pattern-message="" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$"
+                               type="tel" class="masked-phone" name="calcul_phone" value=""
+                               placeholder="+7(___)___-__-__"/>
+                    </div>
+                    <div class="input--main">
+                        <input data-parsley-required-message="Поле обязательно для заполнения" type="email"
+                               name="calcul_name" value="" placeholder="E-mail"/>
+                    </div>
+                    <div class="input--main">
+                        <textarea placeholder="Сообщение"/></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn--base dark--blue">Отправить</button>
+                <div class="input--policy">
+                    <label class="inpCheck">
+                        <input data-parsley-errors-messages-disabled type="checkbox" required name="callback_checkbox"
+                               value="Y">
+                        <span>Я согласен с условиями <a href="#">пользовательского соглашения.</a></span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="modal--callback-success flex flex-column flex-center-vertical flex-center-horizontal">
+            <div class="modal--callback-title">Спасибо!</div>
+            <div class="modal--callback-text">Ваша заявка отправлена, мы скоро свяжется с вами</div>
+            <button type="button" onclick="modalCallbackSuccess(true);" class="btn--base blue--btn">Хорошо</button>
+        </div>
+    </div>
+</div>
+<script src="js/pages/calculator.js"></script>
+@@include('./footer.html')

@@ -1,0 +1,46 @@
+@use "sass:math";
+@import "help/mixins";
+@import "help/fonts";
+@import "my_reset";
+@import "fancy";
+@import "header_mobile";
+@import "footer_mobile";
+@import "main_mobile";
+@import "help/simplebar";
+@import "help/modal_mobile";
+@import "help/btns";
+@import "help/ui";
+
+//Отдельные Блоки
+
+@import "../html_blocks/home_catalog/home_catalog_mobile";
+@import "../html_blocks/advantage_block/advantage_block_mobile";
+@import "../html_blocks/news_block/news_block_mobile";
+@import "../html_blocks/recommended/recommended_mobile";
+@import "blocks/product_block";
+
+//Отдельные страницы
+
+//Главная
+
+@import "pages/home_mobile";
+
+//Каталог(общий)
+
+//Фото образцов плитки
+@import "pages/sample-photo";
+
+// Переиспользуемые блоки
+// бранды
+@import "../html_blocks/brand_block/style";
+// слайдер default
+@import "../html_blocks/slider_default/slider-default";
+
+//Контакты
+@import "pages/contacts_mobile";
+
+//Поиск
+@import "pages/search";
+
+//Избранное
+@import "pages/favorites";

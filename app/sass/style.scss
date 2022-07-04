@@ -1,0 +1,120 @@
+@use "sass:math";
+@import "help/mixins";
+@import "help/fonts";
+@import "my_reset";
+@import "fancy";
+@import "header";
+@import "footer";
+@import "main";
+@import "help/simplebar";
+@import "help/modal";
+@import "help/btns";
+@import "help/ui";
+
+//Отдельные Блоки
+
+@import "../html_blocks/home_catalog/home_catalog";
+@import "../html_blocks/advantage_block/advantage_block";
+@import "../html_blocks/news_block/news_block";
+@import "../html_blocks/recommended/recommended";
+@import "blocks/product_block";
+
+//Отдельные страницы
+
+//Главная
+@import "pages/home";
+
+//Каталог(общий)
+@import "pages/catalog/catalog-all";
+
+// Переиспользуемые блоки
+// бранды
+@import "../html_blocks/brand_block/style";
+// слайдер default
+@import "../html_blocks/slider_default/slider-default";
+// фильтр каталог
+@import "../html_blocks/filter_catalog/style";
+// пагинация
+@import "../html_blocks/pagination_block/style";
+
+//Контакты
+@import "pages/contacts";
+
+//Каталог коллекция и продукта
+@import "pages/catalog/catalog-prod-coll";
+
+//Каталог готовых решений
+@import "pages/catalog/catalog-solution";
+
+//Детальные карточки
+@import "pages/catalog/card-products";
+@import "pages/catalog/card-plitka";
+@import "pages/catalog/card-solution";
+@import "pages/catalog/card-collection";
+
+//О компании
+@import "pages/about";
+
+//Бренды
+@import "pages/brand";
+
+//Фото образцов плитки
+@import "pages/sample-photo";
+
+//Калькулятор
+@import "pages/calculator";
+
+//Поиск
+@import "pages/search";
+
+//Избранное
+@import "pages/favorites";
+
+//Дилерам
+@import "pages/dealer";
+
+// Обмен/возврат
+@import "pages/exchange";
+
+// Доставка
+@import "pages/delivery";
+
+//Оплата
+@import "pages/payment";
+
+//Статьи
+@import "pages/articles";
+
+//Личный кабинет
+@import "pages/lk";
+
+// Акции
+@import "pages/promo";
+@import "pages/promo-detail";
+
+// Новости
+@import "pages/news";
+@import "pages/news-detail";
+
+// Корзина/Оформление заказа
+@import "pages/cart";
+
+#pages-list {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 8px 8px 0 0;
+    background: rgb(72, 136, 255);
+    color: #fff;
+    z-index: 9999;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    @media (any-hover: hover) {
+        &:hover {
+            background: rgb(25, 105, 255);
+        }
+    }
+}

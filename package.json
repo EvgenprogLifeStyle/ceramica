@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-cache": "^1.1.3",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-include": "^2.4.1",
+    "gulp-notify": "^4.0.0",
+    "gulp-pngquant": "^1.0.13",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wait": "^0.0.2",
+    "gulp-webp": "^4.0.1",
+    "keen-slider": "^6.6.4",
+    "node-sass": "^7.0.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
+    "jsdoc": "^3.6.10",
+    "webpack": "^5.65.0"
+  }
+}

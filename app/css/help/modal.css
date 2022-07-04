@@ -1,0 +1,112 @@
+.modal {
+  padding: 32px;
+  width: 426px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 40px rgba(22, 35, 54, 0.07);
+  border-radius: 8px; }
+  .modal--close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 8px;
+    top: 8px;
+    z-index: 3; }
+  .modal--callback {
+    width: 432px; }
+    .modal--callback-title {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 40px;
+      color: #1F2636; }
+    .modal--callback-main {
+      margin-top: 20px; }
+      .modal--callback-main button {
+        margin-top: 22px; }
+      .modal--callback-main .inpCheck {
+        margin-top: 16px; }
+    .modal--callback-success {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #fff;
+      z-index: 2;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s all ease; }
+      .modal--callback-success.active {
+        opacity: 1;
+        visibility: visible; }
+      .modal--callback-success button {
+        max-width: 200px; }
+    .modal--callback-text {
+      font-size: 16px;
+      line-height: 24px;
+      color: #878889;
+      max-width: 330px;
+      text-align: center;
+      margin: 8px 0 20px 0; }
+  .modal--city {
+    width: 944px;
+    max-width: 100%; }
+    .modal--city-row {
+      width: calc(33.33333% - 27px); }
+      .modal--city-row div {
+        margin-bottom: 4px; }
+        .modal--city-row div:last-child {
+          margin-bottom: 0; }
+      .modal--city-row a {
+        padding: 8px 44px 8px 16px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1F2636;
+        display: block;
+        position: relative; }
+        .modal--city-row a.active {
+          color: #4772DA; }
+          .modal--city-row a.active:after {
+            position: absolute;
+            content: '';
+            width: 16px;
+            height: 16px;
+            display: block;
+            right: 16px;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxNCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzIDFMNS43ODk0NyA5TDEgNCIgc3Ryb2tlPSIjNDc3MkRBIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo="); }
+    .modal--city-title {
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 40px;
+      color: #1F2636;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #C5CBD9; }
+  .modal--enter {
+    max-width: 372px; }
+    .modal--enter-tab {
+      display: none; }
+      .modal--enter-tab button {
+        margin-top: 22px;
+        font-weight: normal; }
+        .modal--enter-tab button svg {
+          margin-right: 10px; }
+      .modal--enter-tab .inpCheck {
+        margin-top: 12px; }
+      .modal--enter-tab.active {
+        display: block; }
+    .modal--enter-tabs {
+      margin-bottom: 24px; }
+      .modal--enter-tabs button {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        color: #878889;
+        margin: 0 12px; }
+        .modal--enter-tabs button.active {
+          color: #1F2636; }
+    .modal--enter-lic {
+      margin-bottom: 22px; }

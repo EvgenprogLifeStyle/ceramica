@@ -1,0 +1,25 @@
+.articl__content {
+  flex: 1 1 auto; }
+
+.articl__sign {
+  flex: 1 0 300px; }
+
+.articl-cart__img {
+  flex: 1 0 304px; }
+
+.articl-cart__body {
+  margin-left: 48px;
+  align-self: center; }
+
+.articl-cart__name {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: calc(28 / 18); }
+
+.articl-cart__desc {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: calc(20 / 14); }
+
+.articl-cart__bottom {
+  margin-top: 30px; }

@@ -1,0 +1,846 @@
+.dealer {
+    // .dealer__top
+    &__top {
+        border-top: 1px solid #c5cbd9;
+        border-bottom: 1px solid #c5cbd9;
+        padding: 32px 0px;
+        @include lg {
+            padding: 28px 0px;
+        }
+        @include lgFix {
+            padding: 12px 0px;
+        }
+        @include mdFix {
+            flex-direction: column;
+            align-items: start;
+        }
+        div {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: calc(28 / 18);
+            color: $colorBlue;
+            flex: 1 1 auto;
+            padding-right: 24px;
+            @include lg {
+                font-size: 16px;
+            }
+        }
+        a {
+            max-width: 169px;
+            white-space: nowrap;
+            @include lg {
+                max-width: 144px;
+            }
+            @include mdFix {
+                margin-top: 12px;
+            }
+            span {
+                margin-left: 10px;
+                font-size: 16px;
+                line-height: calc(24 / 16);
+                @include lg {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    // .dealer__desc
+    &__desc {
+        align-items: start;
+    }
+    .recommended--block {
+        @include md {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+// ==================================================================================================
+.desc-dealer {
+    padding: 32px 0px;
+    @include lg {
+        padding: 28px 0px;
+    }
+    @include lgFix {
+        padding: 12px 0px;
+    }
+    @include md {
+        flex-direction: column;
+    }
+    // .desc-dealer__text
+    &__text {
+        flex: 1 1 auto;
+        margin-right: 32px;
+    }
+    // .desc-dealer__partner
+    &__partner {
+        flex: 0 0 624px;
+        padding: 24px;
+        background: #f4f5f6;
+        border-radius: 8px;
+        @include lg {
+            padding: 16px;
+            flex: 0 0 455px;
+        }
+        @include lgFix {
+            flex: 0 0 315px;
+        }
+        @include md {
+            padding: 12px;
+            margin-top: 12px;
+            flex: 1 1 100%;
+            width: 100%;
+        }
+    }
+}
+
+.text-dd {
+    // .text-dd__info
+    &__info {
+        margin-bottom: 32px;
+        @include lg {
+            margin-bottom: 28px;
+        }
+        @include lgFix {
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 16px;
+            line-height: calc(24 / 16);
+            color: $colorBlack;
+            @include lg {
+                font-size: 14px;
+            }
+            &:not(:last-child) {
+                margin-bottom: 24px;
+                @include lg {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    // .text-dd__subname
+    &__subname {
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        color: $colorGrayText;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+    }
+
+    // .text-dd__list
+    &__list {
+        margin: 0px -6px -8px;
+        @include lg {
+            margin: 0px -4px -8px;
+        }
+        .btn {
+            width: auto;
+            padding: 0px 16px;
+            margin: 0 6px 8px;
+            border: 0;
+            font-size: 16px;
+            @include lg {
+                font-size: 14px;
+                padding: 0px 12px;
+                margin: 0 4px 8px;
+            }
+        }
+    }
+}
+
+.partner-dealer {
+    // .partner-dealer__title
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: calc(28 / 18);
+        color: $colorBlue;
+        margin-bottom: 32px;
+        @include lg {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+    }
+    // .partner-dealer__list
+    &__list {
+        @include lgFix {
+            flex-direction: column;
+        }
+        @include md {
+            flex-direction: row;
+        }
+        @include mdFix {
+            flex-direction: column;
+        }
+    }
+    // .partner-dealer__item
+    &__item {
+        flex: 1;
+        position: relative;
+        &:not(:last-child) {
+            @include lgFix {
+                padding-bottom: 12px;
+            }
+            &::before {
+                content: "";
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: #c5cbd9;
+                @include lgFix {
+                    width: 100%;
+                    height: 1px;
+                    bottom: 0;
+                    left: 0;
+                    top: auto;
+                }
+                @include md {
+                    top: 0;
+                    right: 0;
+                    bottom: auto;
+                    left: auto;
+                    width: 1px;
+                    height: 100%;
+                }
+                @include mdFix {
+                    width: 100%;
+                    height: 1px;
+                    bottom: 0;
+                    left: 0;
+                    top: auto;
+                }
+            }
+        }
+        &:first-child {
+            @include md {
+                flex: 1 0 38%;
+            }
+            @include mdFix {
+                flex: 1 0 100%;
+            }
+        }
+        &:last-child {
+            @include lgFix {
+                padding-top: 12px;
+                justify-content: flex-start;
+            }
+            @include md {
+                flex: 1 0 62%;
+                justify-content: center;
+                padding-top: 0;
+            }
+            @include mdFix {
+                flex: 1 0 100%;
+                padding-top: 12px;
+                justify-content: flex-start;
+            }
+        }
+    }
+    // .partner-dealer__icon
+    &__icon {
+        width: 20px;
+        height: 20px;
+    }
+    // .partner-dealer__text
+    &__text {
+        margin-left: 16px;
+        a {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: calc(20 / 14);
+            color: $colorBlack;
+            @include lg {
+                font-size: 12px;
+            }
+        }
+    }
+    // .partner-dealer__subtitle
+    &__subtitle {
+        font-size: 14px;
+        line-height: calc(20 / 14);
+        color: $colorGrayText;
+        margin-bottom: 4px;
+        @include lg {
+            font-size: 12px;
+        }
+    }
+    // .partner-dealer__btn
+    &__btn {
+        margin-top: 32px;
+        @include lg {
+            margin-top: 20px;
+        }
+        @include mdFix {
+            text-align: center;
+        }
+        .btn {
+            background: transparent;
+            @media (any-hover: hover) {
+                &:hover {
+                    background: #6689dd;
+                    color: #fff;
+                }
+            }
+            &:active {
+                background: #496dc2;
+                color: #fff;
+            }
+            @include md {
+                max-width: 220px;
+            }
+            @include xsm {
+                max-width: 100%;
+            }
+        }
+    }
+}
+// ==================================================================================================
+.adres-dealer {
+    margin: 0px -8px;
+    @include lg {
+        margin: 0px -4px;
+    }
+    @include md {
+        flex-wrap: wrap;
+    }
+    // .adres-dealer__item
+    &__item {
+        margin: 0px 8px;
+        border: 1px solid #c5cbd9;
+        border-radius: 8px;
+        padding: 24px;
+        @include lg {
+            padding: 16px;
+            margin: 0px 4px;
+        }
+        @include md {
+            padding: 12px;
+            margin: 0px;
+        }
+
+        &_left {
+            flex: 1 1 calc(45.5% - 16px);
+            @include lg {
+                flex: 1 1 calc(50% - 8px);
+            }
+            @include md {
+                padding: 12px;
+                flex: 1 0 100%;
+            }
+            .contact-dealer__items {
+                display: grid;
+                grid-template-columns: 31% 38% 31%;
+                @include md {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+        &_right {
+            flex: 1 1 calc(54.5% - 16px);
+            @include lg {
+                flex: 1 1 calc(50% - 8px);
+            }
+            @include md {
+                padding: 12px;
+                flex: 1 0 100%;
+                margin-top: 8px;
+            }
+            .contact-dealer__items {
+                display: grid;
+                grid-template-columns: 56% 44%;
+                @include lgFix {
+                    grid-template-columns: 44% 56%;
+                }
+                @include md {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+            .adres-dealer__prev_right p {
+                @include lg {
+                    margin-bottom: 16px;
+                }
+            }
+            .adres-dealer__prev div {
+                @include lg {
+                    margin-bottom: 28px;
+                }
+                @include md {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+    // .adres-dealer__subname
+    &__subname {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: calc(28 / 18);
+        color: $colorBlue;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+    }
+    // .adres-dealer__prev
+    &__prev {
+        p {
+            font-size: 16px;
+            line-height: calc(24 / 16);
+            color: $colorBlack;
+            margin-bottom: 20px;
+            @include lg {
+                font-size: 14px;
+                margin-bottom: 16px;
+            }
+        }
+        div {
+            font-size: 14px;
+            line-height: calc(20 / 14);
+            color: $colorGrayText;
+            margin-bottom: 20px;
+            @include lg {
+                font-size: 12px;
+                margin-bottom: 16px;
+            }
+            a {
+                font-weight: 700;
+                color: $colorBlack;
+                display: inline-block;
+                @include lg {
+                    display: block;
+                }
+            }
+        }
+        // .adres-dealer__prev_right
+        &_right {
+            p {
+                color: #000000;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+
+.contact-dealer {
+    // .contact-dealer__subtitle
+    &__subtitle {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: calc(20 / 14);
+        color: $colorBlack;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 12px;
+        }
+    }
+    // .contact-dealer__item
+    &__item {
+        &:not(:first-child) {
+            justify-content: center;
+            @include mdFix {
+                justify-content: flex-start;
+                padding: 12px 0px;
+            }
+        }
+        &:not(:last-child) {
+            position: relative;
+            &::before {
+                content: "";
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: #c5cbd9;
+                @include mdFix {
+                    width: 100%;
+                    height: 1px;
+                    bottom: 0;
+                    left: 0;
+                    top: auto;
+                }
+            }
+        }
+        @include md {
+            flex: 1;
+        }
+        @include mdFix {
+            flex: 1 0 100%;
+        }
+        &:last-child {
+            @include md {
+                padding-left: 40px;
+            }
+            @include fix720 {
+                padding-left: 30px;
+            }
+            @include mdFix {
+                padding: 12px 0px 0px;
+            }
+        }
+        &:first-child {
+            padding-right: 10px;
+            @include md {
+                padding-right: 40px;
+            }
+            @include fix720 {
+                padding-right: 30px;
+            }
+            @include mdFix {
+                padding: 0 0 12px;
+            }
+        }
+        // .contact-dealer__item_c
+        &_c {
+            justify-content: center;
+            padding-left: 28px;
+            @include xl {
+                padding: 0px 10px 0px 24px;
+            }
+            @include lgFix {
+                padding: 0px 18px;
+            }
+            @include md {
+                padding: 0px 50px;
+                justify-content: center;
+            }
+            @include fix720 {
+                padding: 0px 30px;
+            }
+        }
+    }
+    // .contact-dealer__icon
+    &__icon {
+        flex: 0 0 20px;
+        width: 20px;
+        height: 20px;
+        margin-right: 16px;
+        margin-top: 2px;
+        @include lgFix {
+            margin-right: 12px;
+        }
+        @include md {
+            margin-top: 0;
+        }
+    }
+    // .contact-dealer__text
+    &__text {
+        font-size: 14px;
+        line-height: calc(20 / 14);
+        color: $colorBlack;
+        @include lg {
+            font-size: 12px;
+        }
+        div {
+            line-height: calc(20 / 14);
+            color: $colorGrayText;
+            margin-bottom: 4px;
+        }
+        a {
+            font-weight: 700;
+            font-size: inherit;
+            line-height: calc(20 / 14);
+            color: $colorBlack;
+            margin-right: 16px;
+            @include lgFix {
+                display: block;
+                margin-bottom: 4px;
+            }
+            @include md {
+                display: inline-block;
+            }
+        }
+    }
+}
+// ==================================================================================================
+
+.benefits-dealer {
+    background: #f4f5f6;
+    padding: 60px 0px 44px;
+    overflow: hidden;
+    @include lg {
+        padding: 40px 0px 32px;
+    }
+    @include lgFix {
+        padding: 20px 0px 12px;
+    }
+    @include md {
+        padding: 20px 0px;
+        position: relative;
+        &::after {
+            content: "";
+            width: 73px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+        }
+    }
+    // .benefits-dealer__list
+    &__list {
+        margin: 0px -8px;
+        @include lg {
+            margin: 0px -4px;
+        }
+        @include md {
+            flex-wrap: nowrap;
+        }
+    }
+    // .benefits-dealer__item
+    &__item {
+        width: calc(20% - 16px);
+        margin: 0px 8px 16px;
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 30px;
+        height: 200px;
+        @include lg {
+            width: calc(20% - 8px);
+            margin: 0px 4px 8px;
+            height: 172px;
+            padding: 12px;
+        }
+        @include md {
+            min-width: 168px;
+            margin: 0px 4px;
+            height: 168px;
+            width: 168px;
+            margin: 0;
+        }
+    }
+    // .benefits-dealer__text
+    &__text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: calc(20 / 14);
+        color: $colorBlack;
+        @include lg {
+            font-size: 12px;
+        }
+    }
+}
+// ==================================================================================================
+
+.catalog-dealer {
+    .see--all-wrap {
+        @include md {
+            margin: 16px auto 0;
+
+            min-width: 220px;
+        }
+    }
+    // .catalog-dealer__top
+    &__top {
+        @include md {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    .recommended--tabs {
+        @include md {
+            display: none;
+        }
+    }
+    // .catalog-dealer__select
+    &__select {
+        display: none;
+        @include md {
+            display: block;
+            max-width: 240px;
+            margin-top: 8px;
+        }
+        @include mdFix {
+            max-width: 100%;
+        }
+    }
+}
+
+.catalog-cart {
+    cursor: pointer;
+    // .catalog-cart__img
+    &__img {
+        height: 352px;
+        @include lg {
+            height: 276px;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    // .catalog-cart__body
+    &__body {
+        font-size: 14px;
+        line-height: calc(20 / 14);
+        color: $colorGrayText;
+        @include lg {
+            font-size: 12px;
+        }
+    }
+    // .catalog-cart__name
+    &__name {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        color: $colorBlack;
+        @include lg {
+            font-size: 14px;
+        }
+    }
+    // .catalog-cart__desc
+    &__desc {
+        margin-top: 4px;
+    }
+    // .catalog-cart__bottom
+    &__bottom {
+        margin-top: 16px;
+        @include lg {
+            margin-top: 12px;
+        }
+        svg {
+            color: #878889;
+            margin-right: 8px;
+        }
+    }
+
+    // .catalog-cart__look
+    &__look {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $colorBlue;
+                svg {
+                    color: $colorBlue;
+                }
+            }
+        }
+        &:active {
+            color: #496dc2;
+            svg {
+                color: #496dc2;
+            }
+        }
+    }
+    // .catalog-cart__download
+    &__download {
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $colorBlue;
+                svg {
+                    color: $colorBlue;
+                }
+            }
+        }
+        &:active {
+            color: #496dc2;
+            svg {
+                color: #496dc2;
+            }
+        }
+    }
+}
+.stands-cart {
+    transition: none;
+    // .stands-cart__name
+    &__name {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        color: $colorBlack;
+        @include lg {
+            font-size: 14px;
+        }
+    }
+    // .stands-cart__props
+    &__props {
+        display: block;
+        margin-top: 8px;
+    }
+}
+
+.stock-dealer {
+    // .stock-dealer__desc
+    &__desc {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        color: $colorBlack;
+        margin-top: 12px;
+        @include lg {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+    }
+    // .stock-dealer__body
+    &__body {
+        margin: 16px -8px 0px;
+        @include lg {
+            margin: 8px -4px 0px;
+        }
+        @include md {
+            flex-wrap: wrap;
+            margin: 8px 0px 0px;
+        }
+        & > div {
+            flex: 1;
+            padding: 0;
+            width: 50%;
+            box-shadow: none;
+            border-radius: 0px;
+            margin: 0px 8px;
+            @include lg {
+                margin: 0px 4px;
+            }
+            @include md {
+                flex: 1 0 100%;
+                width: 100%;
+                margin: 0px 0px 8px;
+            }
+        }
+    }
+    // .stock-dealer__schedule
+    &__schedule {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    // .stock-dealer__map
+    &__map {
+        flex: 1 1 auto;
+        position: relative;
+        & > div {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            @include md {
+                position: relative;
+                height: 416px;
+                width: 100%;
+            }
+            @include mdFix {
+                position: relative;
+                height: 240px;
+            }
+        }
+    }
+}

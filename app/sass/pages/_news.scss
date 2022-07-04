@@ -1,0 +1,82 @@
+.news {
+	.pagination-more {
+		margin-top: 44px;
+	}
+}
+.news-list {
+    &__item {
+        width: calc(33% - 59px);
+        &:not(:nth-child(3n)) {
+            margin-right: 96px;
+        }
+        &:not(:nth-child(-n + 3)) {
+            margin-top: 44px;
+        }
+        @include xl {
+            width: calc(33% - 6px);
+            &:not(:nth-child(3n)) {
+                margin-right: 16px;
+            }
+        }
+        @include lg {
+            width: calc(33% - 3px);
+            &:not(:nth-child(3n)) {
+                margin-right: 8px;
+            }
+        }
+        @include fix720 {
+            width: calc(33% - 4px);
+        }
+        @include vm {
+            width: calc(50% - 4px);
+            &:not(:nth-child(3n)) {
+                margin-right: 0;
+            }
+            &:not(:nth-child(2n)) {
+                margin-right: 8px;
+            }
+            &:not(:nth-child(-n + 3)) {
+                margin-top: 0;
+            }
+            &:not(:nth-child(-n + 2)) {
+                margin-top: 44px;
+            }
+        }
+    }
+    &__item-image img {
+        display: block;
+    }
+    &__item-date {
+        font-size: 14px;
+        line-height: 20px;
+        color: #878889;
+        margin-top: 16px;
+        @include lg {
+            margin-top: 8px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    &__item-title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: 16px;
+				&:hover {
+					color: #4772DA;
+				}
+        @include lg {
+            margin-top: 12px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        @include lgFix {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        @include fix720 {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+}

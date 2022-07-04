@@ -1,0 +1,124 @@
+.news {
+  &--mobile {
+    display: inline-flex;
+    margin-top: 16px;
+
+    .see--all-wrap {
+      width: 244px;
+    }
+
+    @include fix720 {
+      justify-content: center;
+      width: 100%;
+      .see--all-wrap {
+        margin: 0;
+      }
+    }
+    @include mdFix {
+      .see--all-wrap {
+        width: 220px;
+      }
+    }
+  }
+
+  &--block {
+    border-radius: 8px;
+    background: #F4F5F6;
+    width: calc(33.3333% - 4px);
+    padding: 12px;
+    flex-direction: column;
+    @include fix720 {
+      width: auto;
+    }
+
+    &-mobile {
+      display: none;
+      @include fix720 {
+        display: flex;
+      }
+    }
+
+    a {
+      &:not(.news--title) {
+        font-weight: 400;
+        color: #4772da;
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: auto;
+
+        svg {
+          margin-left: 4px;
+          color: #4772da;
+        }
+
+        &:hover {
+          color: #6689dd;
+
+          svg {
+            color: #6689dd;
+          }
+        }
+      }
+    }
+  }
+
+  &--image {
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    height: 100px;
+    margin: 0 0 12px 0;
+  }
+
+  &--date {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #878889;
+  }
+
+  &--title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1f2636;
+    margin: 8px 0;
+    display: block;
+  }
+
+  &--main {
+    flex: 1 1 calc(100% - 168px);
+    overflow: hidden;
+
+    @include fix720 {
+      padding-bottom: 14px;
+    }
+    @include mdFix {
+      overflow: hidden;
+    }
+    @include xsm {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: gridCustom(4, 1);
+        display: block;
+        background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+      }
+    }
+    @include sm {
+      &:after {
+        width: gridCustom(4, 0.9);
+      }
+    }
+
+    &-bottom {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

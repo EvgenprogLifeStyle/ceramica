@@ -1,0 +1,122 @@
+.slider {
+    &-default {
+        &-wrap {
+            &:after {
+                @include fix720 {
+                    display: none;
+                }
+                @include xsm {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+.slider-default {
+    //.slider-default__all
+    &__all {
+        h2 {
+        }
+        .btn {
+            width: auto;
+            padding: 0px 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            @include lg {
+                font-size: 14px;
+                padding: 0px 12px;
+            }
+            @include md {
+                display: none;
+            }
+        }
+    }
+    // .slider-default-wrap
+    &-wrap {
+        position: relative;
+        @include xl {
+            &::after {
+                content: "";
+                height: 100%;
+                width: 73px;
+                position: absolute;
+                top: 0;
+                right: -5px;
+                bottom: 0;
+                z-index: 4;
+                background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+    }
+    .products--block {
+        max-width: 306px;
+        min-width: 306px;
+
+        @include lg {
+            max-width: 220px;
+            min-width: 220px;
+        }
+        .products--main {
+            &.inactive {
+                opacity: 1;
+            }
+        }
+    }
+    .products--main {
+        &.inactive {
+            opacity: 1;
+        }
+    }
+
+    // .slider-default__dots
+    &__dots {
+        display: none;
+        @include lg {
+            display: flex;
+            margin-top: 20px;
+        }
+        @include lgFix {
+            margin-top: 8px;
+        }
+    }
+
+    .recommended--bottom {
+        @include lg {
+            padding-bottom: 0;
+        }
+    }
+    .brand-cart {
+        margin: 0;
+        transition: none;
+    }
+}
+._after-blur {
+    position: relative;
+    &::after {
+        content: "";
+        height: calc(100% - 20px);
+        width: 73px;
+        position: absolute;
+        top: 0;
+        right: -2px;
+        bottom: 0;
+        z-index: 0;
+        background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+        pointer-events: none;
+        display: none;
+    }
+    @include xl {
+        &::after {
+            display: inline-block;
+        }
+    }
+}
+.slider-default {
+    .slider--arrow {
+        @include lg {
+            display: none;
+        }
+    }
+}

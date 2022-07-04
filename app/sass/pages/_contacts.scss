@@ -1,0 +1,565 @@
+.contacts {
+  &--page {
+    &-top {
+      padding-bottom: 22px;
+      border-bottom: 1px solid #C5CBD9;
+      margin-bottom: 32px;
+      @include lg {
+        padding-bottom: 18px;
+        margin-bottom: 28px;
+      }
+      @include lgFix {
+        margin-bottom: 12px;
+      }
+      @include md {
+        display: none;
+      }
+
+      a {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1F2636;
+        @include lg {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  &--section {
+    @include md {
+      display: none;
+      margin-top: 0;
+    }
+
+    &-top {
+      @include md990 {
+        flex-direction: column;
+      }
+    }
+
+    &-link {
+      color: #4772DA;
+      margin-top: 8px;
+    }
+
+    &-wrap {
+      @include md {
+        border-bottom: 1px solid #C5CBD9;
+
+        &:first-child {
+          .contacts--section-tab {
+            padding-top: 4px;
+          }
+        }
+
+        &.active {
+          .contacts--section {
+            display: block;
+          }
+
+          .contacts--section-tab {
+            padding-bottom: 8px;
+
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+
+          .navigation-wrapper {
+            margin-bottom: 8px;
+          }
+        }
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    &-tab {
+      display: none;
+      @include md {
+        display: flex;
+      }
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      color: #1F2636;
+      padding: 12px 0;
+      @include mdFix {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 700;
+      }
+    }
+
+    &-gray {
+      color: #878889;
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+
+    &-photos {
+      > div {
+        width: 20%;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 0 8px;
+        @include lg {
+          margin: 0 4px;
+        }
+        @include lgFix {
+          margin: 0;
+        }
+        @include md {
+          min-width: 260px;
+          max-width: 260px;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &-left {
+      padding: 32px 24px;
+      width: gridCustom(20, 7);
+      box-shadow: 0 0 40px rgba(22, 35, 54, 0.07);
+      border-radius: 8px;
+      @include lg {
+        width: gridCustom(24, 8);
+        padding: 28px 20px;
+      }
+      @include lgFix {
+        padding: 24px 16px;
+        width: gridCustom(24, 9);
+      }
+      @include md {
+        padding: 0;
+        width: gridCustom(12, 5);
+        box-shadow: none;
+        margin-bottom: 16px;
+        @include md990 {
+          width: 100%;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    &-right {
+      flex: 1 1 auto;
+      position: relative;
+      @include md990 {
+        width: 100%;
+        height: 300px;
+      }
+      @include mdFix {
+        height: 200px;
+      }
+      > div {
+        position: absolute;
+        left: 16px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        @include lgFix {
+          left: 8px;
+        }
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      left: 0;
+      top: 32px;
+      @include lg {
+        top: 24px;
+      }
+      @include md {
+        top: 16px;
+      }
+      @include md990 {
+        top: 20px;
+      }
+    }
+
+    &-block {
+      border-bottom: 1px solid #C5CBD9;
+      padding: 32px 0;
+      position: relative;
+      font-size: 14px;
+      line-height: 20px;
+      color: #1F2636;
+      @include lg {
+        padding: 24px 0;
+        font-size: 12px;
+        line-height: 16px;
+      }
+      @include md {
+        position: relative;
+        padding: 16px 0;
+      }
+
+      &_text {
+        > div {
+          margin-bottom: 16px;
+          @include lg {
+            margin-bottom: 12px;
+          }
+          @include md {
+            margin-bottom: 8px;
+          }
+
+          &:first-child {
+            margin-top: 16px;
+            @include lg {
+              margin-top: 12px;
+            }
+            @include md {
+              margin-top: 8px;
+            }
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          > div {
+            &:first-child {
+              color: #878889;
+              margin-bottom: 4px;
+            }
+
+            &:last-child {
+
+            }
+          }
+        }
+      }
+
+      &_title {
+        font-weight: bold;
+      }
+
+      &_main {
+        padding-left: 36px;
+        @include md {
+          padding-left: 32px;
+        }
+        @include mdFix {
+          padding-left: 28px;
+        }
+        @include sm {
+          flex-direction: column;
+        }
+
+        button {
+          color: #4772DA;
+          margin-top: 8px;
+        }
+      }
+
+      &:first-child {
+        border-top: 1px solid #C5CBD9;
+        @include md {
+          border-top: none;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+      @include md990 {
+        padding: 20px 0;
+        &:first-child {
+          padding-top: 16px;
+          .contacts--section-icon {
+            top: 16px;
+          }
+        }
+        &:last-child {
+          padding-bottom: 16px;
+        }
+      }
+    }
+
+    &-time {
+      padding-left: 36px;
+      @include md {
+        padding-left: 32px;
+      }
+      @include mdFix {
+        padding-left: 28px;
+      }
+
+      > div {
+        flex: 1 1 auto;
+        @include sm {
+          flex: 1 1 100%;
+          margin-bottom: 8px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &.w100 {
+          flex: 1 1 100%;
+          margin-bottom: 16px;
+          @include sm {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+
+    &-phones {
+      width: 50%;
+
+      > a, div {
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &_messengers {
+        padding-left: 36px;
+        @include md {
+          padding-left: 32px;
+        }
+        @include mdFix {
+          padding-left: 28px;
+        }
+        @include sm {
+          padding-left: 0;
+          margin-top: 12px;
+        }
+        position: relative;
+
+        .contacts--section-icon {
+          top: 0 !important;
+          @include sm {
+            left: -26px !important;
+          }
+        }
+
+        a {
+          width: 100%;
+          display: block;
+          margin-bottom: 8px;
+          @include sm {
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      a {
+        width: 100%;
+        display: block;
+      }
+
+      div {
+        span {
+          color: #878889;
+        }
+
+        > a {
+          font-weight: bold;
+        }
+      }
+    }
+
+    &-road {
+      color: #1F2636;
+      @include mdFix {
+        flex-direction: column;
+      }
+      &_way {
+        margin-top: 12px;
+      }
+
+      &_dist {
+        margin-top: 12px;
+
+        span {
+          margin: 0 2px;
+          font-weight: 700;
+          color: #4772DA;
+          padding: 4px 8px;
+          background: #ffffff;
+          border-radius: 5px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 8px;
+          }
+        }
+
+        > div {
+          &:first-child {
+            font-weight: 400;
+            color: #878889;
+            margin-right: 8px;
+          }
+        }
+
+        &_wrap {
+          position: relative;
+          margin: 0 8px;
+        }
+      }
+
+      &_target {
+        svg {
+          margin-right: 12px;
+          @include lg {
+            width: 36px;
+            height: 36px;
+          }
+          @include md {
+            width: 16px;
+            height: 16px;
+            margin-bottom: 2px;
+          }
+        }
+        @include md {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      &_main {
+        margin-top: 24px;
+        @include lg {
+          margin-top: 20px;
+        }
+      }
+
+      &_block {
+        padding: 24px 36px;
+        background: #F4F5F6;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        width: calc(50% - 8px);
+        @include lg {
+          padding: 20px 28px;
+          font-size: 12px;
+          line-height: 16px;
+          width: calc(50% - 4px);
+        }
+        @include md {
+          padding: 12px 20px;
+        }
+        @include fix720 {
+          padding: 12px;
+        }
+        @include mdFix {
+          width: 100%;
+          padding: 12px;
+          &:last-child {
+            margin-top: 8px;
+          }
+        }
+
+        > span {
+          color: #4772DA;
+        }
+      }
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 28px;
+      color: #4772DA;
+      margin-bottom: 32px;
+      @include lg {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+      }
+      @include lgFix {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @include md {
+        display: none;
+      }
+
+      &_sub {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        color: #1F2636;
+        margin-bottom: 24px;
+        @include lg {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        @include lgFix {
+          margin-bottom: 16px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        @include md {
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    &-dash {
+      flex: 1 1 auto;
+      display: block;
+      border: 2px dashed #C5CBD9;
+      border-radius: 5px;
+      @include md {
+        border-width: 1px;
+      }
+    }
+  }
+
+  &--modal {
+    padding: 0;
+    max-width: 782px;
+    width: 100%;
+    @include lg {
+      max-width: 706px;
+    }
+    @include lgFix {
+      max-width: 636px;
+    }
+  }
+}
+
+@include lg {
+  .time-fix {
+    line-height: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

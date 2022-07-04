@@ -1,0 +1,178 @@
+.news {
+  &--mobile {
+    display: none;
+    margin-top: 16px;
+    @include fix720 {
+      display: inline-flex;
+    }
+
+    .see--all-wrap {
+      width: 244px;
+    }
+
+    @include fix720 {
+      justify-content: center;
+      width: 100%;
+      .see--all-wrap {
+        margin: 0;
+      }
+    }
+    @include mdFix {
+      .see--all-wrap {
+        width: 220px;
+      }
+    }
+  }
+
+  &--block {
+    border-radius: 8px;
+    padding: 20px;
+    background: #F4F5F6;
+    width: calc(33.33333% - 8px);
+
+    &-mobile {
+      display: none;
+      @include fix720 {
+        display: flex;
+      }
+    }
+
+    @include lg {
+      width: calc(33.3333% - 4px);
+      padding: 16px;
+    }
+    @include lgFix {
+      padding: 12px;
+    }
+    @include md {
+      flex-direction: column;
+    }
+    @include fix720 {
+      width: auto;
+    }
+
+    a {
+      &:not(.news--title) {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #4772da;
+        @include lg {
+          font-size: 12px;
+          line-height: 16px;
+        }
+
+        svg {
+          margin-left: 4px;
+          color: #4772da;
+        }
+
+        &:hover {
+          color: #6689dd;
+
+          svg {
+            color: #6689dd;
+          }
+        }
+      }
+    }
+  }
+
+  &--image {
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 224px;
+    width: 100%;
+    margin-right: 16px;
+    @include lg {
+      max-width: 100%;
+      width: 180px;
+    }
+    @include lgFix {
+      width: 152px;
+    }
+    @include md {
+      max-width: 100%;
+      width: 100%;
+      height: 100px;
+      margin: 0 0 12px 0;
+    }
+  }
+
+  &--date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #878889;
+    @include lg {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &--title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1f2636;
+    margin: 8px 0;
+    display: block;
+    @include lg {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @include lgFix {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &--main {
+    overflow: hidden;
+    @include lg {
+      flex: 1 1 calc(100% - 196px);
+    }
+    @include lgFix {
+      flex: 1 1 calc(100% - 168px);
+    }
+
+    @include fix720 {
+      padding-bottom: 14px;
+    }
+    @include mdFix {
+      overflow: hidden;
+    }
+    @include xsm {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: gridCustom(4, 1);
+        display: block;
+        background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+      }
+    }
+    @include sm {
+      &:after {
+        width: gridCustom(4, 0.9);
+      }
+    }
+
+    &-bottom {
+      @include lg {
+        max-width: calc(100% - 212px);
+      }
+      @include lgFix {
+        max-width: calc(100% - 184px);
+      }
+      @include md {
+        max-width: 100%;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

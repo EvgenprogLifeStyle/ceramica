@@ -1,0 +1,187 @@
+.solution {
+    .catalog__content {
+        .catalog__products {
+            margin: 0px -8px;
+            @include lg {
+                margin: 0px -4px;
+            }
+            @include xsm {
+                margin: 0;
+            }
+        }
+    }
+    .filter__tags {
+        padding-top: 0;
+    }
+    .filter-btn {
+        margin-left: 0;
+    }
+    .catalog-body__control {
+        @include lgFix {
+            margin-bottom: 8px;
+        }
+        @include md {
+            margin-bottom: 0px;
+        }
+        @include mdFix {
+            width: 100%;
+        }
+        .filter-btn {
+            @include mdFix {
+                width: 100%;
+                span {
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+.card-solution {
+    border: 1px solid #e3e7f1;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(25% - 16px);
+    margin: 0px 8px 16px;
+    @include lg {
+        width: calc(25% - 8px);
+        padding: 12px;
+        margin: 0px 4px 8px;
+    }
+    @include md {
+        width: calc(33.333% - 8px);
+    }
+    @include mdFix {
+        width: calc(50% - 8px);
+    }
+    @include xsm {
+        width: 100%;
+        margin: 0px 0px 8px;
+    }
+    // .card-solution__top
+    &__top {
+        margin-bottom: 16px;
+        @include lg {
+            margin-bottom: 12px;
+        }
+        & > div {
+            font-size: 12px;
+            line-height: calc(16 / 12);
+            color: $colorGrayText;
+            position: relative;
+            flex: 1;
+            @include lg {
+                font-size: 10px;
+            }
+            &:first-child {
+                &::after {
+                    content: "";
+                    width: 1px;
+                    height: 100%;
+                    background: #c5cbd9;
+                    display: inline-block;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+    // .card-solution__tip
+    &__tip {
+        padding-right: 8px;
+        @include md {
+            flex: 1 1 auto;
+        }
+    }
+    // .card-solution__s
+    &__s {
+        text-align: right;
+        padding-left: 8px;
+        @include md {
+            flex: 1 0 auto;
+        }
+    }
+    // .card-solution__body
+    &__body {
+        margin-top: 16px;
+        @include lg {
+            margin-top: 12px;
+        }
+    }
+    // .card-solution__subname
+    &__subname {
+        font-size: 12px;
+        line-height: calc(16 / 12);
+        color: $colorGrayText;
+        @include lg {
+            font-size: 10px;
+        }
+    }
+
+    // .card-solution__name
+    &__name {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        color: $colorBlack;
+        margin-top: 4px;
+        @include lg {
+            font-size: 14px;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $colorBlue;
+            }
+        }
+    }
+    // .card-solution__bottom
+    &__bottom {
+        margin-top: 16px;
+        @include lg {
+            margin-top: 8px;
+        }
+        .products--clear {
+            flex: 0 0 40px;
+            margin-left: 16px;
+            @media (any-hover: hover) {
+                &:hover {
+                    svg {
+                        color: #6689dd;
+                    }
+                }
+            }
+            @include lg {
+                margin-left: 12px;
+            }
+            @include md {
+                margin-left: 16px;
+            }
+        }
+    }
+    .products--favorites {
+        flex: 0 0 40px;
+        @include lg {
+            flex: 0 0 32px;
+        }
+        @include md {
+            flex: 0 0 40px;
+        }
+    }
+    // .card-solution__btn
+    &__btn {
+        font-size: 16px;
+        text-align: center;
+        line-height: calc(24 / 16);
+        padding: 0;
+        margin-right: 16px;
+        @include lg {
+            margin-right: 12px;
+            font-size: 14px;
+        }
+        @include md {
+            margin-right: 16px;
+        }
+    }
+}

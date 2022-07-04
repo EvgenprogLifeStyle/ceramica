@@ -1,0 +1,92 @@
+.footer--bottom-main {
+  color: #F4F5F6;
+  font-size: 14px;
+  line-height: 20px;
+  width: gridCustom(20, 15.5); }
+  .footer--bottom-main a {
+    color: #F4F5F6; }
+
+.footer--bottom-wrap {
+  background: #1F2636;
+  padding: 18px 0; }
+
+.footer--main {
+  padding-top: 76px; }
+
+.footer--social {
+  width: 26px;
+  margin-left: auto; }
+  .footer--social a {
+    margin-bottom: 47px; }
+    .footer--social a svg {
+      color: #96A3BB; }
+    .footer--social a:last-child {
+      margin-bottom: 0; }
+
+.footer--right-bottom {
+  max-width: 260px; }
+
+.footer--right-wrap {
+  width: gridCustom(20, 4);
+  margin-left: gridCustom(20, 1.3); }
+  .footer--right-wrap .border--btn {
+    margin: 15px 0 23px 0; }
+
+.footer--menu {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #1F2636; }
+  .footer--menu-wrap {
+    width: gridCustom(20, 14); }
+  .footer--menu li {
+    margin-bottom: 8px; }
+    .footer--menu li:last-child {
+      margin-bottom: 0; }
+    .footer--menu li a {
+      font-size: 16px;
+      line-height: 24px;
+      color: #878889;
+      font-weight: normal;
+      padding: 4px 0; }
+      .footer--menu li a:hover {
+        color: #6689DD; }
+      .footer--menu li a:active {
+        color: #496DC2; }
+    .footer--menu li:first-child {
+      margin-top: 20px; }
+
+.footer--phone-block {
+  margin-bottom: 16px; }
+  .footer--phone-block:last-child {
+    margin-bottom: 0; }
+  .footer--phone-block div {
+    font-size: 16px;
+    line-height: 24px;
+    color: #878889; }
+  .footer--phone-block a {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: #1F2636;
+    display: block;
+    margin: 8px 0; }
+
+.devs {
+  margin-left: auto; }
+  .devs div {
+    font-size: 12px;
+    line-height: 16px;
+    color: #F4F5F6;
+    margin-left: 16px;
+    transition: .3s all ease; }
+  .devs svg {
+    color: #F4F5F6; }
+  .devs:hover svg {
+    color: #6689DD; }
+  .devs:hover div {
+    color: #6689DD; }
+  .devs:active svg {
+    color: #496DC2; }
+  .devs:active div {
+    color: #496DC2; }

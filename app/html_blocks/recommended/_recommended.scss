@@ -1,0 +1,159 @@
+.recommended {
+  &--top {
+    @include md {
+      display: none;
+    }
+  }
+
+  &--products {
+    @include md {
+      padding-bottom: 14px;
+      position: relative;
+    }
+
+    &-title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 8px;
+      display: none;
+      @include md {
+        display: block;
+      }
+      @include fix720 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &-all {
+      display: none;
+      margin: 16px auto 0 auto;
+      @include md {
+        display: flex;
+      }
+    }
+  }
+
+  &--bottom {
+    position: relative;
+    @include lg {
+      padding-bottom: 14px;
+    }
+    @include md {
+      padding-bottom: 0;
+    }
+
+    .slider--dots {
+      display: none;
+      @include lg {
+        display: flex;
+        width: auto;
+      }
+    }
+  }
+
+  &--block {
+    display: none;
+    @include md {
+      display: block;
+      .see--all-wrap {
+        margin-bottom: 20px;
+      }
+      &:last-child {
+        .see--all-wrap {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .recommended--products {
+      &:after {
+        content: "";
+        position: absolute;
+        right: -2px;
+        top: 0;
+        bottom: 0;
+        width: gridCustom(24, 1.5);
+        background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+        pointer-events: none;
+        display: none;
+        @include lg {
+          display: block;
+        }
+        @include vm {
+          display: none;
+        }
+        @include xsm {
+          display: block;
+        }
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &--slider {
+    &-left {
+      left: -56px;
+      @include lg {
+        display: none;
+      }
+    }
+
+    &-right {
+      right: -56px;
+      @include lg {
+        display: none;
+      }
+    }
+  }
+
+  &--tabs {
+    margin-left: 44px;
+
+    button {
+      padding: 8px 16px;
+      margin: 0 4px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #4772da;
+      background: #e3e7f1;
+      border-radius: 100px;
+      @include lg {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 6px 16px;
+      }
+
+      &.active {
+        background: #4772da;
+        color: #ffffff;
+
+        &:hover {
+          background: #4772da;
+        }
+      }
+
+      &:hover {
+        background: #d3d9e8;
+      }
+
+      &:active {
+        background: #4772da;
+        color: #ffffff;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

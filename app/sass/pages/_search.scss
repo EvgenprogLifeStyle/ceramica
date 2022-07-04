@@ -1,0 +1,110 @@
+.search {
+    h1 {
+        div {
+            display: inline-block;
+        }
+        span {
+            color: #878889;
+        }
+    }
+    // .search__body
+    &__body {
+        & > div {
+            flex: 1;
+        }
+        @include mdFix {
+            flex-direction: column;
+            justify-content: flex-start;
+            & > div {
+                flex: 1 0 100%;
+                width: 100%;
+            }
+        }
+    }
+    // .search__text
+    &__text {
+        margin-right: 32px;
+        @include md {
+            flex: 0 0 40%;
+        }
+        @include mdFix {
+            margin: 0 0 16px;
+        }
+    }
+    // .search__title
+    &__title {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: calc(40 / 28);
+        color: $colorBlack;
+        margin-bottom: 8px;
+        @include lg {
+            font-size: 24px;
+        }
+        @include lgFix {
+            font-size: 20px;
+        }
+        @include fix720 {
+            font-size: 16px;
+        }
+    }
+    // .search__subtitle
+    &__subtitle {
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        color: $colorGrayText;
+        @include lg {
+            font-size: 14px;
+        }
+    }
+    // .search__btn
+    &__btn {
+        margin-top: 16px;
+        max-width: 177px;
+        font-size: 16px;
+        @include lg {
+            font-size: 14px;
+            max-width: 151px;
+        }
+    }
+    // .search__img
+    &__img {
+        @include lg {
+            text-align: center;
+        }
+        @include md {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+        @include mdFix {
+            text-align: left;
+        }
+        img {
+            @include lg {
+                max-height: 212px;
+            }
+            @include md {
+                max-height: 136px;
+            }
+            @include mdFix {
+                max-height: 92px;
+            }
+        }
+    }
+    .control-cb .control-cb__sort {
+        @include lgFix {
+            margin-left: 0;
+        }
+    }
+    .catalog-body__control {
+        @include lgFix {
+            margin-bottom: 8px;
+        }
+        @include md {
+            margin-bottom: 0px;
+        }
+    }
+    &-fail {
+        margin-bottom: auto;
+    }
+}

@@ -1,0 +1,442 @@
+.contacts {
+  &--page {
+    &-top {
+      padding-bottom: 18px;
+      border-bottom: 1px solid #C5CBD9;
+      margin-bottom: 12px;
+
+      a {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #1F2636;
+      }
+    }
+  }
+
+  &--section {
+    display: none;
+
+    &-top {
+      @include md990 {
+        flex-direction: column;
+      }
+    }
+
+    &-wrap {
+      border-bottom: 1px solid #C5CBD9;
+
+      &:first-child {
+        .contacts--section-tab {
+          padding-top: 4px;
+        }
+      }
+
+      &.active {
+        .contacts--section {
+          display: block;
+        }
+
+        .contacts--section-tab {
+          padding-bottom: 8px;
+
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+
+        .navigation-wrapper {
+          margin-bottom: 8px;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    &-tab {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      color: #1F2636;
+      padding: 12px 0;
+      @include mdFix {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 700;
+      }
+    }
+
+    &-link {
+      color: #4772DA;
+      margin-top: 8px;
+    }
+
+    &-gray {
+      color: #878889;
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+
+    &-photos {
+      > div {
+        width: calc(20% - 8px);
+        border-radius: 8px;
+        overflow: hidden;
+        @include md {
+          min-width: 260px;
+          max-width: 260px;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &-left {
+      padding: 0;
+      width: gridCustom(12, 5);
+      margin-bottom: 16px;
+      @include md990 {
+        width: 100%;
+        margin-bottom: 12px;
+      }
+    }
+
+    &-right {
+      flex: 1 1 auto;
+      position: relative;
+
+      @include md990 {
+        width: 100%;
+        height: 300px;
+      }
+      @include mdFix {
+        height: 200px;
+      }
+
+      > div {
+        position: absolute;
+        left: 8px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      left: 0;
+      top: 16px;
+      @include md990 {
+        top: 20px;
+      }
+    }
+
+    &-block {
+      border-bottom: 1px solid #C5CBD9;
+      position: relative;
+      padding: 16px 0;
+      font-size: 12px;
+      line-height: 16px;
+      color: #1F2636;
+
+      &_text {
+        > div {
+          margin-bottom: 8px;
+
+          &:first-child {
+            margin-top: 8px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          > div {
+            &:first-child {
+              color: #878889;
+              margin-bottom: 4px;
+            }
+
+            &:last-child {
+
+            }
+          }
+        }
+      }
+
+      &_title {
+        font-weight: bold;
+      }
+
+      &_main {
+        padding-left: 32px;
+        @include mdFix {
+          padding-left: 28px;
+        }
+        @include sm {
+          flex-direction: column;
+        }
+
+        button {
+          color: #4772DA;
+          margin-top: 8px;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      @include md990 {
+        padding: 20px 0;
+        &:first-child {
+          padding-top: 16px;
+        }
+        &:last-child {
+          padding-bottom: 16px;
+        }
+      }
+    }
+
+    &-time {
+      padding-left: 32px;
+      @include mdFix {
+        padding-left: 28px;
+      }
+
+      > div {
+        flex: 1 1 auto;
+        @include sm {
+          flex: 1 1 100%;
+          margin-bottom: 8px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        &.w100 {
+          flex: 1 1 100%;
+          margin-bottom: 16px;
+          @include sm {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+
+    &-phones {
+      width: 50%;
+      @include sm {
+        width: 100%;
+      }
+
+      > a, div {
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &_messengers {
+        padding-left: 32px;
+        position: relative;
+        @include mdFix {
+          padding-left: 28px;
+        }
+        @include sm {
+          padding-left: 0;
+          margin-top: 12px;
+        }
+
+        .contacts--section-icon {
+          top: 0;
+
+          @include sm {
+            left: -26px;
+          }
+        }
+
+        a {
+          width: 100%;
+          display: block;
+          margin-bottom: 8px;
+          @include sm {
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      a {
+        width: 100%;
+        display: block;
+      }
+
+      div {
+        span {
+          color: #878889;
+        }
+
+        > a {
+          font-weight: bold;
+        }
+      }
+    }
+
+    &-road {
+      color: #1F2636;
+      @include mdFix {
+        flex-direction: column;
+      }
+
+      &_way {
+        margin-top: 12px;
+      }
+
+      &_dist {
+        margin-top: 12px;
+
+        span {
+          margin: 0 2px;
+          font-weight: 700;
+          color: #4772DA;
+          padding: 4px 8px;
+          background: #ffffff;
+          border-radius: 5px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 8px;
+          }
+        }
+
+        > div {
+          &:first-child {
+            font-weight: 400;
+            color: #878889;
+            margin-right: 8px;
+          }
+        }
+
+        &_wrap {
+          position: relative;
+          margin: 0 8px;
+        }
+      }
+
+      &_target {
+        font-weight: 700;
+
+        svg {
+          margin-bottom: 2px;
+        }
+
+        margin: 0 2px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &_main {
+        margin-top: 20px;
+      }
+
+      &_block {
+        background: #F4F5F6;
+        border-radius: 8px;
+        font-weight: 700;
+        padding: 12px 20px;
+        font-size: 12px;
+        line-height: 16px;
+        width: calc(50% - 4px);
+        @include fix720 {
+          padding: 12px;
+        }
+        @include mdFix {
+          width: 100%;
+          padding: 12px;
+          &:last-child {
+            margin-top: 8px;
+          }
+        }
+
+        > span {
+          color: #4772DA;
+        }
+      }
+    }
+
+    &-title {
+      font-weight: 600;
+      color: #4772DA;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 24px;
+
+      &_sub {
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #1F2636;
+      }
+    }
+
+    &-dash {
+      flex: 1 1 auto;
+      display: block;
+      border: 1px dashed #c5cbd9;
+      border-radius: 5px;
+    }
+  }
+
+  &--modal {
+    padding: 0;
+    max-width: 610px;
+    width: 100%;
+    overflow: visible;
+
+    > div {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    @include vm {
+      max-width: 448px;
+      .modal--close {
+        right: 0;
+        top: -32px;
+      }
+    }
+    @include xsm {
+      max-width: 332px;
+    }
+    @include sm {
+      max-width: 288px;
+    }
+  }
+}
+
+.time-fix {
+  line-height: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+}

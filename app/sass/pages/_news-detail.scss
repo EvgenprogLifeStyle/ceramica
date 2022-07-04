@@ -1,0 +1,201 @@
+.detail-news {
+    @include lgFix {
+        margin-bottom: 0;
+    }
+    &__date {
+        margin-bottom: 16px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #878889;
+        @include lg {
+            font-size: 12px;
+            line-height: 16px;
+            margin-bottom: 8px;
+        }
+    }
+    &__description {
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        @include lg {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        @include lgFix {
+            border-bottom: 1px solid #c5cbd9;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        ol,
+        ul {
+            list-style: decimal;
+            padding-left: 20px;
+        }
+        li:not(:last-child) {
+            margin-bottom: 12px;
+        }
+        > div,
+        p {
+            margin-bottom: 12px;
+        }
+    }
+    &__image {
+        margin-bottom: 16px;
+        @include lg {
+            margin-bottom: 8px;
+        }
+        @include md {
+            max-width: 736px;
+        }
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 36px;
+        color: #000000;
+        margin-bottom: 12px;
+        @include lgFix {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    &__wrap {
+        @include lgFix {
+            flex-direction: column;
+        }
+    }
+}
+.other-news {
+    margin-left: 96px;
+    flex: 1 0 304px;
+    @include lg {
+        flex: 1 0 298px;
+        margin-left: 59px;
+    }
+    @include lgFix {
+        flex: 1;
+        margin-left: 0;
+        border-bottom: 1px solid #c5cbd9;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    &__list {
+        margin-bottom: 20px;
+        @include lgFix {
+            margin-bottom: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &__list-date {
+        font-size: 14px;
+        line-height: 20px;
+        color: #878889;
+        @include lg {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    &__list-item {
+        display: block;
+        &:not(:last-child) {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #c5cbd9;
+            @include lg {
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+            }
+            @include lgFix {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+        &:hover {
+            color: #4772da;
+        }
+        @include lgFix {
+            width: calc(50% - 4px);
+            margin-bottom: 16px;
+            &:nth-child(odd) {
+                margin-right: 8px;
+            }
+        }
+        @include vm {
+            &:nth-child(odd) {
+                margin-right: 0;
+            }
+            width: 100%;
+            margin-bottom: 16px;
+        }
+    }
+    &__list-name {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 8px;
+        }
+        @include lgFix {
+            margin-bottom: 4px;
+        }
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 40px;
+        color: #000000;
+        margin-bottom: 20px;
+        @include lg {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 16px;
+        }
+        @include lgFix {
+            font-size: 20px;
+            line-height: 28px;
+        }
+        @include fix720 {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    &__btn {
+        background: #e3e7f1;
+        color: #4772da;
+        display: block;
+        text-align: center;
+        border: none;
+        @include lgFix {
+            width: max-content;
+            padding-left: 55px;
+            padding-right: 55px;
+        }
+    }
+}
+
+.brand-slider-news {
+    &__btn {
+        width: auto;
+				@include  lg {
+					padding: 11px 33px;
+				}
+        @include md {
+            display: none;
+        }
+        &_bottom {
+            display: none;
+            justify-content: center;
+            @include md {
+                display: flex;
+            }
+            margin-top: 16px;
+            > a {
+                padding-left: 45px;
+                padding-right: 45px;
+                display: block;
+            }
+        }
+    }
+}

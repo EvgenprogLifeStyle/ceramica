@@ -1,0 +1,191 @@
+.payment {
+    &__section {
+        padding-bottom: 40px;
+        @include lg {
+            padding-bottom: 32px;
+        }
+        @include lgFix {
+            padding-bottom: 16px;
+        }
+    }
+    &__section-descr {
+        font-size: 16px;
+        line-height: 24px;
+        @include lg {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    &__section-list {
+        font-size: 16px;
+        line-height: 24px;
+        padding-left: 16px;
+        @include lg {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        > ul {
+            list-style: decimal;
+            > li:not(:last-child) {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    &__section-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    &__container {
+        @include md {
+            flex-direction: column;
+        }
+    }
+    &__cancel {
+        width: 70%;
+				border-bottom: 1px solid #C5CBD9;
+        @include lg {
+            width: 100%;
+        }
+    }
+}
+
+.payment-warn {
+    border: 1px solid #4772da;
+    border-radius: 8px;
+    margin-left: 96px;
+    padding: 20px 24px;
+    height: max-content;
+    flex: 1 0 384px;
+    @include lg {
+        margin-left: 59px;
+        flex: 1 0 298px;
+				padding: 12px;
+    }
+    @include lgFix {
+        flex: 1 0 274px;
+        margin-left: 48px;
+    }
+    @include md {
+        flex: 1;
+        margin-left: 0;
+        margin-bottom: 16px;
+				padding: 8px;
+    }
+    &__descr {
+        font-size: 16px;
+        line-height: 24px;
+        color: #878889;
+        @include lg {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        color: #4772da;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 16px;
+            line-height: 24px;
+        }
+				@include  md {
+					margin-bottom: 8px;
+				}
+    }
+}
+
+.payment-requisites {
+    padding-top: 60px;
+    @include lg {
+        padding-top: 40px;
+    }
+    @include lgFix {
+        padding-top: 20px;
+    }
+    @include md {
+        flex-direction: column;
+    }
+    &__item {
+        flex: 1;
+        &:first-child {
+            margin-right: 17px;
+            @include lg {
+                margin-right: 8px;
+            }
+            @include md {
+                margin-right: 0;
+                margin-bottom: 17px;
+            }
+        }
+    }
+    &__table {
+        border: 1px solid #c5cbd9;
+        border-radius: 8px;
+        @include lgFix {
+            height: 93%;
+        }
+    }
+    &__table-name {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        width: 40%;
+        @include lg {
+            font-size: 12px;
+            line-height: 16px;
+            width: 50%;
+        }
+        @include md {
+            padding-right: 8px;
+        }
+    }
+    &__table-row {
+        display: flex;
+        padding: 20px;
+        @include lg {
+            padding: 16px 12px;
+        }
+        @include md {
+            padding: 12px 8px;
+        }
+        &:not(:last-child) {
+            border-bottom: 1px solid #c5cbd9;
+        }
+    }
+    &__table-value {
+        font-size: 14px;
+        line-height: 20px;
+        width: 60%;
+        @include lg {
+            font-size: 12px;
+            line-height: 16px;
+            width: 50%;
+        }
+        @include md {
+            padding-right: 8px;
+        }
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        color: #4772da;
+        margin-bottom: 20px;
+        @include lg {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        @include md {
+            margin-bottom: 12px;
+        }
+    }
+}

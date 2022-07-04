@@ -1,0 +1,139 @@
+.delivery {
+    &__warn {
+        font-size: 16px;
+        line-height: 24px;
+        color: #4772da;
+        border: 1px solid #4772da;
+        border-radius: 8px;
+        padding: 20px;
+        @include lg {
+            font-size: 14px;
+            line-height: 20px;
+            padding: 12px;
+        }
+    }
+    &__wrap {
+        flex: 1;
+    }
+    &__section-descr {
+        font-size: 16px;
+        line-height: 24px;
+        > div:not(:last-child) {
+            margin-bottom: 12px;
+        }
+        @include lg {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    &__section-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 16px;
+            line-height: 24px;
+        }
+        @include md {
+            margin-bottom: 12px;
+        }
+    }
+    &__section {
+        &:not(:last-child) {
+            border-bottom: 1px solid #c5cbd9;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            @include lg {
+                margin-bottom: 32px;
+                padding-bottom: 32px;
+            }
+            @include lgFix {
+                margin-bottom: 16px;
+                padding-bottom: 16px;
+            }
+        }
+    }
+    &__container {
+        @include md {
+            flex-direction: column;
+        }
+    }
+}
+
+.delivery-info {
+    margin-left: 96px;
+    flex: 0 0 384px;
+    @include lg {
+        flex: 0 0 275px;
+        margin-left: 48px;
+    }
+    @include md {
+        flex: 0 0 100%;
+        margin-left: 0;
+        margin-top: 16px;
+    }
+    &__block {
+        padding: 32px;
+        background: #f4f5f6;
+        border-radius: 8px;
+        @include lg {
+            padding: 12px;
+        }
+        @include md {
+            padding: 12px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        &-item {
+            &:not(:last-child) {
+                border-bottom: 1px solid #c5cbd9;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+        }
+        &-wrap {
+            @include md {
+								display: flex;
+								justify-content: space-between;
+						}
+            @include mdFix {
+                flex-direction: column;
+            }
+        }
+    }
+    &__item {
+        font-size: 14px;
+        line-height: 20px;
+        &:not(:last-child) {
+            margin-bottom: 8px;
+            @include lg {
+                margin-bottom: 4px;
+            }
+        }
+        @include lg {
+            font-size: 12px;
+            line-height: 16px;
+        }
+        @include md {
+            font-size: 12px;
+            line-height: 16px;
+            width: 33%;
+        }
+        @include mdFix {
+            width: 100%;
+        }
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        color: #4772da;
+        margin-bottom: 12px;
+        @include lg {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}

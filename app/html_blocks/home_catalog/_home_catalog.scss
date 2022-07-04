@@ -1,0 +1,97 @@
+.home {
+  &--catalog {
+    &-main {
+      margin: 24px -8px -16px -8px;
+      @include lg {
+        margin: 20px -4px -8px -4px;
+      }
+      @include lgFix {
+        margin-top: 8px;
+      }
+    }
+    &-title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 28px;
+      color: #1F2636;
+      transition: .3s all ease;
+      @include lg {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      @include lgFix {
+        min-height: 46px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @include fix720 {
+        font-size: 12px;
+        line-height: 16px;
+        word-break: break-word;
+        min-height: 32px;
+      }
+      @include xsm {
+        vertical-align: middle;
+        display: flex;
+      }
+    }
+    &-count {
+      font-size: 16px;
+      line-height: 24px;
+      color: #878889;
+      margin-top: 4px;
+      @include lg {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      @include lgFix {
+        display: none;
+      }
+    }
+    &-block {
+      margin-bottom: 16px;
+      width: 20%;
+      @include lg {
+        margin-bottom: 8px;
+      }
+      @include mdFix {
+        width: 50%;
+        img {
+          height: 80px;
+        }
+      }
+      > a  {
+        margin: 0 8px;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #F4F5F6;
+        @include lg {
+          margin: 0 4px;
+        }
+        &:hover {
+          .home--catalog-title {
+            color: #6689dd;
+          }
+        }
+
+      }
+    }
+    &-bottom {
+      padding: 12px 16px;
+      @include lg {
+        padding: 12px 15px;
+      }
+      @include lgFix {
+        padding: 8px;
+      }
+      @include mdFix {
+        padding: 8px 8px 12px 8px;
+      }
+    }
+  }
+}

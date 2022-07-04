@@ -1,0 +1,53 @@
+.btn {
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4772DA;
+  padding: 12px 33px;
+  border-radius: 5px;
+  border: 1px solid #4772DA;
+  transition: .3s all ease; }
+  .btn--base {
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    height: 48px;
+    border-radius: 5px; }
+    .btn--base.blue--btn {
+      background: #E3E7F1;
+      color: #4772DA; }
+      .btn--base.blue--btn:hover {
+        background: #D3D9E8; }
+      .btn--base.blue--btn:active {
+        background: #BAC3DB; }
+    .btn--base.dark--blue {
+      background: #4772DA;
+      color: #ffffff; }
+      .btn--base.dark--blue:hover {
+        background: #6689DD; }
+      .btn--base.dark--blue:active {
+        background: #496DC2; }
+    .btn--base.border--btn {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #4772DA;
+      border: 1px solid #4772DA; }
+      .btn--base.border--btn:hover {
+        background: #6689DD;
+        border-color: #6689DD;
+        color: #FFFFFF; }
+      .btn--base.border--btn:active {
+        background: #496DC2;
+        border-color: #496DC2;
+        color: #FFFFFF; }
+  .btn:hover {
+    background: #6689DD;
+    border-color: #6689DD;
+    color: #FFFFFF; }
+  .btn:active {
+    background: #496DC2;
+    border-color: #496DC2;
+    color: #FFFFFF; }
